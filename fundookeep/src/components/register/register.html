@@ -4,67 +4,69 @@
 *@Date: 31-12-2019
 ***********************************************************************************************/ -->
 <section class="register">
-  <div class="centered-container" >
-        <md-card class="md-layout-item md-size-180 md-small-size-180" style="padding: 50px" id='header'>
-   
-        
-          <div class="title">
-            <span class="f" style="font-size:20px;font-weight:700">F</span>
-            <span class="u" style="font-size:20px;font-weight:700">U</span>
-            <span class="n" style="font-size:20px;font-weight:700">N</span>
-            <span class="d" style="font-size:20px;font-weight:700">D</span>
-            <span class="o" style="font-size:20px;font-weight:700">O</span>
-            <span class="o" style="font-size:20px;font-weight:700">O</span>
-            <!-- <h1>Fundoo</h1>  -->
-            <h2>Create your Account</h2>
+  <div class="centered-container">
+    <md-card
+      md-with-hover
+      class="md-layout-item md-size-180 md-small-size-180"
+      style="padding: 50px"
+      id="header"
+    >
+      <div class="title">
+        <span class="f" style="font-size:20px;font-weight:700">F</span>
+        <span class="u" style="font-size:20px;font-weight:700">U</span>
+        <span class="n" style="font-size:20px;font-weight:700">N</span>
+        <span class="d" style="font-size:20px;font-weight:700">D</span>
+        <span class="o" style="font-size:20px;font-weight:700">O</span>
+        <span class="o" style="font-size:20px;font-weight:700">O</span>
+        <!-- <h1>Fundoo</h1>  -->
+        <h2>Create your Account</h2>
+      </div>
+
+      <div class="form">
+        <div class="label">
+          <div class="fName">
+            <md-field>
+              <label>First-Name</label>
+              <md-input v-model="login.firstName" autofocus></md-input>
+            </md-field>
           </div>
 
-          <div class="form">
-            <div class="label">
-              <div class="fName">
-              <md-field>
-                <label>First-Name</label>
-                <md-input v-model="login.firstName" autofocus></md-input>
-              </md-field>
-              </div>
-          
-              <div class="lName">
-              <md-field>
-                <label>Last-Name</label>
-                <md-input v-model="login.lastName" autofocus></md-input>
-              </md-field>
-              </div>
-            </div>
-
-          
-          
-              <md-field>
-                <label>E-mail</label>
-                <md-input v-model="login.email" autofocus></md-input>
-              </md-field>
-            
-
-            <div class="label1">
-              <div class="pass">
-              <md-field md-has-password>
-                <label>Password</label>
-                <md-input v-model="login.password" type="password"></md-input>
-              </md-field>
-              </div>
-            <div class="cpass">
-              <md-field md-has-password>
-                  <label>Confirm Password</label>
-                  <md-input v-model="login.password" type="password"></md-input>
-              </md-field>
-            </div>
+          <div class="lName">
+            <md-field>
+              <label>Last-Name</label>
+              <md-input v-model="login.lastName" autofocus></md-input>
+            </md-field>
           </div>
         </div>
 
-          <div class="actions md-layout md-alignment-center-space-between">
-            <a href="/resetpassword">Reset password</a>
-            <md-button class="md-raised md-primary" @click="auth">Sign in</md-button>
+        <md-field>
+          <label>E-mail</label>
+          <md-input v-model="login.email" autofocus></md-input>
+        </md-field>
+
+        <div class="label1">
+          <div class="pass">
+            <md-field md-has-password>
+              <label>Password</label>
+              <md-input v-model="login.password" type="password"></md-input>
+            </md-field>
           </div>
-        </md-card>
-  <!-- </form> -->
-   </div>
+          <div class="cpass">
+            <md-field md-has-password>
+              <label>Confirm Password</label>
+              <md-input v-model="login.password" type="password"></md-input>
+            </md-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions md-layout md-alignment-center-space-between">
+        <a href="/resetpassword">Reset password</a>
+        <md-button class="md-raised md-primary" @click="auth"
+          >Sign in</md-button
+        >
+      </div>
+    </md-card>
+    <!-- </form> -->
+  </div>
 </section>
