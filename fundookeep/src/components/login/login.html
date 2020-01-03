@@ -2,13 +2,18 @@
 *@purpose: Login page
 *@author: Soumya Chinnur
 *@Date: 31-12-2019
-***********************************************************************************************/ -->
+*******************************************************************************************/ -->
 <section class="login">
-  <div class="centered-container"> 
-    <md-card md-with-hover class="md-layout-item md-size-180 md-small-size-180" style="padding: 50px" id='header'>
+  <div class="centered-container">
+    <md-card
+      md-with-hover
+      class="md-layout-item md-size-180 md-small-size-180"
+      style="padding: 50px"
+      id="header"
+    >
       <div class="title">
-        <span class="f" ><b>F</b></span>
-        <span class="u" ><b>U</b></span>
+        <span class="f"><b>F</b></span>
+        <span class="u"><b>U</b></span>
         <span class="n"><b>N</b></span>
         <span class="d"><b>D</b></span>
         <span class="o"><b>O</b></span>
@@ -18,37 +23,41 @@
 
       <div class="form">
         <md-field>
-        <div>
+          <div>
             <icons-image _ngcontent-stq-c22="" _nghost-stq-c19="" class="icon">
-              <i _ngcontent-stq-c19="" class="material-icons icon-image-preview">email</i>
+              <i _ngcontent-stq-c19="" class="material-icons icon-image-preview"
+                >email</i
+              >
             </icons-image>
-        </div>
-        <div>
-          <label>E-mail</label>
+          </div>
+          <div>
+            <label>E-mail</label>
             <md-input v-model="login.email" autofocus></md-input>
-        </div>
+          </div>
         </md-field>
-        
 
         <md-field md-has-password>
           <label>Password</label>
           <md-input v-model="login.password" type="password"></md-input>
         </md-field>
         <div class="actions md-layout md-alignment-center-space-between">
-            <a href="/register">forgot password?</a>
-          </div>
+          <a href="/register">forgot password?</a>
+        </div>
       </div>
 
       <div class="actions md-layout md-alignment-center-space-between">
         <a href="/resetpassword">create account</a>
-        <md-button class="md-raised md-primary" @click="auth">Sign in</md-button>
+        <md-button class="md-raised md-primary" @click="auth"
+          >Sign in</md-button
+        >
       </div>
 
       <div class="loading-overlay" v-if="loading">
-        <md-progress-spinner md-mode="indeterminate" :md-stroke="2"></md-progress-spinner>
+        <md-progress-spinner
+          md-mode="indeterminate"
+          :md-stroke="2"
+        ></md-progress-spinner>
       </div>
     </md-card>
- </div>
+  </div>
 </section>
-
-
