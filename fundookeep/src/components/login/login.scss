@@ -1,73 +1,94 @@
-.login{
-    padding-left:37%
+.login {
+  padding-left: 37%;
 }
 .centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 29%;
+
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: bold;
+    img {
+      margin-bottom: 16px;
+      max-width: 80px;
+    }
+  }
+  .actions {
+    .md-button {
+      margin: 0;
+    }
+  }
+  .form {
+    margin-bottom: 60px;
+  }
+
+  .md-content {
+    z-index: 1;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+  }
+  .loading-overlay {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    height: 100vh;
-    width:29%;
-
-    .title {
-      text-align: center;
-      margin-bottom: 30px;
-      img {
-        margin-bottom: 16px;
-        max-width: 80px;
-      }
-    }
-    .actions {
-      .md-button {
-        margin: 0;
-      }
-    }
-    .form {
-      margin-bottom: 60px;
-    }
-
-    .md-content {
-      z-index: 1;
-      padding: 40px;
-      width: 100%;
-      max-width: 400px;
-      position: relative;
-    }
-    .loading-overlay {
-      z-index: 10;
-      top: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-
   }
+}
 
-  .f{
-      color:rgb(66, 133, 244);
-  }
-  .u{
-        color:rgb(52, 168, 83);
-  }
-  .n{
-        color:rgb(251, 188, 5);
-  }
-  .d{
-        color:rgb(66, 133, 244);
-  }
-  .o{
-        color:rgb(234, 67, 53);
-  }
-  .o{
-        color:rgb(234, 67, 53);
-  }
-
-
-  
+.f {
+  color: rgb(66, 133, 244);
+  font-size: 28px;
+  font-family: bold;
+}
+.u {
+  color: rgb(52, 168, 83);
+  font-size: 28px;
+  font-family: bold;
+}
+.n {
+  color: rgb(251, 188, 5);
+  font-size: 28px;
+  font-family: bold;
+}
+.d {
+  color: rgb(66, 133, 244);
+  font-size: 28px;
+  font-family: bold;
+}
+.o {
+  color: rgb(234, 67, 53);
+  font-size: 28px;
+  font-family: bold;
+}
+.o {
+  color: rgb(234, 67, 53);
+  font-size: 28px;
+  font-family: bold;
+}
+#header {
+  border-style: groove;
+  border-radius: 10px;
+}
+.icon {
+  position: relative;
+  /* Adjust these values accordingly */
+  top: 5px;
+  left: 242px;
+}
+.background{
+  background-color:light grey;
+}

@@ -1,26 +1,30 @@
-<section class="login">
-  <div class="centered-container">
-    <md-content class="md-elevation-3">
 
+<section class="login">
+  <div class="centered-container"> 
+    <md-card md-with-hover class="md-layout-item md-size-180 md-small-size-180" style="padding: 50px" id='header'>
       <div class="title">
-        <span class="f" >F</span>
-        <span class="u" >U</span>
-        <span class="n">N</span>
-        <span class="d">D</span>
-        <span class="o">O</span>
-        <span class="o">O</span>
-       <!-- <h1>Fundoo</h1>  -->
-       <h2>Sign in</h2>
+        <span class="f" ><b>F</b></span>
+        <span class="u" ><b>U</b></span>
+        <span class="n"><b>N</b></span>
+        <span class="d"><b>D</b></span>
+        <span class="o"><b>O</b></span>
+        <span class="o"><b>O</b></span>
+        <h2>Sign in</h2>
       </div>
 
       <div class="form">
         <md-field>
+        <div>
+            <icons-image _ngcontent-stq-c22="" _nghost-stq-c19="" class="icon">
+              <i _ngcontent-stq-c19="" class="material-icons icon-image-preview">email</i>
+            </icons-image>
+        </div>
+        <div>
           <label>E-mail</label>
-          <md-input v-model="login.email" autofocus></md-input>
-         </md-field>
-         <div class="actions md-layout md-alignment-center-space-between">
-            <a href="/register">forgot email?</a>
-          </div>
+            <md-input v-model="login.email" autofocus></md-input>
+        </div>
+        </md-field>
+        
 
         <md-field md-has-password>
           <label>Password</label>
@@ -39,11 +43,9 @@
       <div class="loading-overlay" v-if="loading">
         <md-progress-spinner md-mode="indeterminate" :md-stroke="2"></md-progress-spinner>
       </div>
-
-    </md-content>
-    <div class="background" />
-  </div>
-    
-
+      <div class="background"></div>
+    </md-card>
+ </div>
 </section>
+
 
