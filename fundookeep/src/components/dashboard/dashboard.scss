@@ -1,4 +1,5 @@
 .dashboard {
+  
     .page-container {
      
         overflow: hidden;
@@ -11,9 +12,7 @@
         max-width: calc(100vw - 125px);
       }
     
-      .md-content {
-        padding: 16px;
-      }
+      
       .gb_5dgb_Xc {
         font-size: 20px;
       }
@@ -72,5 +71,12 @@
       max-height: 287px;
       overflow: auto;
     }
+   .labels{
+     opacity:0.5;
+     padding-left:2%
+   }
+   .line{
+     width:20%
+   }
   }
 

@@ -5,7 +5,7 @@
 ******************************************************************************************/ -->
 <section class="dashboard">
   <div class="page-container md-layout-column">
-    <md-toolbar class="md-primary">
+       <md-toolbar class="md-primary">
       <md-button class="md-icon-button" @click="showNavigation">
          <md-icon class="menu">menu</md-icon>
       </md-button>
@@ -22,59 +22,42 @@
   </div>
 
   <div v-if="flag">
-    <div>
-      <md-content class="scrollbar">
-       <md-list>
-      <div>
-        <div>
-        <md-list-item>
-          <md-icon>
-            <img src="../../assets/notes.svg" alt="" srcset="" class="Notes">
-          </md-icon>
-            <span class="md-list-item-text">Notes</span>
-        </md-list-item>
-        </div>
-      
-        <div>
-        <md-list-item>
-          <md-icon>
-            <img src="../../assets/notes1.svg" alt="" srcset="" class="Reminder">
-          </md-icon>
+    <md-list>
+  <div class="line">
+      <md-list-item>
+          <md-icon>lightbulb_outline</md-icon>
+          <span class="md-list-item-text">Notes</span>
+      </md-list-item>
+      <md-list-item>
+          <md-icon>reminder</md-icon>
             <span class="md-list-item-text">Reminder</span>
-        </md-list-item>
-        </div>
-        <hr>
-      </div>
-      
-      <div>
-        <md-list-item>
-          <label>label</label>
-          <md-icon>
-            <img src="../../assets/notes2.svg" alt="" srcset="" class="Editlabels">
-          </md-icon>
-              <span class="md-list-item-text">Edit labels</span>
-        </md-list-item>
-        <hr>
-     </div>
+      </md-list-item>
+  </div>
+ <hr/>
+     
+ <div>
+    <div class="labels">
+      <label>LABELS</label>
+</div>
+      <md-list-item>
+            <md-icon>edit</md-icon>
+            <span class="md-list-item-text">Edit labels</span>
+      </md-list-item>
+ </div>
           
-     <div>
-        <md-list-item>
-          <md-icon>
-            <img src="../../assets/notes3.svg" alt="" srcset="" class="Archive">
-          </md-icon>
+  <div>
+    <md-list-item>
+          <md-icon>archive</md-icon>
               <span class="md-list-item-text">Archive</span>
-        </md-list-item>
+    </md-list-item>
         
-
-        <md-list-item>
-          <md-icon>
-            <img src="../../assets/notes4.svg" alt="" srcset="" class="Bin">
-          </md-icon>
+    <md-list-item>
+        <md-icon>trash</md-icon>
               <span class="md-list-item-text">Bin</span>
-        </md-list-item>
-        </div>
-      </md-list>
-      </md-content>
-    </div>
+    </md-list-item>
+  </div>
+  </md-list>
+  </div>
+  </div>
   </div>
 </section>
