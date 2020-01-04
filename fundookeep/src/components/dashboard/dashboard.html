@@ -7,7 +7,7 @@
   <div class="page-container md-layout-column">
     <md-toolbar class="md-primary">
       <md-button class="md-icon-button" @click="showNavigation">
-         <md-icon>menu</md-icon>
+         <md-icon class="menu">menu</md-icon>
       </md-button>
       <div>
           <a class="gb_iegb_mcgb_ge" aria-label="Keep" href="#" tabindex="0">
@@ -15,39 +15,44 @@
           <span class="gb_5dgb_Xc">Keep</span>
           </a>  
       </div>
-      <md-avatar class="md-avatar-icon">
+      <!-- <md-avatar class="md-avatar-icon">
         <md-icon>home</md-icon>
-      </md-avatar>
+      </md-avatar> -->
     </md-toolbar>
   </div>
 
   <div v-if="flag">
     <div>
-      <md-list>
+      <md-content class="scrollbar">
+       <md-list>
+      
         <md-list-item>
           <md-icon>
-            <img src="../../assets/notes.svg" alt="" srcset="">
+            <img src="../../assets/notes.svg" alt="" srcset="" class="Notes">
           </md-icon>
             <span class="md-list-item-text">Notes</span>
         </md-list-item>
-
+      
         <md-list-item>
           <md-icon>
-            <img src="../../assets/notes1.svg" alt="" srcset="">
+            <img src="../../assets/notes1.svg" alt="" srcset="" class="Reminder">
           </md-icon>
             <span class="md-list-item-text">Reminder</span>
         </md-list-item>
-
+  
+      
         <md-list-item>
+          <label>label</label>
           <md-icon>
-            <img src="../../assets/notes2.svg" alt="" srcset="">
+            <img src="../../assets/notes2.svg" alt="" srcset="" class="Editlabels">
           </md-icon>
               <span class="md-list-item-text">Edit labels</span>
         </md-list-item>
+     
           
         <md-list-item>
           <md-icon>
-            <img src="../../assets/notes3.svg" alt="" srcset="">
+            <img src="../../assets/notes3.svg" alt="" srcset="" class="Archive">
           </md-icon>
               <span class="md-list-item-text">Archive</span>
         </md-list-item>
@@ -55,11 +60,13 @@
 
         <md-list-item>
           <md-icon>
-            <img src="../../assets/notes4.svg" alt="" srcset="">
+            <img src="../../assets/notes4.svg" alt="" srcset="" class="Bin">
           </md-icon>
               <span class="md-list-item-text">Bin</span>
         </md-list-item>
+   
       </md-list>
+      </md-content>
     </div>
   </div>
 </section>

@@ -53,5 +53,29 @@
      {
        font-family: monospace;
      }
-}
+     .Notes{
+       opacity:0.5;
+     }
+     .Reminder{
+      opacity:0.5;
+    }
+    .Editlabels{
+      opacity:0.5;
+    }
+    .Archive{
+      opacity:0.5;
+    }
+    .Bin{
+      opacity:0.5;
+    }
+    .menu
+    {
+      opacity:0.5;
+    }
+    .scrollbar{
+      max-width: 290px;
+      max-height: 287px;
+      overflow: auto;
+    }
+  }
 
