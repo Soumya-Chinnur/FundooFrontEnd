@@ -1,5 +1,5 @@
 
-export default {
+export default { //standard syntax for instantiating an object that has been defined.
   name: 'dashboard',
   components: {},
   props: [],
