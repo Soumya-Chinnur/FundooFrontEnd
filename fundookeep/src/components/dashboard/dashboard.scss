@@ -30,15 +30,28 @@
       }
       .md-toolbar.md-theme-default.md-primary
       {
-        background-color: wheat;
-        color: #0a0000;
+        background-color: white;
+        color: rgb(60,60,60);
+        
 
       }
-      .md-icon-button
-      {
-        
+      
+      .gb_Oc{
+        padding: 50px;
+    font-size: 19px;
       }
-      
-      
+     .md-toolbar.md-theme-default.md-primary .md-icon {
+    
+      color: rgb(60,60,60);
+     }
+     .md-list-item-text
+     {
+       color: rgb(0,0,0);
+       font-family: monospace;
+     }
+     .gb_5dgb_Xc
+     {
+       font-family: monospace;
+     }
 }
 
