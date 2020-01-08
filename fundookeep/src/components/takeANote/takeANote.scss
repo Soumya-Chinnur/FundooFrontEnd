@@ -1,0 +1,41 @@
+.take-a-note {
+}
+.note{
+
+        width:600px;
+        margin: 32px auto 16px auto;
+        position: relative;
+
+}
+
+    .card{
+
+        width:600px;
+        //height: 46px;
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+        opacity: 1;
+        position: relative;
+        border-radius: 8px;
+        }
+.icon{
+    -webkit-background-size: 24px 24px;
+    background-size: 24px 24px;
+    // height: 46px;
+    position: absolute;
+    top: 0;
+    width: 46px;   
+
+
+}
+.h1{        padding: 1%;
+    opacity:0.5;
+}
+.icons{        padding: 0%;
+    display:flex;
+    justify-content:space-between;
+}
+.icons1{
+    align-items: center;
+    margin-top: 2%;
+}
+

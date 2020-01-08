@@ -1,21 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import login from "../components/login";
-import register from "../components/register"
-import forgotpassword from "../components/forgotpassword"
-import resetpassword from "../components/resetpassword"
-import dashboard from "../components/dashboard"
-import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
-import VueMaterial from 'vue-material'
+import register from "../components/register";
+import forgotpassword from "../components/forgotpassword";
+import resetpassword from "../components/resetpassword";
+import dashboard from "../components/dashboard";
+import note from "../components/note";
+import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
+import "vue-material/dist/vue-material.min.css";
+import "vue-material/dist/theme/default.css";
+import VueMaterial from "vue-material";
 
-Vue.use(MdButton)
-Vue.use(MdContent)
-Vue.use(MdTabs)
-Vue.use(VueMaterial)
-Vue.use(VueRouter)
-
+Vue.use(MdButton);
+Vue.use(MdContent);
+Vue.use(MdTabs);
+Vue.use(VueMaterial);
+Vue.use(VueRouter);
 
 Vue.use(VueRouter);
 
@@ -43,11 +43,20 @@ const routes = [
   {
     path: "/dashboard",
     name: "dashboard",
-    component: dashboard
+    component: dashboard,
+
+    children: [
+      {
+        path: "/",
+        redirect: "note",
+        pathMatch: "full"
+      },
+      {
+        path: "note",
+        component: note
+      }
+    ]
   }
-
-
-  
 ];
 
 const router = new VueRouter({

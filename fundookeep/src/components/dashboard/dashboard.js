@@ -1,3 +1,6 @@
+import Vue from "vue";
+import VueRouter from "vue-router";
+Vue.use(VueRouter)
 
 export default { //standard syntax for instantiating an object that has been defined.
   name: 'dashboard',

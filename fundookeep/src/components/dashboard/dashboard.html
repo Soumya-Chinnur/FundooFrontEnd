@@ -21,45 +21,52 @@
     </md-toolbar>
   </div>
 
-  <div v-if="flag">
-  <md-list>
-  <div>
-      <md-list-item>
-          <md-icon>lightbulb_outline</md-icon>
-          <span class="md-list-item-text">Notes</span>
-      </md-list-item>
-      <md-list-item>
-          <md-icon>notifications_none</md-icon>
-            <span class="md-list-item-text">Reminder</span>
-      </md-list-item>
-  </div>
-  <hr />
-     
- <div>
-    <div class="labels">
-      <label>LABELS</label>
-</div>
-
-<div>
-   <md-list-item>
-        <md-icon>edit</md-icon>
-        <span class="md-list-item-text">Edit labels</span>
-    </md-list-item>
-</div>
-  <hr />        
-  <div>
-    <md-list-item>
-          <md-icon>archive</md-icon>
-              <span class="md-list-item-text">Archive</span>
-    </md-list-item>
-        
-    <md-list-item>
-        <md-icon>delete</md-icon>
-              <span class="md-list-item-text">Bin</span>
-    </md-list-item>
-  </div>
-</div>
-  </md-list>
+  <div class="pass">
+    <div v-if="flag" class="pass1">
+      <md-list>
+      <div>
+          <md-list-item>
+              <md-icon>lightbulb_outline</md-icon>
+              <span class="md-list-item-text">Notes</span>
+          </md-list-item>
+          <md-list-item>
+              <md-icon>notifications_none</md-icon>
+                <span class="md-list-item-text">Reminder</span>
+          </md-list-item>
+      </div>
+      <hr />
+         
+     <div>
+        <div class="labels">
+          <label>LABELS</label>
+    </div>
+    
+    <div>
+       <md-list-item>
+            <md-icon>edit</md-icon>
+            <span class="md-list-item-text">Edit labels</span>
+        </md-list-item>
+    </div>
+      <hr />        
+      <div>
+        <md-list-item>
+              <md-icon>archive</md-icon>
+                  <span class="md-list-item-text">Archive</span>
+        </md-list-item>
+            
+        <md-list-item>
+            <md-icon>delete</md-icon>
+                  <span class="md-list-item-text">Bin</span>
+        </md-list-item>
+      </div>
+    </div>
+      </md-list>
+      
+      </div>
+      <div class="pass2">
+       <router-view></router-view>
+    
+      </div>
   </div>
 
 </section>
