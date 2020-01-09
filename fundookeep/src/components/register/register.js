@@ -1,11 +1,12 @@
+// import register from "../services/userServices"
 export default {
-  name: 'login',
+  name: 'register',
   components: {},
   props: [],
   data () {
     return {
       loading: false,
-      login: {
+      register: {
         firstName: "",
         lastName: "",
         email: "",
@@ -23,6 +24,17 @@ export default {
   },
   methods: {
     auth() {
+      // var obj={
+      //   firstName:this.register.firstName,
+      //   lastName:this.register.lastName,
+      //   email:this.register.email,
+      //   password:this.register.password
+      // }
+      // register(obj).then(res=>{
+      //   console.log(res)
+      // }).catch(err=>{
+      //   console.log(err)
+      // })
       // your code to login user
       // this is only for example of loading
       this.loading = true;

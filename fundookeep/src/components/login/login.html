@@ -23,16 +23,27 @@
 
       <div class="form">
         <md-field>
-          <div>
-            <icons-image _ngcontent-stq-c22="" _nghost-stq-c19="" class="icon">
+          <div
+            style="display: flex; flex-direction: row"
+          >
+            <!-- <div>
+              <icons-image _ngcontent-stq-c22="" _nghost-stq-c19="" class="icon">
               <i _ngcontent-stq-c19="" class="material-icons icon-image-preview"
                 >email</i
               >
-            </icons-image>
-          </div>
-          <div>
-            <label>E-mail</label>
-            <md-input v-model="login.email" autofocus></md-input>
+            </icons-image> -->
+            <!-- </div> -->
+            <div>
+              <label>E-mail</label>
+              <md-input v-model="login.email" autofocus>
+ 
+              </md-input>
+              <icons-image _ngcontent-stq-c22="" _nghost-stq-c19="" class="icon">
+                  <i _ngcontent-stq-c19="" class="material-icons icon-image-preview"
+                    >email</i
+                  >
+                </icons-image>
+            </div>
           </div>
         </md-field>
 
@@ -41,12 +52,12 @@
           <md-input v-model="login.password" type="password"></md-input>
         </md-field>
         <div class="actions md-layout md-alignment-center-space-between">
-          <a href="/register">forgot password?</a>
+          <a href="/resetpassword">forgot password?</a>
         </div>
       </div>
 
       <div class="actions md-layout md-alignment-center-space-between">
-        <a href="/resetpassword">create account</a>
+        <a href="/register">create account</a>
         <md-button class="md-raised md-primary" @click="auth"
           >Sign in</md-button
         >
