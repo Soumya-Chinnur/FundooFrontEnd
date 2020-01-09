@@ -1,8 +1,8 @@
 // import register from "../services/userServices"
-export default {
+export default { //syntax for instantiating an object that has been defined
   name: 'register',
-  components: {},
-  props: [],
+  components: {},//logical entities of code that contain functionality
+  props: [], //Props are how you pass data from a parent component down to a child component
   data () {
     return {
       loading: false,
@@ -16,10 +16,10 @@ export default {
 
   
   },
-  computed: {
+  computed: {//A computed property is used to declaratively describe a value that depends on other values
 
   },
-  mounted () {
+  mounted () {  //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
 
   },
   methods: {
