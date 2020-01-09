@@ -1,8 +1,8 @@
 import login from "../services/userServices"
-export default {
+export default { //syntax for instantiating an object that has been defined
   name: 'login',
-  components: {},
-  props: [],
+  components: {},//logical entities of code that contain functionality
+  props: [], //Props are how you pass data from a parent component down to a child component
   data () {
     return {
       loading: false,
@@ -14,10 +14,10 @@ export default {
 
   
   },
-  computed: {
+  computed: { //A computed property is used to declaratively describe a value that depends on other values
 
   },
-  mounted () {
+  mounted () {   //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
 
   },
   methods: {
@@ -34,10 +34,10 @@ export default {
       })
       // your code to login user
       // this is only for example of loading
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 5000);
+      // this.loading = true;
+      // setTimeout(() => {
+      //   this.loading = false;
+      // }, 5000);
     }
   }
 
