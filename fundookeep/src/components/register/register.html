@@ -12,12 +12,12 @@
       id="header"
     >
       <div class="title">
-        <span class="f" style="font-size:20px;font-weight:700">F</span>
-        <span class="u" style="font-size:20px;font-weight:700">U</span>
-        <span class="n" style="font-size:20px;font-weight:700">N</span>
-        <span class="d" style="font-size:20px;font-weight:700">D</span>
-        <span class="o" style="font-size:20px;font-weight:700">O</span>
-        <span class="o" style="font-size:20px;font-weight:700">O</span>
+        <span class="f">F</span>
+        <span class="u">U</span>
+        <span class="n">N</span>
+        <span class="d">D</span>
+        <span class="o">O</span>
+        <span class="o">O</span>
         <!-- <h1>Fundoo</h1>  -->
         <h2>Create your Account</h2>
       </div>
@@ -37,20 +37,24 @@
               <md-input v-model="register.lastName" autofocus></md-input>
             </md-field>
           </div>
-        </div>
+      </div>
 
+     <div class="label1">
+        <div class="email">
         <md-field>
           <label>E-mail</label>
           <md-input v-model="register.email" autofocus></md-input>
         </md-field>
+        </div>
 
-        <div class="label1">
-          <div class="pass">
+              
+        <div class="password">
             <md-field md-has-password>
               <label>Password</label>
               <md-input v-model="register.password" type="password"></md-input>
             </md-field>
-          </div>
+        </div>
+      </div>
           <!-- <div class="cpass">
             <md-field md-has-confirmpassword>
               <label>Confirm Password</label>
@@ -58,7 +62,7 @@
             </md-field>
           </div> -->
         </div>
-      </div>
+      
 
       <div class="actions md-layout md-alignment-center-space-between">
         <a href="/resetpassword">Reset password</a>
@@ -66,7 +70,8 @@
           >Sign in</md-button
         >
       </div>
+    
     </md-card>
     <!-- </form> -->
-  </div>
+</div>
 </section>

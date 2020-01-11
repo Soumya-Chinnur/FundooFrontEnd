@@ -9,6 +9,7 @@
         position: fixed;
         height: 100vh;
         width:32%;
+       
         
         .title {
           text-align: center;
@@ -86,31 +87,39 @@
       .label{
         display: flex;
         justify-content: space-around;
+        flex-direction: row;
     }
     .label1{
-        display: flex;
-        justify-content: space-around;
+      display: flex;
+      justify-content: space-around;
+  }
+    // .label1{
+    //     display: flex;
+    //     justify-content: space-around;
     }
     .actions md-layout md-alignment-center-space-between{
       width:20px
     }
+   
 
-
-    .md-field{
-      margin: 23px;
-    }
-    .lName{
+    // .md-field{
+    //   margin: 23px;
+    // }
+    
+    .password{
       margin-left: 20px;
     }
+
     .cpass{
       margin-left: 20px;
     }
     #header{
       border: groove;
+      border-radius: 8px;
     }
     @media (min-width: 320px) and (max-width: 550px) {
       .centered-container{
       width: 41%;
       }
     }
-  }
+  
