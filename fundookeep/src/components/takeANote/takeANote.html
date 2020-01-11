@@ -1,17 +1,13 @@
 
 <section class="take-anote">
-  <div class='note'>
-
-  <md-card class="card" @click="openCard">
-      <div class="icons">
-    <div>
-  <h1 style="opacity:0.5;">Take a note..</h1>
-    </div>
-
-
+  <div v-if = true class=displaycard>
+  <md-card class="card">
+    <div  @click="reversecard"></div>
+ <div class="icons">
+    <div><h1 style="opacity:0.5;">Take a note..</h1></div>
     <div class="iconsInCard">
     <div class="icons1">
-      <div class="md-button">
+    <div class="md-button">
   <md-icon :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/check_box-24px.svg')"></md-icon>
     </div> 
   </div>
@@ -27,7 +23,13 @@
     </div>
     </div>
 </div>
+  </md-card>
+</div>
 
+
+<div v-if = false class=displaycard>
+    <md-card class="card">
+      <div  @click="originalcard"></div>
   </md-card>
 
 </div>

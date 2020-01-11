@@ -5,7 +5,7 @@ export default {
   props: [],
   data () {
     return {
-      flag:false,
+      flag:true,
 
     }
   },
@@ -16,9 +16,13 @@ export default {
 
   },
   methods: {
-    openCard()
+    reversecard()
     {
-      this.flag = !this.flag ;
+      this.flag != this.flag;
+    },
+    originalcard()
+    {
+      this.flag != this.flag;
     }
   }
 }
