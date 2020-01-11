@@ -1,6 +1,6 @@
-import login from "../services/userServices"
+import { login } from "../services/userServices";
 export default { //syntax for instantiating an object that has been defined
-  name: 'login',
+  name: "login",
   components: {},//logical entities of code that contain functionality
   props: [], //Props are how you pass data from a parent component down to a child component
   data () {
@@ -28,8 +28,10 @@ export default { //syntax for instantiating an object that has been defined
         password:this.login.password
       }
       login(obj).then(res=>{
-        console.log(res)
+      // eslint-disable-next-line no-console
+        console.log("asdfghjkk",res)
       }).catch(err=>{
+              // eslint-disable-next-line no-console
         console.log(err)
       })
       // your code to login user

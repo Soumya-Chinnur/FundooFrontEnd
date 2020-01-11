@@ -1,47 +1,53 @@
-// import register from "../services/userServices"
-export default { //syntax for instantiating an object that has been defined
-  name: 'register',
-  components: {},//logical entities of code that contain functionality
-  props: [], //Props are how you pass data from a parent component down to a child component
-  data () {
+import { register } from "../services/userServices";
+
+// import register from "../services/userServices";
+export default {
+  //syntax for instantiating an object that has been defined
+  name: "register",
+  components: {}, //logical entities of code that contain functionality
+
+  data() {
     return {
       loading: false,
       register: {
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
+        password: "",
+     
       }
     };
-
-  
   },
-  computed: {//A computed property is used to declaratively describe a value that depends on other values
 
-  },
-  mounted () {  //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
-
-  },
   methods: {
-    auth() {
-      // var obj={
-      //   firstName:this.register.firstName,
-      //   lastName:this.register.lastName,
-      //   email:this.register.email,
-      //   password:this.register.password
-      // }
-      // register(obj).then(res=>{
-      //   console.log(res)
-      // }).catch(err=>{
-      //   console.log(err)
-      // })
-      // your code to login user
-      // this is only for example of loading
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 5000);
+    auth() {                    // eslint-disable-next-line no-console
+      var obj = {
+        firstName: this.register.firstName,
+        lastName: this.register.lastName,
+        email: this.register.email,
+        password: this.register.password,
+        service:"basic"
+
+      };
+      // eslint-disable-next-line no-console
+      console.log("kjdkdldw",obj)
+
+
+      register(obj)
+        .then(res => {
+                    // eslint-disable-next-line no-console
+                    console.log("hjkhbkjhjkhjkhk",res);
+        })
+        this.$router.push("/login")
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.log(err);
+        });
+
+      // this.loading = true;
+      // setTimeout(() => {
+      //   this.loading = false;
+      // }, 5000);
     }
   }
-
-  }
+};

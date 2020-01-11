@@ -27,36 +27,36 @@
           <div class="fName">
             <md-field>
               <label>First-Name</label>
-              <md-input v-model="login.firstName" autofocus></md-input>
+              <md-input v-model="register.firstName" autofocus></md-input>
             </md-field>
           </div>
 
           <div class="lName">
             <md-field>
               <label>Last-Name</label>
-              <md-input v-model="login.lastName" autofocus></md-input>
+              <md-input v-model="register.lastName" autofocus></md-input>
             </md-field>
           </div>
         </div>
 
         <md-field>
           <label>E-mail</label>
-          <md-input v-model="login.email" autofocus></md-input>
+          <md-input v-model="register.email" autofocus></md-input>
         </md-field>
 
         <div class="label1">
           <div class="pass">
             <md-field md-has-password>
               <label>Password</label>
-              <md-input v-model="login.password" type="password"></md-input>
+              <md-input v-model="register.password" type="password"></md-input>
             </md-field>
           </div>
-          <div class="cpass">
-            <md-field md-has-password>
+          <!-- <div class="cpass">
+            <md-field md-has-confirmpassword>
               <label>Confirm Password</label>
-              <md-input v-model="login.password" type="password"></md-input>
+              <md-input v-model="register.confirmpassword" type="password"></md-input>
             </md-field>
-          </div>
+          </div> -->
         </div>
       </div>
 

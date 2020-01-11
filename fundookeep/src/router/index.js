@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import login from "../components/login";
 import register from "../components/register";
 import forgotpassword from "../components/forgotpassword";
-import resetpassword from "../components/resetpassword";
+
 import dashboard from "../components/dashboard";
 import note from "../components/note";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
@@ -35,11 +35,7 @@ const routes = [
     name: "forgotpassword",
     component: forgotpassword
   },
-  {
-    path: "/resetpassword",
-    name: "resetpassword",
-    component: resetpassword
-  },
+  
   {
     path: "/dashboard",
     name: "dashboard",

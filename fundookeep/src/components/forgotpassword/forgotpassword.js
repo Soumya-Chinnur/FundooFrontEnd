@@ -1,3 +1,4 @@
+import { forgotPassword } from "../services/userServices"
 export default { //syntax for instantiating object that has already been defined
   name: 'forgotpassword',
   components: {},//logical entities of code that contain functionality
@@ -5,21 +6,25 @@ export default { //syntax for instantiating object that has already been defined
   data () {
     return {
       loading: false,
-      login: {
-        email: "",
-        password: ""
+      forgotpassword: {
+        email: ""
+        
       }
      }
   },
-  computed: {//A computed property is used to declaratively describe a value that depends on other values
-
-  },
-  mounted () { //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
-
-
-  },
+ 
   methods: {
     auth() {
+      var obj={
+        email:this.forgotpassword.email
+      }
+      forgotPassword(obj).then(res=>{
+          // eslint-disable-next-line no-console
+        console.log(res)
+      }).catch(err=>{
+          // eslint-disable-next-line no-console
+        console.log(err)
+      })
       // your code to login user
       // this is only for example of loading
       this.loading = true;
