@@ -1,38 +1,56 @@
-
 <section class="take-anote">
-  <div v-if = true class=displaycard>
-  <md-card class="card">
-    <div  @click="reversecard"></div>
- <div class="icons">
-    <div><h1 style="opacity:0.5;">Take a note..</h1></div>
-    <div class="iconsInCard">
-    <div class="icons1">
-    <div class="md-button">
-  <md-icon :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/check_box-24px.svg')"></md-icon>
-    </div> 
+  <div v-if="flag == true" class="displaycard">
+    <md-card class="card" style="margin: 0 auto;margin-top: 15px;">
+      <div class="icons">
+        <div>
+          <h1 style="opacity:0.5;" @click="reversecard">Take a note..</h1>
+        </div>
+        <div class="iconsInCard">
+          <div class="icons1">
+            <div class="md-button">
+              <md-icon
+                :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/check_box-24px.svg')"
+              ></md-icon>
+            </div>
+          </div>
+          <div class="icons2">
+            <div class="md-button">
+              <md-icon
+                :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/brush-24px.svg')"
+              ></md-icon>
+            </div>
+          </div>
+          <div class="icons3">
+            <div class="md-button">
+              <md-icon
+                :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/photo_size_select_actual-24px.svg')"
+              ></md-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card>
   </div>
-    <div class="icons2">
-      <div class="md-button">
-        <md-icon :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/brush-24px.svg')"></md-icon>
-     </div>
-    </div>
-     <div class="icons3">
-        <div class="md-button">
-        <md-icon :md-src="require('/home/user/Desktop/Fundoo_sc/fundookeep/src/assets/photo_size_select_actual-24px.svg')"></md-icon>
-     </div>
-    </div>
-    </div>
-</div>
-  </md-card>
-</div>
 
-
-<div v-if = false class=displaycard>
-    <md-card class="card">
-      <div  @click="originalcard"></div>
-  </md-card>
-
-</div>
-
+  <div v-if="flag == false" class="displaycard">
+    <md-card class="card" style="margin: 0 auto;margin-top: 15px">
+      <div>
+        <div class="originalcard">
+          <span>Title</span>
+          <md-button class="md-icon-button" >
+            <img src="../../assets/pin.svg" alt="" srcset=""/>
+          </md-button>
+        </div>
+        <div class="subtitle">Take a note...</div>
+        <div style="display:flex; justify-content:space-between;">
+          <div>
+            <icons></icons>
+          </div>
+          <div>
+            <md-button class="button" @click="originalcard">close</md-button>
+          </div>
+        </div>
+      </div>
+    </md-card>
+  </div>
 </section>
-  

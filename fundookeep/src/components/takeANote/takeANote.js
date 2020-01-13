@@ -1,30 +1,24 @@
-
+import icons from "../icons"
 export default {
-  name: 'take-a-note',
-  components: {},
+  name: "take-a-note",
+  components: {icons},
   props: [],
-  data () {
+  data() {
     return {
-      flag:true,
-
-    }
+      flag: true
+    };
   },
-  computed: {
-
-  },
-  mounted () {
-
-  },
+  computed: {},
+  mounted() {},
   methods: {
-    reversecard()
-    {
-      this.flag != this.flag;
+    reversecard() {
+      console.log("heloooo")
+      this.flag = !this.flag;
+      console.log("hiiiiiiiiiiiiiiii",this.flag)
     },
-    originalcard()
-    {
-      this.flag != this.flag;
+    originalcard() {
+      this.flag = !this.flag;
     }
+
   }
-}
-
-
+};

@@ -27,10 +27,15 @@
 
 
 }
+.button{
+    text-transform:none;
+    // padding-left: 78%;
 
+}
 .icons{        
     display:flex;
     justify-content:space-between;
+    margin:5%;
 }
 .icons1{
     align-items: center;
@@ -44,5 +49,31 @@
 }
 .md-button{
     min-width:34px;
+}
+.originalcard{
+    letter-spacing: .00625em;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 550;
+    line-height: 1.5rem;
+     padding: 15px 10px 12px;
+     opacity:0.5;
+}
+.subtitle{
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 550;
+    line-height: 1.25rem;
+    padding: 15px 10px 12px;
+    opacity:0.5;
+}
+.alert{
+    padding: 4%;
+    margin: 0 8px;
+}
+.md-icon-button
+{
+float: right;
 }
 
