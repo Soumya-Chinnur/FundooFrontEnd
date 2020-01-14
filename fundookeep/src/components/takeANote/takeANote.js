@@ -1,7 +1,7 @@
-import icons from "../icons"
+import icons from "../icons";
 export default {
   name: "take-a-note",
-  components: {icons},
+  components: { icons },
   props: [],
   data() {
     return {
@@ -13,16 +13,15 @@ export default {
   mounted() {},
   methods: {
     reversecard() {
-      console.log("heloooo")
+      console.log("heloooo");
       this.flag = !this.flag;
-      console.log("hiiiiiiiiiiiiiiii",this.flag)
+      console.log("hiiiiiiiiiiiiiiii", this.flag);
     },
     originalcard() {
       this.flag = !this.flag;
     },
-    filledpin(){
-      this.pin =!this.pin;
+    filledpin() {
+      this.pin = !this.pin;
     }
-   
   }
 };
