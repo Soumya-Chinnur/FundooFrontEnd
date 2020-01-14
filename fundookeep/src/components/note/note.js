@@ -1,8 +1,8 @@
 import takeANote from "../takeANote"
-// import displayNote from "../displayNote"
+import displayNote from "../displayNote"
 export default {
   name: 'note',
-  components: {takeANote},
+  components: {takeANote,displayNote},
   props: [],
   data () {
     return {

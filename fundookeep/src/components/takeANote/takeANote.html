@@ -1,6 +1,6 @@
-<section class="take-anote">
+<section class="take-a-note">
   <div v-if="flag == true" class="displaycard">
-    <md-card class="card" style="margin: 0 auto;margin-top: 15px;">
+    <md-card class="card" style="margin: 0 auto;margin-top: 25px;">
       <div class="icons">
         <div>
           <h1 style="opacity:0.5;" @click="reversecard">Take a note..</h1>
@@ -33,15 +33,25 @@
   </div>
 
   <div v-if="flag == false" class="displaycard">
-    <md-card class="card" style="margin: 0 auto;margin-top: 15px">
+    <md-card class="card" style="margin: 0 auto;margin-top: 25px">
       <div>
         <div class="originalcard">
           <span>Title</span>
-          <md-button class="md-icon-button" >
-            <img src="../../assets/pin.svg" alt="" srcset=""/>
-          </md-button>
+
+          <div v-if="pin == true" class="displaypin">
+            <md-button class="md-icon-button" @click="filledpin">
+              <img src="../../assets/pin.svg" alt="" srcset="" />
+            </md-button>
+          </div>
+          <div v-if="pin== false" class="displayfilledpin"  @click="filledpin">
+            <md-button class="md-icon-button">
+              <img src="../../assets/filledpin.svg" alt="" srcset="" />
+            </md-button>
+          </div>
         </div>
         <div class="subtitle">Take a note...</div>
+      </div>
+      <div> 
         <div style="display:flex; justify-content:space-between;">
           <div>
             <icons></icons>

@@ -5,7 +5,8 @@ export default {
   props: [],
   data() {
     return {
-      flag: true
+      flag: true,
+      pin: true
     };
   },
   computed: {},
@@ -18,7 +19,10 @@ export default {
     },
     originalcard() {
       this.flag = !this.flag;
+    },
+    filledpin(){
+      this.pin =!this.pin;
     }
-
+   
   }
 };

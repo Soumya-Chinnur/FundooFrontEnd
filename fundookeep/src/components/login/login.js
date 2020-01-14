@@ -28,6 +28,8 @@ export default { //syntax for instantiating an object that has been defined
         password:this.login.password
       }
       login(obj).then(res=>{
+        console.log("niiiiiiiiiiiiiiiiiiiii",res.data.id)
+        localStorage.setItem("token",res.data.id)
       // eslint-disable-next-line no-console
         console.log("asdfghjkk",res)
       }).catch(err=>{

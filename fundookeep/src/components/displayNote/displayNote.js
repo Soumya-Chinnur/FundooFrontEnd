@@ -1,7 +1,7 @@
-
+import icons from "../icons"
 export default {
   name: 'display-note',
-  components: {},
+  components: {icons},
   props: [],
   data () {
     return {
