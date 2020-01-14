@@ -37,6 +37,7 @@
       <div>
         <div class="originalcard">
           <span>Title</span>
+          <md-input v-model="user.title"></md-input>
 
           <div v-if="pin == true" class="displaypin">
             <md-button class="md-icon-button" @click="filledpin">
@@ -50,6 +51,7 @@
           </div>
         </div>
         <div class="subtitle">Take a note...</div>
+        <input v-model="note"></input>
       </div>
       <div>
         <div style="display:flex; justify-content:space-between;">

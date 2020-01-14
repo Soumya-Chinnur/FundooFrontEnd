@@ -1,17 +1,31 @@
-
 <section class="display-note">
-
-  <md-card class="card" style="margin: 0 auto;margin-top: 25px;">
-     <div>
-      <md-button class="md-icon-button">
-        <img src="../../assets/pin.svg" alt="" srcset="" />
-      </md-button>
-     </div>
+  <md-card
+    v-for="card in cards"
+    class="card"
+    style="margin: 0 auto;margin-top: 25px;"
+  >
+    <div>
+      <span>{{card.title}}</span>
       <div>
-      
-         <icons></icons>
+        <div>
+          {{card.description}}
+        </div>
+        <div class="header">
+          <div class="originalpin" v-if="pin== true">
+            <md-button class="md-icon-button" @click="filledpin">
+              <img src="../../assets/pin.svg" alt="" srcset="" />
+            </md-button>
+          </div>
+          <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
+            <md-button class="md-icon-button">
+              <img src="../../assets/filledpin.svg" alt="" srcset="" />
+            </md-button>
+          </div>
+        </div>
       </div>
-     </md-card>
- 
+      <div>
+        <icons></icons>
+      </div>
+    </div>
+  </md-card>
 </section>
-

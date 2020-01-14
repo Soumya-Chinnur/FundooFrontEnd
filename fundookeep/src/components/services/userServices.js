@@ -25,3 +25,27 @@ export function forgotPassword(data) {
       apiConstant.userResetPassword,data
   );
 }
+export function dashboard() {
+  //   eslint-disable-next-line no-console
+return axios.get(
+  "http://fundoonotes.incubation.bridgelabz.com/api" +
+    apiConstant.dashboard,{
+      headers:{
+        Authorization:localStorage.getItem("token")
+      }
+    }
+   
+);
+}
+export function addNote() {
+  //   eslint-disable-next-line no-console
+return axios.post(
+  "http://fundoonotes.incubation.bridgelabz.com/api" +
+    apiConstant.addNote,{
+      headers:{
+        Authorization:localStorage.getItem("token")
+      }
+    }
+   
+);
+}

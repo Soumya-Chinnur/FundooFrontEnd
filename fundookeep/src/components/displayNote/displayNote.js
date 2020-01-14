@@ -2,9 +2,14 @@ import icons from "../icons"
 export default {
   name: 'display-note',
   components: {icons},
-  props: [],
+  props: {
+    cards:{
+      type:Array
+    }
+  },
   data () {
     return {
+      pin:true
 
     }
   },
@@ -15,7 +20,10 @@ export default {
 
   },
   methods: {
-
+    filledpin() {
+      this.pin = !this.pin;
+    },
+    
   }
 }
 
