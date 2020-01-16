@@ -1,31 +1,32 @@
 <section class="display-note">
+  <div class="flex">
   <md-card
     v-for="card in cards"
     class="card"
-    style="margin: 0 auto;margin-top: 25px;"
   >
+
+    <div class="titleAndPincontainer">
     <div>
       <span>{{card.title}}</span>
-      <div>
+    </div>
+          <div class="originalpin" v-if="pin== true">
+              <md-button class="md-icon-button" @click="filledpin">
+                <img src="../../assets/pin.svg" alt="" srcset="" />
+              </md-button>
+            </div>
+            <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
+                <md-button class="md-icon-button">
+                  <img src="../../assets/filledpin.svg" alt="" srcset="" />
+                </md-button>
+              </div>
+    </div>
         <div>
           {{card.description}}
         </div>
-        <div class="header">
-          <div class="originalpin" v-if="pin== true">
-            <md-button class="md-icon-button" @click="filledpin">
-              <img src="../../assets/pin.svg" alt="" srcset="" />
-            </md-button>
-          </div>
-          <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
-            <md-button class="md-icon-button">
-              <img src="../../assets/filledpin.svg" alt="" srcset="" />
-            </md-button>
-          </div>
-        </div>
-      </div>
-      <div>
+<div>
         <icons></icons>
       </div>
-    </div>
   </md-card>
+</div>
+
 </section>

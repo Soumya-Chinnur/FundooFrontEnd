@@ -5,5 +5,6 @@ export const apiConstant = {
   userRegistration: "/user/userSignUp",
   userResetPassword: "/user/reset-password",
   dashboard: "/notes/getNotesList",
-  addNote: "/notes/addNotes"
+  addNote: "/notes/addNotes",
+  updateNote: "/notes/updateNotes"
 };

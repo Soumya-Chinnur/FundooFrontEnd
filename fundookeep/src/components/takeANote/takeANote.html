@@ -1,6 +1,6 @@
 <section class="take-a-note">
   <div v-if="flag == true" class="displaycard">
-    <md-card class="card" style="margin: 0 auto;margin-top: 25px;">
+    <md-card class="card" style="margin:32px auto 32px auto ;">
       <div class="icons">
         <div>
           <h1 style="opacity:0.5;" @click="reversecard">Take a note..</h1>
@@ -33,27 +33,31 @@
   </div>
 
   <div v-if="flag == false" class="displaycard">
-    <md-card class="card" style="margin: 0 auto;margin-top: 25px">
+    <md-card class="card" style="margin: 0 auto;margin: 32px auto 32px auto">
       <div>
         <div class="originalcard">
-          <span>Title</span>
-          <md-input v-model="user.title"></md-input>
-
-          <div v-if="pin == true" class="displaypin">
-            <md-button class="md-icon-button" @click="filledpin">
-              <img src="../../assets/pin.svg" alt="" srcset="" />
-            </md-button>
+       <div class="title">
+            <textarea v-model="addNote.title" placeholder="Title"> </textarea>
+            <div v-if="pin == true" class="displaypin">
+                <md-button class="md-icon-button" @click="filledpin"  style="bottom:8px">
+                  <img src="../../assets/pin.svg" alt="" srcset="" />
+                </md-button>
+              </div>
+              <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
+                <md-button class="md-icon-button" style="bottom:8px">
+                  <img src="../../assets/filledpin.svg" alt="" srcset="" />
+                </md-button>
+              </div>
+            </div>
           </div>
-          <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
-            <md-button class="md-icon-button">
-              <img src="../../assets/filledpin.svg" alt="" srcset="" />
-            </md-button>
-          </div>
+        
+        <div class="subtitle">
+          <!-- <div class="subtitle">Take a note...</div> -->
+          <textarea v-model="addNote.description" placeholder="Take a note">
+          </textarea>
         </div>
-        <div class="subtitle">Take a note...</div>
-        <input v-model="note"></input>
       </div>
-      <div>
+      
         <div style="display:flex; justify-content:space-between;">
           <div>
             <icons></icons>
@@ -61,9 +65,7 @@
           <div>
             <md-button class="button" @click="originalcard">close</md-button>
           </div>
-        </div>
       </div>
     </md-card>
   </div>
 </section>
-//

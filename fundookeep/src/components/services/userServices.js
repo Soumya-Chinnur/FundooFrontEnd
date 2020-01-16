@@ -37,11 +37,23 @@ return axios.get(
    
 );
 }
-export function addNote() {
+export function addNote(data) {
   //   eslint-disable-next-line no-console
 return axios.post(
   "http://fundoonotes.incubation.bridgelabz.com/api" +
-    apiConstant.addNote,{
+    apiConstant.addNote,data,{
+      headers:{
+        Authorization:localStorage.getItem("token")
+      }
+    }
+   
+);
+}
+export function updateNote(data) {
+  //   eslint-disable-next-line no-console
+return axios.post(
+  "http://fundoonotes.incubation.bridgelabz.com/api" +
+    apiConstant.updateNote,data,{
       headers:{
         Authorization:localStorage.getItem("token")
       }
