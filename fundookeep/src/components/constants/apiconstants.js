@@ -6,5 +6,6 @@ export const apiConstant = {
   userResetPassword: "/user/reset-password",
   dashboard: "/notes/getNotesList",
   addNote: "/notes/addNotes",
- archive: "/notes/archiveNotes"
+ archive: "/notes/archiveNotes",
+ trash: "/notes/trashNotes"
 };

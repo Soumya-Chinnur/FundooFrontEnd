@@ -21,6 +21,19 @@ export default {
       }
     );
   },
+  trash(data) {
+      console.log("ffsa",data);
+      
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.trash,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
   getNotes() {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +

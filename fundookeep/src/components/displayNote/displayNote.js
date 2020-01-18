@@ -1,35 +1,31 @@
-import icons from "../icons"
+import icons from "../icons";
 export default {
-  name: 'display-note',
-  components: {icons},
+  name: "display-note",
+  components: { icons },
   props: {
-    cards:{
-      type:Array
+    cards: {
+      type: Array
     }
   },
-  data () {
+  data() {
     return {
-      pin:true
-
-    }
+      pin: true
+    };
   },
-  computed: {
-
-  },
-  mounted () {
-
-  },
+  computed: {},
+  mounted() {},
   methods: {
     filledpin() {
       this.pin = !this.pin;
     },
-    archive(e){
-      console.log("e",e)
-      let ind= this.cards.indexOf(e)
-      this.cards.splice(ind,1)
+    archive(e) {
+      console.log("e", e);
+      let ind = this.cards.indexOf(e);
+      this.cards.splice(ind, 1);
+    },
+    trash(e) {
+      let ind = this.cards.indexOf(e);
+      this.cards.splice(ind, 1);
     }
-    
   }
-}
-
-
+};

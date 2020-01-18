@@ -6,12 +6,14 @@ export default {
     cardObj:Object
   },
   data() {
-    return {};
+    return {
+    };
   },
 
   computed: {},
   mounted() {},
   methods: {
+    
     archive(card) {
       var obj = {
         noteIdList: [card.id],
@@ -21,6 +23,16 @@ export default {
         console.log("frd", res);
         this.$emit("archivedCard",card)
       });
+    },
+    trash(card) {
+      var obj = {
+        noteIdList: [card.id],
+        isDeleted: true
+      };
+      noteService.trash(obj).then(res => {
+        console.log("frg", res);
+        this.$emit("deleteCard",card)
+      });
     }
   }
-};
+}
