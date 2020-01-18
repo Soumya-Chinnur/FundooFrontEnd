@@ -1,32 +1,27 @@
 <section class="display-note">
   <div class="flex">
-  <md-card
-    v-for="card in cards"
-    class="card"
-  >
-
-    <div class="titleAndPincontainer">
-    <div>
-      <span>{{card.title}}</span>
-    </div>
-          <div class="originalpin" v-if="pin== true">
-              <md-button class="md-icon-button" @click="filledpin">
-                <img src="../../assets/pin.svg" alt="" srcset="" />
-              </md-button>
-            </div>
-            <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
-                <md-button class="md-icon-button">
-                  <img src="../../assets/filledpin.svg" alt="" srcset="" />
-                </md-button>
-              </div>
-    </div>
-        <div>
-          {{card.description}}
+    <md-card v-for="card in cards" class="card">
+      <div class="titleAndPincontainer">
+        <div class="titleContainer">
+          {{card.title}}
         </div>
-<div>
-        <icons></icons>
+        <div class="originalpin" v-if="pin== true">
+          <md-button class="md-icon-button" @click="filledpin">
+            <img src="../../assets/pin.svg" alt="" srcset="" />
+          </md-button>
+        </div>
+        <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
+          <md-button class="md-icon-button">
+            <img src="../../assets/filledpin.svg" alt="" srcset="" />
+          </md-button>
+        </div>
       </div>
-  </md-card>
-</div>
-
+      <div class="cardContainer">
+        {{card.description}}
+      </div>
+      <div>
+        <icons :cardObj="card" @archivedCard="archive" @deleteCard="delete"> </icons>
+      </div>
+    </md-card>
+  </div>
 </section>

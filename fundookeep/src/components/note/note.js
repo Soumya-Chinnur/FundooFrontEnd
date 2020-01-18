@@ -19,8 +19,12 @@ export default {
         dashboard()
           .then(res => {
             this.messages = [];
+            for (let index = 0; index < res.data.data.data.length; index++) {
+              if (!res.data.data.data[index].isArchived) {
+                this.messages.push(res.data.data.data[index]);
+              }
+            }
 
-            this.messages = res.data.data.data;
             console.log("hsa111111111111111111111111k", this.messages);
           })
           .catch(err => {
@@ -39,9 +43,14 @@ export default {
     dashboard()
       .then(res => {
         this.messages = [];
+        for (let index = 0; index < res.data.data.data.length; index++) {
+          if (!res.data.data.data[index].isArchived) {
+            this.messages.push(res.data.data.data[index]);
+          }
+        }
 
         console.log("wed", res);
-        this.messages = res.data.data.data;
+
         console.log("hsak", this.messages);
       })
       .catch(err => {

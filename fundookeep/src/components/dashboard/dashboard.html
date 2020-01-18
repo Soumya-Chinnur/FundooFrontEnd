@@ -20,18 +20,25 @@
     </md-toolbar>
   </div>
 
-  <div class="pass">
-    <div v-if="flag" class="pass1">
-      <md-list>
+  <div class="pass" >
+    <div v-if="flag" class="pass1" style="background-color:#f2f2f2">
+      <md-list style="background-color:#f2f2f2;">
       <div>
+          <div>
           <md-list-item>
-              <md-icon>lightbulb_outline</md-icon>
+            <md-icon>lightbulb_outline</md-icon>   
+            <router-link to="/dashboard/note">
               <span class="md-list-item-text">Notes</span>
+            </router-link>
           </md-list-item>
+        </div>
+        <div>
+
           <md-list-item>
               <md-icon>notifications_none</md-icon>
                 <span class="md-list-item-text">Reminder</span>
           </md-list-item>
+        </div>
       </div>
       <hr />
          
@@ -40,7 +47,7 @@
           <label>LABELS</label>
     </div>
     
-    <div>
+    <div class="editContainer">
        <md-list-item>
             <md-icon>edit</md-icon>
             <span class="md-list-item-text">Edit labels</span>
@@ -48,9 +55,11 @@
     </div>
       <hr />        
       <div>
-        <md-list-item>
+        <md-list-item >
               <md-icon>archive</md-icon>
-                  <span class="md-list-item-text">Archive</span>
+              <router-link to="/dashboard/archive" class="links">
+                <span class="md-list-item-text">Archive</span>
+              </router-link>
         </md-list-item>
             
         <md-list-item>

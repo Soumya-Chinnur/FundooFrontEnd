@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import login from "../components/login";
 import register from "../components/register";
 import forgotpassword from "../components/forgotpassword";
-
+import archive from "../components/archieve"
 import dashboard from "../components/dashboard";
 import note from "../components/note";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
@@ -50,6 +50,10 @@ const routes = [
       {
         path: "note",
         component: note
+      },
+      {
+        path: "archive",
+        component: archive
       }
     ]
   }

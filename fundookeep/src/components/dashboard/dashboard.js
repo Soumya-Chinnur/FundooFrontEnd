@@ -22,7 +22,8 @@ export default { //standard syntax for instantiating an object that has been def
     showNavigation()
     {
       this.flag = !this.flag ;
-    }
+    },
+
   }
 }
 

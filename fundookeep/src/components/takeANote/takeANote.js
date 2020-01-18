@@ -12,8 +12,8 @@ export default {
       pin: true,
 
       addNote: {
-        title: " ",
-        description: " "
+        title: "",
+        description: ""
       },
       updateNote: {
         title: " ",

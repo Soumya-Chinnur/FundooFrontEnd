@@ -26,7 +26,7 @@ export default {
         lastName: this.register.lastName,
         email: this.register.email,
         password: this.register.password,
-        service:"basic"
+        service:"advance"
 
       };
       // eslint-disable-next-line no-console

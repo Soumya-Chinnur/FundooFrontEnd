@@ -1,22 +1,26 @@
-
+import noteService from "../services/noteService";
 export default {
-  name: 'icons',
+  name: "icons",
   components: {},
-  props: [],
-  data () {
-    return {
-
-    }
+  props: {
+    cardObj:Object
   },
-  computed: {
-
+  data() {
+    return {};
   },
-  mounted () {
 
-  },
+  computed: {},
+  mounted() {},
   methods: {
-
+    archive(card) {
+      var obj = {
+        noteIdList: [card.id],
+        isArchived: true
+      };
+      noteService.archive(obj).then(res => {
+        console.log("frd", res);
+        this.$emit("archivedCard",card)
+      });
+    }
   }
-}
-
-
+};

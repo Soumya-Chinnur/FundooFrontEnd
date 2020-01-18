@@ -23,6 +23,11 @@ export default {
     filledpin() {
       this.pin = !this.pin;
     },
+    archive(e){
+      console.log("e",e)
+      let ind= this.cards.indexOf(e)
+      this.cards.splice(ind,1)
+    }
     
   }
 }
