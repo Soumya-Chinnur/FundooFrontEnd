@@ -3,17 +3,15 @@ export default {
   name: "icons",
   components: {},
   props: {
-    cardObj:Object
+    cardObj: Object
   },
   data() {
-    return {
-    };
+    return {};
   },
 
   computed: {},
   mounted() {},
   methods: {
-    
     archive(card) {
       var obj = {
         noteIdList: [card.id],
@@ -21,7 +19,7 @@ export default {
       };
       noteService.archive(obj).then(res => {
         console.log("frd", res);
-        this.$emit("archivedCard",card)
+        this.$emit("archivedCard", card);
       });
     },
     trash(card) {
@@ -31,8 +29,8 @@ export default {
       };
       noteService.trash(obj).then(res => {
         console.log("frg", res);
-        this.$emit("deleteCard",card)
+        this.$emit("deleteCard", card);
       });
     }
   }
-}
+};
