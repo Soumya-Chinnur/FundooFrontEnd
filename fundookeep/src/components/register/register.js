@@ -13,36 +13,32 @@ export default {
         firstName: "",
         lastName: "",
         email: "",
-        password: "",
-     
+        password: ""
       }
     };
   },
 
   methods: {
-    auth() {                    // eslint-disable-next-line no-console
+    auth() {
+      // eslint-disable-next-line no-console
       var obj = {
         firstName: this.register.firstName,
         lastName: this.register.lastName,
         email: this.register.email,
         password: this.register.password,
-        service:"advance"
-
+        service: "advance"
       };
       // eslint-disable-next-line no-console
-      console.log("kjdkdldw",obj)
+      console.log("kjdkdldw", obj);
 
-
-      register(obj)
-        .then(res => {
-                    // eslint-disable-next-line no-console
-                    console.log("hjkhbkjhjkhjkhk",res);
-        })
-        this.$router.push("/login")
-        .catch(err => {
-          // eslint-disable-next-line no-console
-          console.log(err);
-        });
+      register(obj).then(res => {
+        // eslint-disable-next-line no-console
+        console.log("hjkhbkjhjkhjkhk", res);
+      });
+      this.$router.push("/login").catch(err => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      });
 
       // this.loading = true;
       // setTimeout(() => {
