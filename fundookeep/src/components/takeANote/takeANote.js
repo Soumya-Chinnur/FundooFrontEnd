@@ -1,7 +1,7 @@
 import { addNote } from "../services/userServices";
-import { updateNote } from "../services/userServices"
+import { updateNote } from "../services/userServices";
 import icons from "../icons";
-import { messageService} from "../services/noteService"
+import { messageService } from "../services/noteService";
 export default {
   name: "take-a-note",
   components: { icons },
@@ -33,11 +33,10 @@ export default {
       this.flag = !this.flag;
 
       var obj = {
-        
         title: this.addNote.title,
         description: this.addNote.description
       };
-    
+
       console.log("dwsa", obj);
       addNote(obj)
         .then(res => {
@@ -50,11 +49,9 @@ export default {
           console.log(err);
         });
 
-
-        updateNote(obj)
+      updateNote(obj)
         .then(res => {
           console.log("sou", res);
-         
         })
         .catch(err => {
           console.log(err);

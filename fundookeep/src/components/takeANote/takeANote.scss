@@ -1,102 +1,94 @@
 .take-a-note {
 }
-.note{
-
-        width:600px;
-        margin: 32px auto 16px auto;
-        position: relative;
-
+.note {
+  width: 600px;
+  margin: 32px auto 16px auto;
+  position: relative;
 }
 
-    .card{
-        
-        width:600px;
-        //height: 46px;
-        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
-        opacity: 1;
-        // position: relative;
-        border-radius: 8px;
-        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+.card {
+  width: 600px;
+  //height: 46px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
+  opacity: 1;
+  // position: relative;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
 }
 
-.icon{
-    -webkit-background-size: 24px 24px;
-    background-size: 24px 24px;
-    // height: 46px;
-    // position: absolute;
-    top: 0;
-    width: 46px;   
-
-
+.icon {
+  -webkit-background-size: 24px 24px;
+  background-size: 24px 24px;
+  // height: 46px;
+  // position: absolute;
+  top: 0;
+  width: 46px;
 }
-.button{
-    text-transform:none;
-    // padding-left: 78%;
-
+.button {
+  text-transform: none;
+  // padding-left: 78%;
 }
-.icons{        
-    display:flex;
-    justify-content:space-between;
-    margin:5%;
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
 }
-.icons1{
-    align-items: center;
-    margin-top: 1%;
+.icons1 {
+  align-items: center;
+  margin-top: 1%;
 }
-.iconsInCard{
-    display:flex;
-    padding-top: 1%;
-    justify-content: space-between;
-    padding-right: 2%;
+.iconsInCard {
+  display: flex;
+  padding-top: 1%;
+  justify-content: space-between;
+  padding-right: 2%;
 }
-.md-button{
-    min-width:34px;
+.md-button {
+  min-width: 34px;
 }
-.title{
-    letter-spacing: .00625em;
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    font-size: 1rem;
-    font-weight: 550;
-    line-height: 1.5rem;
-     padding: 10px;
-     opacity:0.5;
+.title {
+  letter-spacing: 0.00625em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.5rem;
+  padding: 10px;
+  opacity: 0.5;
 }
-.subtitle{
-    letter-spacing: .01428571em;
-    font-family: Roboto,Arial,sans-serif;
-    font-size: .875rem;
-    font-weight: 550;
-    line-height: 1.25rem;
-    padding: 10px;
-    opacity:0.5;
+.subtitle {
+  letter-spacing: 0.01428571em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 550;
+  line-height: 1.25rem;
+  padding: 10px;
+  opacity: 0.5;
 }
-.alert{
-    padding: 4%;
-    margin: 0 8px;
+.alert {
+  padding: 4%;
+  margin: 0 8px;
 }
-.md-icon-button
-{
-float: right;
+.md-icon-button {
+  float: right;
 }
-.displaypin{
-    position:relative;
-    bottom:30px;
+.displaypin {
+  position: relative;
+  bottom: 30px;
 }
-.displayfilledpin{
-    position:relative;
-    bottom:30px;
+.displayfilledpin {
+  position: relative;
+  bottom: 30px;
 }
-textarea
-{
+textarea {
   border: none;
   background-color: transparent;
   resize: none;
   outline: none;
-  width:80%;
-  overflow:hidden;
+  width: 80%;
+  overflow: hidden;
 }
-.originalcard{
-    height: 50px;
+.originalcard {
+  height: 50px;
 }
-
-
