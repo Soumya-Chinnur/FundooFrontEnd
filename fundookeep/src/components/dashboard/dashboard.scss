@@ -1,106 +1,94 @@
 .dashboard {
-  
-    .page-container {
-     
-        overflow: hidden;
-        position: relative;
-        border: 1px solid rgba(#000, .12);
-      }
-    
-      .md-drawer {
-        width: 230px;
-        max-width: calc(100vw - 125px);
-      }
-    
-      
-      .gb_5dgb_Xc {
-        font-size: 20px;
-      }
-      .label{
-        display: flex;
-        justify-content: space-around;
-      }
-      .md-ripple{
-          margin: -3px;
-      }
-      .gb_iegb_mcgb_ge{
-          margin:10px;
-      }
-      .md-toolbar.md-theme-default.md-primary
-      {
-        background-color: white;
-        color: rgb(60,60,60);
-        
+  .page-container {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(#000, 0.12);
+  }
 
-      }
-      
-      .gb_Oc{
-        padding: 50px;
+  .md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+  }
+
+  .gb_5dgb_Xc {
+    font-size: 20px;
+  }
+  .label {
+    display: flex;
+    justify-content: space-around;
+  }
+  .md-ripple {
+    margin: -3px;
+  }
+  .gb_iegb_mcgb_ge {
+    margin: 10px;
+  }
+  .md-toolbar.md-theme-default.md-primary {
+    background-color: white;
+    color: rgb(60, 60, 60);
+  }
+
+  .gb_Oc {
+    padding: 50px;
     font-size: 19px;
-      }
-     .md-toolbar.md-theme-default.md-primary .md-icon {
-    
-      color: rgb(60,60,60);
-     }
-     .md-list-item-text
-     {
-       color: rgb(0,0,0);
-         }
-   
-     .Notes{
-       opacity:0.5;
-     }
-     .Reminder{
-      opacity:0.5;
-    }
-    .Editlabels{
-      opacity:0.5;
-    }
-    .Archive{
-      opacity:0.5;
-    }
-    .Bin{
-      opacity:0.5;
-    }
-    .menu
-    {
-      opacity:0.5;
-    }
-    .scrollbar{
-      max-width: 290px;
-      max-height: 287px;
-      overflow: auto;
-    }
-   .labels{
-     opacity:0.5;
-     padding-left:2%;
-     font-size: 10px
-    
-   }
   }
-  hr
-  {
-    margin:0px;
+  .md-toolbar.md-theme-default.md-primary .md-icon {
+    color: rgb(60, 60, 60);
   }
-  .page-container md-layout-column{
-    box-sizing: border-box;
+  .md-list-item-text {
+    color: rgb(0, 0, 0);
   }
-  .pass{
-    width:100%;
+
+  .Notes {
+    opacity: 0.5;
+  }
+  .Reminder {
+    opacity: 0.5;
+  }
+  .Editlabels {
+    opacity: 0.5;
+  }
+  .Archive {
+    opacity: 0.5;
+  }
+  .Bin {
+    opacity: 0.5;
+  }
+  .menu {
+    opacity: 0.5;
+  }
+  .scrollbar {
+    max-width: 290px;
+    max-height: 287px;
+    overflow: auto;
+  }
+  .labels {
+    opacity: 0.5;
+    padding-left: 2%;
+    font-size: 10px;
+  }
+}
+hr {
+  margin: 0px;
+}
+.page-container md-layout-column {
+  box-sizing: border-box;
+}
+.pass {
+  width: 100%;
   display: flex;
   height: 100vh;
-  }
-  .pass1{
-    width:20%;
-  }
-  .pass2{
-    width:80%
-  }
-  .dashboard{
-    background-color: white;
-  }
-
-#refresh{
-  margin-left: 12px;
+}
+.pass1 {
+  width: 20%;
+}
+.pass2 {
+  width: 80%;
+}
+.dashboard {
+  background-color: white;
 }
 
+#refresh {
+  margin-left: 12px;
+}
