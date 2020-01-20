@@ -22,8 +22,8 @@ export default {
     );
   },
   trash(data) {
-      console.log("ffsa",data);
-      
+    console.log("ffsa", data);
+
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.trash,
       data,
