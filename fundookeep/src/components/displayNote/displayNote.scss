@@ -1,39 +1,35 @@
 .display-note {
-    
 }
- .flex{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2%;
- }
-    .card{
-
-        width:280px;
-        //height: 46px;
-        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
-        opacity: 1;
-        // position: relative;
-        border-radius: 8px;
-        margin: 3%;
-       
-        }
-.icons{
-    display:flex;
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
 }
-.header{
-    display: flex;
-    justify-content: flex-end;
+.card {
+  width: 280px;
+  //height: 46px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
+  opacity: 1;
+  // position: relative;
+  border-radius: 8px;
+  margin: 3%;
+}
+.icons {
+  display: flex;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
 }
 
-    
-
-.titleAndPincontainer{
-    display:flex;
-    justify-content: space-between;
+.titleAndPincontainer {
+  display: flex;
+  justify-content: space-between;
 }
-.cardContainer{
-    margin:3%;
+.cardContainer {
+  margin: 3%;
 }
-.titleContainer{
-    margin: 2%;
+.titleContainer {
+  margin: 2%;
 }
