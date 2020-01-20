@@ -7,7 +7,6 @@
   justify-content: center;
   width: 42%;
   height: 100vh;
-  
 
   .title {
     text-align: center;
@@ -88,23 +87,22 @@
   /* Adjust these values accordingly */
   top: 5px;
   left: 242px- Screen;
-} 
-.background{
-  background-color:light grey;
 }
-@media (min-width:290px) {
-.centered-container{
-  width:41%;
+.background {
+  background-color: light grey;
 }
-}
-@media (min-width:520px) and (max-width:750px){
-  .centered-container{
-    width:41%;
+@media (min-width: 290px) {
+  .centered-container {
+    width: 41%;
   }
 }
-  @media (min-width:890px){
-    .centered-container{
-      width:50%;
-    }
+@media (min-width: 520px) and (max-width: 750px) {
+  .centered-container {
+    width: 41%;
   }
-  
+}
+@media (min-width: 890px) {
+  .centered-container {
+    width: 50%;
+  }
+}
