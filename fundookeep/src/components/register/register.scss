@@ -1,51 +1,48 @@
+.title {
+  text-align: center;
+}
+.subtitleContainer{
+  display: flex;
+  justify-content: center;
+}
+.form {
+  margin-top: 2%;
+}
 
+.f {
+  color: rgb(66, 133, 244);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+.u {
+  color: rgb(52, 168, 83);
+  font-size: 20px;
+  font-weight: 700;
+}
+.n {
+  color: rgb(251, 188, 5);
+  font-size: 20px;
+  font-weight: 700;
+}
+.d {
+  color: rgb(66, 133, 244);
+  font-size: 20px;
+  font-weight: 700;
+}
+.o {
+  color: rgb(234, 67, 53);
+  font-size: 20px;
+  font-weight: 700;
+}
+.o {
+  color: rgb(234, 67, 53);
+  font-size: 20px;
+  font-weight: 700;
+}
 
-
-    .title {
-      text-align: center;
-    }
-
-    
-
-    .form {
-      margin-bottom: 5%;
-    }
-    
-
-  .f {
-    color: rgb(66, 133, 244);
-    font-size: 20px;
-    font-weight: 700;
-    text-align: left;
-  }
-  .u {
-    color: rgb(52, 168, 83);
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .n {
-    color: rgb(251, 188, 5);
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .d {
-    color: rgb(66, 133, 244);
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .o {
-    color: rgb(234, 67, 53);
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .o {
-    color: rgb(234, 67, 53);
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-[class*=""]{
-  width:100%;
+[class*=""] {
+  width: 100%;
 }
 #header {
   border: groove;
@@ -59,43 +56,38 @@
 //     margin-top: 25%;
 //   }
 // }
-@media (min-width: 560px)
-{
-  .cardContainer{
- margin-left:27%;
- margin-top: 15%;
-  width:60%
+@media (min-width: 560px) {
+  .cardContainer {
+    margin-left: 27%;
+    margin-top: 10%;
+    width: 50%;
   }
 }
-@media (min-width: 700px)
-{
-  .cardContainer{
- margin-left:20%;
- margin-top: 4%;
-  width:60%
+@media (min-width: 700px) {
+  .cardContainer {
+    margin-left: 20%;
+    margin-top: 4%;
+    width: 50%;
   }
 }
-@media (min-width: 850px){
- 
-  .cardContainer{
-   margin-left: 26%;
-   margin-top: 10%;
-    width:60%;
-}
+@media (min-width: 850px) {
+  .cardContainer {
+    margin-left: 26%;
+    margin-top: 10%;
+    width: 50%;
+  }
 }
 @media (min-width: 1210px) {
-  
   .cardContainer {
-  margin-left: 30%;
-  margin-top: 8%;
-   width:35%;
+    margin-left: 30%;
+    margin-top: 8%;
+    width: 35%;
   }
 }
- @media (min-width: 2200px)
-{
+@media (min-width: 2200px) {
   .cardContainer {
-  margin-left: 30%;
-  margin-top: 8%;
-   width:40%;
-}
+    margin-left: 30%;
+    margin-top: 8%;
+    width: 40%;
+  }
 }
