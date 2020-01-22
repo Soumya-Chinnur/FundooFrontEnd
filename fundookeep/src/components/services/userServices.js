@@ -29,7 +29,7 @@ export function forgotPassword(data) {
   );
 }
 export function dashboard() {
-  //   eslint-disable-next-line no-console
+  
   return axios.get(
     "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.dashboard,
     {

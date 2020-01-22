@@ -9,7 +9,10 @@ export default {
   },
   data() {
     return {
-      pin: true
+      pin: true,
+      pins: true,
+      vgcolor: "#FFFF",
+      showDialog: false
     };
   },
   computed: {},
@@ -17,6 +20,9 @@ export default {
   methods: {
     filledpin() {
       this.pin = !this.pin;
+    },
+    close() {
+      this.showDialog = false
     },
     archive(e) {
       console.log("e", e);
@@ -26,6 +32,10 @@ export default {
     trash(e) {
       let ind = this.cards.indexOf(e);
       this.cards.splice(ind, 1);
-    }
+    },
+    filledpins() {
+      this.pins = !this.pins;
+    },
+
   }
 };

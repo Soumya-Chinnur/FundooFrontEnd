@@ -7,5 +7,6 @@ export const apiConstant = {
   dashboard: "/notes/getNotesList",
   addNote: "/notes/addNotes",
  archive: "/notes/archiveNotes",
- trash: "/notes/trashNotes"
+ trash: "/notes/trashNotes",
+ color: "/notes/changesColorNotes"
 };

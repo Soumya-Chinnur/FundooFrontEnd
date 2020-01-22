@@ -11,6 +11,8 @@ export const messageService = {
 };
 export default {
   archive(data) {
+    console.log("gjhkjhk",data);
+    
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.archive,
       data,
@@ -26,6 +28,19 @@ export default {
 
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.trash,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+  color(data) {
+    console.log("ffsa", data);
+
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.color,
       data,
       {
         headers: {

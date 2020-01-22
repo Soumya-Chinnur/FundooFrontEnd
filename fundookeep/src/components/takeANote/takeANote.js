@@ -18,7 +18,8 @@ export default {
       updateNote: {
         title: " ",
         description: ""
-      }
+      },
+      background:"#FFFF"
     };
   },
   computed: {},
@@ -59,6 +60,9 @@ export default {
     },
     filledpin() {
       this.pin = !this.pin;
+    },
+    color(e) {
+     this.background=e;
     }
   }
 };

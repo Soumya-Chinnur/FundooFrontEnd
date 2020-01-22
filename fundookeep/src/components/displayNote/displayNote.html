@@ -1,8 +1,12 @@
 <section class="display-note">
   <div class="flex">
-    <md-card v-for="card in cards" class="card">
+    <md-card
+      v-for="card in cards"
+      class="card"
+      v-bind:style="{ 'background-color': card.color }"
+    >
       <div class="titleAndPincontainer">
-        <div class="titleContainer">
+        <div class="titleContainer" @click="showDialog = true">
           {{card.title}}
         </div>
         <div class="originalpin" v-if="pin== true">
@@ -20,8 +24,55 @@
         {{card.description}}
       </div>
       <div>
-        <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash"> </icons>
+        <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash">
+        </icons>
       </div>
     </md-card>
+  </div>
+
+  <div>
+    <md-dialog :md-active.sync="showDialog">
+      <div>
+        <div class="originalcard">
+          <div class="title">
+            <textarea placeholder="Title"> </textarea>
+            <div v-if="pins == true" class="displaypin">
+              <md-button
+                class="md-icon-button"
+                @click="filledpins"
+                style="bottom:8px"
+              >
+                <img src="../../assets/pin.svg" alt="" srcset="" />
+              </md-button>
+            </div>
+            <div
+              v-if="pins == false"
+              class="displayfilledpin"
+              @click="filledpins"
+            >
+              <md-button class="md-icon-button" style="bottom:8px">
+                <img src="../../assets/filledpin.svg" alt="" srcset="" />
+              </md-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="subtitle">
+          <!-- <div class="subtitle">Take a note...</div> -->
+          <textarea placeholder="Take a note..."></textarea>
+
+          <!-- <textarea v-model="addNote.description" placeholder="enter optional message"></textarea> -->
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between;">
+        <div>
+          <icons></icons>
+        </div>
+        <div>
+          <md-button class="button" @click="close">close</md-button>
+        </div>
+      </div>
+    </md-dialog>
   </div>
 </section>

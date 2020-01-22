@@ -3,7 +3,7 @@
 .flex {
   display: flex;
   flex-wrap: wrap;
-  padding: 2%;
+  padding: 1%;
 }
 .card {
   width: 280px;
@@ -32,4 +32,56 @@
 }
 .titleContainer {
   margin: 2%;
+}
+.title {
+  letter-spacing: 0.00625em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.5rem;
+  padding: 10px;
+  opacity: 0.5;
+}
+.subtitle {
+  letter-spacing: 0.01428571em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 550;
+  line-height: 1.25rem;
+  padding: 10px;
+  opacity: 0.5;
+}
+.alert {
+  padding: 4%;
+  margin: 0 8px;
+}
+.md-icon-button {
+  float: right;
+}
+.displaypin {
+  position: relative;
+  bottom: 30px;
+}
+.displayfilledpin {
+  position: relative;
+  bottom: 30px;
+}
+textarea {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 80%;
+  overflow: hidden;
+}
+.originalcard {
+  height: 50px;
+}
+.md-dialog{
+  border-radius :6px;
+  width:500px !important;
+}
+.button {
+  text-transform: none;
+  // padding-left: 78%;
 }
