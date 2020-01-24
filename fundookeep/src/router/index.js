@@ -6,6 +6,7 @@ import forgotpassword from "../components/forgotpassword";
 import archive from "../components/archieve"
 import dashboard from "../components/dashboard";
 import note from "../components/note";
+import trash from "../components/trash";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
@@ -54,6 +55,10 @@ const routes = [
       {
         path: "archive",
         component: archive
+      },
+      {
+        path: "trash",
+        component: trash
       }
     ]
   }

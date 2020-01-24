@@ -20,7 +20,10 @@ export default {
           .then(res => {
             this.messages = [];
             for (let index = 0; index < res.data.data.data.length; index++) {
-              if (!res.data.data.data[index].isArchived) {
+              if (
+                !res.data.data.data[index].isArchived &&
+                !res.data.data.data[index].isDeleted
+              ) {
                 this.messages.push(res.data.data.data[index]);
               }
             }
@@ -44,7 +47,7 @@ export default {
       .then(res => {
         this.messages = [];
         for (let index = 0; index < res.data.data.data.length; index++) {
-          if (!res.data.data.data[index].isArchived) {
+          if (!res.data.data.data[index].isArchived && !res.data.data.data[index].isDeleted) {
             this.messages.push(res.data.data.data[index]);
           }
         }

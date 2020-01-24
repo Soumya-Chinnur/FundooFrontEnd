@@ -19,7 +19,7 @@ export default {
         title: " ",
         description: ""
       },
-      background:"#FFFF"
+      background: "#FFFF"
     };
   },
   computed: {},
@@ -62,7 +62,7 @@ export default {
       this.pin = !this.pin;
     },
     color(e) {
-     this.background=e;
+      this.background = e;
     }
   }
 };

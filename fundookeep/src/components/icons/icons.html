@@ -34,12 +34,12 @@
   </md-button>
 
   <md-menu md-size="small">
-    <md-button md-menu-trigger class="md-icon-button" @click="trash(cardObj)">
+    <md-button md-menu-trigger class="md-icon-button" >
       <img src="../../assets/menu.svg" alt="" srcset="" />
     </md-button>
 
     <md-menu-content>
-      <md-menu-item>delete note</md-menu-item>
+      <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
     </md-menu-content>
   </md-menu>
 </div>

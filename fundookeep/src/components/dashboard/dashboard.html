@@ -19,54 +19,66 @@
   </div>
 
   <div class="pass" >
-    <div v-if="flag" class="pass1" style="background-color:#f2f2f2">
-      <md-list style="background-color:#f2f2f2;">
+    <div v-if="flag" class="pass1" >
+      <md-list >
       <div>
-          <div>
-          <md-list-item>
+         
+          <md-list-item id="notes-item">
             <md-icon>lightbulb_outline</md-icon>   
             <router-link to="/dashboard/note">
               <span class="md-list-item-text">Notes</span>
             </router-link>
           </md-list-item>
-        </div>
-        <div>
+      
+        
 
           <md-list-item>
               <md-icon>notifications_none</md-icon>
                 <span class="md-list-item-text">Reminder</span>
           </md-list-item>
-        </div>
+     
       </div>
       <hr />
          
-     <div>
+     <div  >
         <div class="labels">
-          <label>LABELS</label>
-    </div>
+          <span class="labelContainer">LABELS</span> 
+        </div>  
     
-    <div class="editContainer">
+    
+    <div id="note-item">
        <md-list-item>
-            <md-icon>edit</md-icon>
-            <span class="md-list-item-text">Edit labels</span>
+         <div>
+        <img src="../../assets/create-24px.svg" alt="" srcset="" height=24px/> 
+         </div> 
+         <div>          
+        <span class="md-list-item-text">Edit labels</span>
+         </div>
         </md-list-item>
     </div>
       <hr />        
-      <div>
-        <md-list-item >
-              <md-icon>archive</md-icon>
-              <router-link to="/dashboard/archive" class="links">
+      <div >
+        <div>
+        <md-list-item id="note1-item">
+          <img src="../../assets/archiveOutline.svg" alt="" srcset="" height=24px/>            
+            <router-link to="/dashboard/archive" class="links">
                 <span class="md-list-item-text">Archive</span>
               </router-link>
         </md-list-item>
-            
-        <md-list-item>
-            <md-icon>delete</md-icon>
+      </div>  
+      <div>
+        <md-list-item id="note2-item">
+            <md-icon>
+              <img src="../../assets/trash.svg" alt="" srcset="">
+            </md-icon>
+            <router-link to="/dashboard/trash" class="links">
                   <span class="md-list-item-text">Bin</span>
+                </router-link>
         </md-list-item>
       </div>
+      </div>
     </div>
-      </md-list>
+    </md-list>
       
       </div>
       <div class="pass2">

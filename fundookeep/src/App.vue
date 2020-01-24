@@ -16,11 +16,16 @@
   color: white;
   background-color: white
 }
-
+// @font-face {
+//   font-family: googlefonts;
+//   src: url("../../assets/GoogleSans-Regular.ttf");
+// }
 #nav {
   padding: 30px;
 
   a {
+      font-family: "googlefonts", arial, sans-serif;
+
     font-weight: bold;
     color: #2c3e50;
 

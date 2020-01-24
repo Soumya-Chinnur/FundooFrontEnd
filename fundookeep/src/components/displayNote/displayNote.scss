@@ -13,7 +13,7 @@
   opacity: 1;
   // position: relative;
   border-radius: 8px;
-  margin: 3%;
+  margin: 2%;
 }
 .icons {
   display: flex;
@@ -26,6 +26,9 @@
 .titleAndPincontainer {
   display: flex;
   justify-content: space-between;
+  margin: 2%;
+
+  height: 26%;
 }
 .cardContainer {
   margin: 3%;
@@ -60,12 +63,20 @@
 }
 .displaypin {
   position: relative;
-  bottom: 30px;
+  bottom: 2px;
 }
-.displayfilledpin {
+.originalpin {
   position: relative;
-  bottom: 30px;
+  bottom: 2px;
 }
+// .displayfilledpin {
+//   position: relative;
+//   bottom: 2px;
+// }
+// .originalfilledpin{
+//   position: relative;
+//   bottom: 2px;
+// }
 textarea {
   border: none;
   background-color: transparent;
@@ -77,9 +88,9 @@ textarea {
 .originalcard {
   height: 50px;
 }
-.md-dialog{
-  border-radius :6px;
-  width:500px !important;
+.md-dialog {
+  border-radius: 6px;
+  width: 500px !important;
 }
 .button {
   text-transform: none;

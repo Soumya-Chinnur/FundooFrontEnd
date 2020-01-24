@@ -1,3 +1,7 @@
+@font-face {
+  font-family: googlefonts;
+  src: url("../../assets/GoogleSans-Regular.ttf");
+}
 .dashboard {
   .page-container {
     overflow: hidden;
@@ -16,6 +20,7 @@
   .label {
     display: flex;
     justify-content: space-around;
+    font-family: "googlefonts", arial, sans-serif;
   }
   .md-ripple {
     margin: -3px;
@@ -65,11 +70,14 @@
   .labels {
     opacity: 0.5;
     padding-left: 2%;
-    font-size: 10px;
+    margin-left: 3%;
+    padding: 5%;
+    font-family: "googlefonts", arial, sans-serif;
   }
 }
 hr {
   margin: 0px;
+  opacity: 0.5;
 }
 .page-container md-layout-column {
   box-sizing: border-box;
@@ -91,4 +99,28 @@ hr {
 
 #refresh {
   margin-left: 12px;
+}
+.md-list-item-text {
+  font-family: "googlefonts", arial, sans-serif;
+  font-size: 15px;
+}
+.labelContainer {
+  font-family: "googlefonts", arial, sans-serif;
+  font-size: 12px;
+}
+
+#notes-item {
+  display: inline-block;
+}
+#note-item {
+  display: inline-block;
+  width: 61%;
+}
+#note1-item {
+  display: inline-block;
+  width: 54%;
+}
+#note2-item {
+  display: inline-block;
+  width: 45%;
 }

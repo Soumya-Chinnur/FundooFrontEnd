@@ -46,6 +46,8 @@ export default {
       });
     },
     trash(card) {
+      console.log("hhhhhhhhhhhhhhhhhhhhhhh");
+      
       var obj = {
         noteIdList: [card.id],
         isDeleted: true

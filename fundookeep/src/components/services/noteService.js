@@ -59,5 +59,16 @@ export default {
         }
       }
     );
+  },
+  updateNotes() {
+    return axios.get(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.update,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
   }
 };

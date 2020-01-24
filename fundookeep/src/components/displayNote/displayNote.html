@@ -6,7 +6,7 @@
       v-bind:style="{ 'background-color': card.color }"
     >
       <div class="titleAndPincontainer">
-        <div class="titleContainer" @click="showDialog = true">
+        <div class="titleContainer" @click="openDialog(card) ">
           {{card.title}}
         </div>
         <div class="originalpin" v-if="pin== true">
@@ -14,7 +14,7 @@
             <img src="../../assets/pin.svg" alt="" srcset="" />
           </md-button>
         </div>
-        <div v-if="pin== false" class="displayfilledpin" @click="filledpin">
+        <div v-if="pin== false" class="displaypin" @click="filledpin">
           <md-button class="md-icon-button">
             <img src="../../assets/filledpin.svg" alt="" srcset="" />
           </md-button>
@@ -35,8 +35,8 @@
       <div>
         <div class="originalcard">
           <div class="title">
-            <textarea placeholder="Title"> </textarea>
-            <div v-if="pins == true" class="displaypin">
+            <textarea placeholder="Title" >{{dilogdata.title}}  </textarea>
+            <div v-if="pins == true" class="originalfilledpin">
               <md-button
                 class="md-icon-button"
                 @click="filledpins"
@@ -59,7 +59,7 @@
 
         <div class="subtitle">
           <!-- <div class="subtitle">Take a note...</div> -->
-          <textarea placeholder="Take a note..."></textarea>
+          <textarea placeholder="Take a note...">  {{dilogdata.description}}</textarea>
 
           <!-- <textarea v-model="addNote.description" placeholder="enter optional message"></textarea> -->
         </div>
@@ -70,7 +70,8 @@
           <icons></icons>
         </div>
         <div>
-          <md-button class="button" @click="close">close</md-button>
+          <md-button class="button" v-model="Array" @click="save()">close</md-button>
+          
         </div>
       </div>
     </md-dialog>

@@ -1,13 +1,15 @@
 import noteService from "../services/noteService";
 import displayNote from "../displayNote";
 export default {
-  name: "delete",
-  components: {},
+  name: "trash",
+  components: { displayNote },
   props: [],
   data() {
-    return {};
+    return {
+      deleteCards:[]
+    };
   },
-  computed: { displayNote },
+  computed: {},
   mounted() {
     noteService.getNotes().then(res => {
       console.log("fsd", res);
@@ -16,6 +18,7 @@ export default {
           this.deleteCards.push(res.data.data.data[index]);
         }
       }
+      console.log("sssssssssssssssssssss", this.deleteCards);
     });
   },
   methods: {}
