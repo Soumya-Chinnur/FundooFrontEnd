@@ -5,7 +5,7 @@
 ******************************************************************************************/ -->
 <section class="dashboard">
   <div class="page-container md-layout-column">
-       <md-toolbar class="md-primary">
+    <!-- <md-toolbar class="md-primary">
       <md-button class="md-icon-button" @click="showNavigation">
          <md-icon class="menu">menu</md-icon>
       </md-button>
@@ -15,76 +15,123 @@
           <span class="gb_5dgb_Xc">Keep</span>
           </a>  
       </div>
-   </md-toolbar>
+      <div>
+        <md-avatar  class="md-avatar-icon">
+          <md-icon>home</md-icon>
+        </md-avatar>
+      </div>
+   </md-toolbar> -->
+
+    <md-toolbar class="md-primary">
+      <md-button class="md-icon-button" @click="showNavigation">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <div class="image">
+        <img src="../../assets/keep-512.png" alt="keepLogo" />
+      </div>
+
+      <span class="md-title">Keep</span>
+
+      <div class="md-toolbar-section-end">
+        <div class="iconContainer">
+          <div class="refreshContainer">
+              <md-avatar class="md-small">
+                <img src="../../assets/refresh.svg" alt="People" />
+              </md-avatar>
+            </div>
+          <div>
+              <md-avatar class="md-small">
+                <img src="../../assets/toolbarIcon.svg" alt="People" />
+              </md-avatar>
+            </div>
+    
+          <div>
+              <md-avatar class="md-small">
+                <img src="../../assets/setting.svg" alt="People" />
+              </md-avatar>
+            </div>
+       
+        </div>
+        <div>
+          <md-avatar class="md-medium">
+            <img src="../../assets/dog.jpg" alt="People" />
+          </md-avatar>
+        </div>
+      
+       
+      </div>
+    </md-toolbar>
   </div>
 
-  <div class="pass" >
-    <div v-if="flag" class="pass1" >
-      <md-list >
-      <div>
-         
+  <div class="pass">
+    <div v-if="flag" class="pass1">
+      <md-list>
+        <div>
           <md-list-item id="notes-item">
-            <md-icon>lightbulb_outline</md-icon>   
+            <md-icon>lightbulb_outline</md-icon>
             <router-link to="/dashboard/note">
               <span class="md-list-item-text">Notes</span>
             </router-link>
           </md-list-item>
-      
-        
 
           <md-list-item>
-              <md-icon>notifications_none</md-icon>
-                <span class="md-list-item-text">Reminder</span>
+            <md-icon>notifications_none</md-icon>
+            <span class="md-list-item-text">Reminder</span>
           </md-list-item>
-     
-      </div>
-      <hr />
-         
-     <div  >
-        <div class="labels">
-          <span class="labelContainer">LABELS</span> 
-        </div>  
-    
-    
-    <div id="note-item">
-       <md-list-item>
-         <div>
-        <img src="../../assets/create-24px.svg" alt="" srcset="" height=24px/> 
-         </div> 
-         <div>          
-        <span class="md-list-item-text">Edit labels</span>
-         </div>
-        </md-list-item>
-    </div>
-      <hr />        
-      <div >
+        </div>
+        <hr />
+
         <div>
-        <md-list-item id="note1-item">
-          <img src="../../assets/archiveOutline.svg" alt="" srcset="" height=24px/>            
-            <router-link to="/dashboard/archive" class="links">
-                <span class="md-list-item-text">Archive</span>
-              </router-link>
-        </md-list-item>
-      </div>  
-      <div>
-        <md-list-item id="note2-item">
-            <md-icon>
-              <img src="../../assets/trash.svg" alt="" srcset="">
-            </md-icon>
-            <router-link to="/dashboard/trash" class="links">
+          <div class="labels">
+            <span class="labelContainer">LABELS</span>
+          </div>
+
+          <div id="note-item">
+            <md-list-item>
+              <div>
+                <img
+                  src="../../assets/create-24px.svg"
+                  alt=""
+                  srcset=""
+                  height="24px"
+                />
+              </div>
+              <div>
+                <span class="md-list-item-text">Edit labels</span>
+              </div>
+            </md-list-item>
+          </div>
+          <hr />
+          <div>
+            <div>
+              <md-list-item id="note1-item">
+                <img
+                  src="../../assets/archiveOutline.svg"
+                  alt=""
+                  srcset=""
+                  height="24px"
+                />
+                <router-link to="/dashboard/archive" class="links">
+                  <span class="md-list-item-text">Archive</span>
+                </router-link>
+              </md-list-item>
+            </div>
+            <div>
+              <md-list-item id="note2-item">
+                <md-icon>
+                  <img src="../../assets/trash.svg" alt="" srcset="" />
+                </md-icon>
+                <router-link to="/dashboard/trash" class="links">
                   <span class="md-list-item-text">Bin</span>
                 </router-link>
-        </md-list-item>
-      </div>
-      </div>
+              </md-list-item>
+            </div>
+          </div>
+        </div>
+      </md-list>
     </div>
-    </md-list>
-      
-      </div>
-      <div class="pass2">
-       <router-view></router-view>
-    
-      </div>
+    <div class="pass2">
+      <router-view></router-view>
+    </div>
   </div>
-
 </section>

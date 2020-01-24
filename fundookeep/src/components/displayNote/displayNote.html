@@ -35,7 +35,9 @@
       <div>
         <div class="originalcard">
           <div class="title">
-            <textarea placeholder="Title" >{{dilogdata.title}}  </textarea>
+            <div class="textareaContainer">
+            <textarea placeholder="Title" > {{dilogdata.title}} </textarea>
+          </div>
             <div v-if="pins == true" class="originalfilledpin">
               <md-button
                 class="md-icon-button"

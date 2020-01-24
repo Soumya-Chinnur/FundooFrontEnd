@@ -7,6 +7,7 @@
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(#000, 0.12);
+    // margin: 10px 0px 0px 0px;
   }
 
   .md-drawer {
@@ -30,6 +31,9 @@
   }
   .md-toolbar.md-theme-default.md-primary {
     background-color: white;
+    color: black;
+    display: flex;
+
     color: rgb(60, 60, 60);
   }
 
@@ -122,5 +126,23 @@ hr {
 }
 #note2-item {
   display: inline-block;
-  width: 45%;
+  width: 40%;
+}
+
+.md-toolbar.md-theme-default.md-primary .md-title,
+.md-toolbar.md-theme-default.md-primary .md-display-1,
+.md-toolbar.md-theme-default.md-primary .md-display-2 {
+  color: gray;
+}
+
+.image img {
+  width: 40px;
+  height: 40px;
+}
+.refreshContainer {
+}
+.iconContainer {
+  display: flex;
+  width: 22%;
+  justify-content: space-evenly;
 }
