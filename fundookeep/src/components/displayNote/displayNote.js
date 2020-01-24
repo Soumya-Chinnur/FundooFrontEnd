@@ -25,10 +25,9 @@ export default {
     filledpin() {
       this.pin = !this.pin;
     },
-    save(tit, desc) {
-      console.log("in saveeee", this.dilogdata.id);
-      console.log("kkkktitle,,,,--", tit);
-      console.log("kkkktitle,,,,--", desc);
+    save() {
+      console.log("in saveeee", this.dilogdata);
+     
 
       this.showDialog = false;
     },
@@ -38,7 +37,8 @@ export default {
       this.cards.splice(ind, 1);
     },
     openDialog(card) {
-      (this.dilogdata = card), console.log("editttttttt", this.dilogdata.id);
+      this.dilogdata = card,
+       console.log("editttttttt", this.dilogdata);
       this.showDialog = true;
       let editNote = {
         id: this.dilogdata.id

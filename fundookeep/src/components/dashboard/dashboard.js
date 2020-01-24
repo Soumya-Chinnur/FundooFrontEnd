@@ -16,7 +16,7 @@ export default {
     //A computed property is used to declaratively describe a value that depends on other values
   },
   mounted() {
-    //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
+    
   },
   methods: {
     showNavigation() {

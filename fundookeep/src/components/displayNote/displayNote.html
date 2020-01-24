@@ -27,7 +27,7 @@
         <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash">
         </icons>
       </div>
-    </md-card>
+    </md-card>ghj
   </div>
 
   <div>
@@ -36,7 +36,7 @@
         <div class="originalcard">
           <div class="title">
             <div class="textareaContainer">
-            <textarea placeholder="Title" > {{dilogdata.title}} </textarea>
+            <input placeholder="Title" v-model= "dilogdata.title">
           </div>
             <div v-if="pins == true" class="originalfilledpin">
               <md-button
