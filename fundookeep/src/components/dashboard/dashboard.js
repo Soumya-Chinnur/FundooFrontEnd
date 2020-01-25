@@ -20,8 +20,8 @@ export default {
   mounted() {
     labelService.getLabelList().then(res => {
       console.log("labellllllllllllllll", res);
-     
-          this.label.push(res.data.data.data);
+
+      this.label.push(res.data.data.data);
     });
   },
   methods: {

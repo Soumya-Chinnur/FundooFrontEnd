@@ -31,7 +31,7 @@ export default {
           localStorage.setItem("token", res.data.id);
           // eslint-disable-next-line no-console
           console.log("asdfghjkk", res);
-          this.$router.push("/dashboard")
+          this.$router.push("/dashboard");
         })
         .catch(err => {
           // eslint-disable-next-line no-console
