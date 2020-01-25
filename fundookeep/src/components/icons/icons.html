@@ -26,20 +26,32 @@
   </md-menu>
 
   <md-button class="md-icon-button">
-      <img src="../../assets/image.svg" alt="" srcset="" />
-    </md-button>
+    <img src="../../assets/image.svg" alt="" srcset="" />
+  </md-button>
 
   <md-button class="md-icon-button" @click="archive(cardObj)">
     <img src="../../assets/archive.svg" alt="" srcset="" />
   </md-button>
 
   <md-menu md-size="small">
-    <md-button md-menu-trigger class="md-icon-button" >
+    <md-button md-menu-trigger class="md-icon-button">
       <img src="../../assets/menu.svg" alt="" srcset="" />
     </md-button>
 
     <md-menu-content>
+      <div v-if="flag==true" class="displaylabel">
+        <md-menu-item @click="label" md-menu-trigger>Add label</md-menu-item>
+      </div>
       <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
     </md-menu-content>
+
+        <md-menu-content>
+            <div v-if="flag ==false" class="displaylabel">
+              <md-menu-item @click="addLabel">label note</md-menu-item>
+            </div>
+          </md-menu-content>
+     
+
   </md-menu>
+  
 </div>

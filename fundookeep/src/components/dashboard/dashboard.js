@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import labelService from "../services/labelService";
 Vue.use(VueRouter);
 
 export default {
@@ -9,6 +10,7 @@ export default {
   props: [],
   data() {
     return {
+      label: [],
       flag: false
     };
   },
@@ -16,7 +18,11 @@ export default {
     //A computed property is used to declaratively describe a value that depends on other values
   },
   mounted() {
-    
+    labelService.getLabelList().then(res => {
+      console.log("labellllllllllllllll", res);
+     
+          this.label.push(res.data.data.data);
+    });
   },
   methods: {
     showNavigation() {

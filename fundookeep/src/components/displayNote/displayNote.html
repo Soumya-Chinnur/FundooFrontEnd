@@ -27,7 +27,7 @@
         <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash">
         </icons>
       </div>
-    </md-card>ghj
+    </md-card>
   </div>
 
   <div>
@@ -61,7 +61,7 @@
 
         <div class="subtitle">
           <!-- <div class="subtitle">Take a note...</div> -->
-          <textarea placeholder="Take a note...">  {{dilogdata.description}}</textarea>
+          <input placeholder="Title" v-model= "dilogdata.description">
 
           <!-- <textarea v-model="addNote.description" placeholder="enter optional message"></textarea> -->
         </div>

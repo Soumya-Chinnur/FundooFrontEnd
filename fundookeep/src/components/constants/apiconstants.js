@@ -9,5 +9,6 @@ export const apiConstant = {
  archive: "/notes/archiveNotes",
  trash: "/notes/trashNotes",
  color: "/notes/changesColorNotes",
- updateNote: "/notes/updateNotes"
+ updateNote: "/notes/updateNotes",
+ getlabel: "/noteLabels/getNoteLabelList"
 };

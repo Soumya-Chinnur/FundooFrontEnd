@@ -7,6 +7,8 @@ export default {
   },
   data() {
     return {
+      flag:true,
+     
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -35,6 +37,13 @@ export default {
   computed: {},
   mounted() {},
   methods: {
+    label() {
+      this.flag = !this.flag;
+      
+    // addLabel() {
+    //   this.flag1 = !this.flag1;
+    // },
+    },
     archive(card) {
       var obj = {
         noteIdList: [card.id],
@@ -75,5 +84,6 @@ export default {
         //
       });
     }
-  }
-};
+
+}
+}
