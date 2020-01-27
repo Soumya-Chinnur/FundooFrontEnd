@@ -1,0 +1,77 @@
+<section class="service-register">
+  <md-toolbar class="toolbarContainer">
+    <h1 class="md-title">fundooNotes</h1>
+  </md-toolbar>
+  <div class="subtitleContainer">
+    <p>fundooNotes offered. Choose below service to Register.</p>
+  </div>
+
+  <div class="twoCardContainer">
+    <div class="cardContainer">
+      <md-card md-with-hover class="md-card1">
+        <md-card md-with-hover v-for="card in cards" class="md-card2">
+          <md-card-header>
+            <div class="md-title" @click="openDialog(card)">
+              Price: $99 per month
+            </div>
+            <a href="/register">advance</a>
+          </md-card-header>
+          <div>
+            <p></p>
+          </div>
+        </md-card>
+      </md-card>
+    </div>
+
+    <div class="cardContainer1">
+      <md-card md-with-hover class="md-card3">
+        <md-card mar-with-hover class="md-card4">
+          <md-card-header>
+            <div class="md-title" @click="openDialog(card)">
+              Price: $49 per month
+            </div>
+            <a href="/register">basic</a>
+            <p>sdfffffffffffff</p>
+          </md-card-header>
+        </md-card>
+      </md-card>
+    </div>
+  </div>
+  <div class="linkContainer">
+    <a href="/register">Sign in instead</a>
+  </div>
+
+  <div>
+    <md-dialog :md-active.sync="showDialog">
+      <md-toolbar class="toolbarContainer">
+        <div class="titleToolbarContainer">Advance pack details</div>
+      </md-toolbar>
+
+      <div>
+        <md-tabs md-sync-route>
+          <md-tab
+            id="tab-home"
+            md-label="Home"
+            to="/fundookeep/"
+            exact
+          ></md-tab>
+
+          <!-- <md-tab id="tab-pages" md-label="Pages" to="/components/tabs/pages">
+        <md-list>
+          <md-list-item to="/components/tabs/pages/1">Go to Subpage 1</md-list-item>
+          <md-list-item to="/components/tabs/pages/2">Go to Subpage 2</md-list-item>
+        </md-list>
+       -->
+          <!-- </md-tab> -->
+        </md-tabs>
+      </div>
+    </md-dialog>
+  </div>
+  <div class="dialog2Container">
+    <md-dialog :md-active.sync="showDialog1">
+      <md-toolbar class="toolbarContainer">
+        <div class="titleToolbarContainer">Advance pack details</div>
+      </md-toolbar>
+    </md-dialog>
+  </div>
+</section>

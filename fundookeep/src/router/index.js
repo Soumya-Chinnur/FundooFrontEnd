@@ -3,10 +3,11 @@ import VueRouter from "vue-router";
 import login from "../components/login";
 import register from "../components/register";
 import forgotpassword from "../components/forgotpassword";
-import archive from "../components/archieve"
+import archive from "../components/archieve";
 import dashboard from "../components/dashboard";
 import note from "../components/note";
 import trash from "../components/trash";
+import serviceRegister from "../components/serviceRegister";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
@@ -36,7 +37,7 @@ const routes = [
     name: "forgotpassword",
     component: forgotpassword
   },
-  
+
   {
     path: "/dashboard",
     name: "dashboard",
@@ -61,6 +62,11 @@ const routes = [
         component: trash
       }
     ]
+  },
+  {
+    path: "/serviceRegister",
+    name: "serviceRegister",
+    component: serviceRegister
   }
 ];
 

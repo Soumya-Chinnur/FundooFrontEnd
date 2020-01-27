@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       label: [],
+      labels: [],
       flag: false
     };
   },
@@ -19,10 +20,16 @@ export default {
   },
   mounted() {
     labelService.getLabelList().then(res => {
-      console.log("labellllllllllllllll", res);
+      console.log("labellllllllllllllll", res.data.data.details.label);
 
-      this.label.push(res.data.data.data);
+      this.labels.push(res.data.data.data);
+      for (let index = 0; index < res.data.data.data.length; index++) {
+        if (res.data.data.data[index]) {
+          this.labels.push(res.data.data.data[index]);
+        }
+      }
     });
+   
   },
   methods: {
     showNavigation() {
