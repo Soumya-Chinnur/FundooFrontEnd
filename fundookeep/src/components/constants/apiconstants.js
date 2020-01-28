@@ -10,5 +10,6 @@ export const apiConstant = {
  trash: "/notes/trashNotes",
  color: "/notes/changesColorNotes",
  updateNote: "/notes/updateNotes",
- getlabel: "/noteLabels/getNoteLabelList"
+ getlabel: "/noteLabels/getNoteLabelList",
+ userService: "/user/service"
 };

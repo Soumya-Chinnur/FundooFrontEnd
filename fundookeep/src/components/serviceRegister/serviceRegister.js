@@ -1,33 +1,38 @@
+import { userService }  from "../services/userServices";
 
 export default {
-  name: 'service-register',
+  name: "service-register",
   components: {},
   props: [],
-  data () {
+  data() {
     return {
       cards: {
         type: Array
+      
       },
       dialogdata: Object,
       showDialog: false,
-      showDialog1: false
-    }
+      hover: false
+    };
   },
-  computed: {
-
-  },
-  mounted () {
-
+  computed: {},
+  mounted() {
+    this.serviceRegister()
   },
   methods: {
-    openDialog(card){
-this.dialogdata = card;
-this.showDialog = true;
-this.showDialog1 = true;
-
+    openDialog(card) {
+      this.dialogdata = card;
+      this.showDialog = true;
+    },
+    serviceRegister()
+    {
+      userService().then(res => {
+        console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
+      this.cards=res.data.data.data;
+      console.log("jjjjjjjjj",this.cards)
+      });
+      
     }
 
   }
-}
-
-
+};

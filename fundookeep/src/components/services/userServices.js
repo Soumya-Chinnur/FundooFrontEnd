@@ -52,7 +52,7 @@ export function addNote(data) {
   );
 }
 export function updateNote(data) {
-  //   eslint-disable-next-line no-console
+  
   return axios.post(
     "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.updateNote,
     data,
@@ -63,4 +63,16 @@ export function updateNote(data) {
     }
   );
 }
+export function userService() {
+  //   eslint-disable-next-line no-console
+  return axios.get(
+    "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.userService,
+    {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }
+  );
+}
+
 

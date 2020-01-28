@@ -8,34 +8,45 @@
 
   <div class="twoCardContainer">
     <div class="cardContainer">
-      <md-card md-with-hover class="md-card1">
-        <md-card md-with-hover v-for="card in cards" class="md-card2">
+      <md-card md-with-hover class="md-card1" v-for="card in cards">
+        <!-- <span class="cardColorContainer" v-if="hover">dfvs</span> -->
+        <md-card md-with-hover class="md-card2">
           <md-card-header>
             <div class="md-title" @click="openDialog(card)">
-              Price: $99 per month
+              {{card.price}}
             </div>
-            <a href="/register">advance</a>
+            <a href="/register" style="margin:7%">{{card.name}}</a>
+            <div class="descriptionContainer">
+              <li _ngcontent-c1="" class="features">
+                {{card.description}}
+              </li>
+            </div>
           </md-card-header>
-          <div>
-            <p></p>
-          </div>
         </md-card>
       </md-card>
     </div>
 
-    <div class="cardContainer1">
+    <!-- <div class="cardContainer1">
       <md-card md-with-hover class="md-card3">
         <md-card mar-with-hover class="md-card4">
           <md-card-header>
             <div class="md-title" @click="openDialog(card)">
               Price: $49 per month
             </div>
-            <a href="/register">basic</a>
-            <p>sdfffffffffffff</p>
+            <a href="/register" style="margin:7%">basic</a>
+            <div class="descriptionContainer">
+              <li _ngcontent-c1="" class="features">
+                $99/month
+              </li>
+              <li _ngcontent-c1="" class="features">
+                Ability to add title, description, images, labels, checklist and
+                colors
+              </li>
+            </div>
           </md-card-header>
         </md-card>
       </md-card>
-    </div>
+    </div> -->
   </div>
   <div class="linkContainer">
     <a href="/register">Sign in instead</a>
@@ -47,31 +58,17 @@
         <div class="titleToolbarContainer">Advance pack details</div>
       </md-toolbar>
 
+      <md-tabs>
+        <md-tab class="tab-feature" md-label="feature1">Content 1</md-tab>
+        <md-tab class="tab-feature" md-label="feature2">Content 2</md-tab>
+        <md-tab class="tab-feature" md-label="feature3">Content 3</md-tab>
+      </md-tabs>
       <div>
-        <md-tabs md-sync-route>
-          <md-tab
-            id="tab-home"
-            md-label="Home"
-            to="/fundookeep/"
-            exact
-          ></md-tab>
-
-          <!-- <md-tab id="tab-pages" md-label="Pages" to="/components/tabs/pages">
-        <md-list>
-          <md-list-item to="/components/tabs/pages/1">Go to Subpage 1</md-list-item>
-          <md-list-item to="/components/tabs/pages/2">Go to Subpage 2</md-list-item>
-        </md-list>
-       -->
-          <!-- </md-tab> -->
-        </md-tabs>
+        <md-button class="md-button">remove</md-button>
       </div>
-    </md-dialog>
-  </div>
-  <div class="dialog2Container">
-    <md-dialog :md-active.sync="showDialog1">
-      <md-toolbar class="toolbarContainer">
-        <div class="titleToolbarContainer">Advance pack details</div>
-      </md-toolbar>
+      <div>
+        <md-button class="md-button1">Proceed to checkout</md-button>
+      </div>
     </md-dialog>
   </div>
 </section>
