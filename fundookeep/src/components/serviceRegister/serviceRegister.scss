@@ -15,127 +15,81 @@
     display: flex;
     font-size: 25px;
   }
-  .twoCardContainer {
+  .cardContainer {
     display: flex;
-    flex-direction: row;
   }
-
-
+  .twoCardContainer {
+    margin-left: 20%;
+  }
   .md-card1 {
-    width: 300px;
+    width: 280px;
     // margin: 4px;
     display: inline-block;
-    vertical-align: top;
-    flex-direction: row;
+
     box-sizing: border-box;
     display: flex;
-    margin-left: 60%;
+    margin-left: 40%;
     height: 250px;
     margin-top: 19%;
     background-color: lightgrey;
     border-radius: 2px;
+    margin: 6%;
   }
 
   .md-card2 {
     height: 250px;
-    width: 280px;
+    width: 260px;
     // margin: 4px;
     display: inline-block;
-    vertical-align: top;
-    flex-direction: row;
+
     box-sizing: border-box;
     display: flex;
     margin-top: -14%;
     margin-left: -10%;
     border-radius: 2px;
-
   }
-  .md-card3 {
-    width: 300px;
-    // margin: 4px;
-    display: inline-block;
-    vertical-align: top;
-    flex-direction: row;
-    box-sizing: border-box;
-    display: flex;
-    margin-top: 19%;
-    height: 250px;
-    margin-left: 100%;
-    background-color: lightgrey;
-    border-radius: 2px;
 
-  }
-  .md-card4 {
-    width: 280px;
-    // margin: 4px;
-    display: inline-block;
-    vertical-align: top;
-    flex-direction: row;
-    box-sizing: border-box;
-    display: flex;
-    margin-top: -14%;
-    margin-left: -10%;
-    height: 250px;
-    border-radius: 2px;
-
-  }
   .linkContainer {
     display: flex;
     justify-content: center;
     margin: 6%;
   }
-  // .dialog1Container{
-  //   height:150px;
-  //   width:400px;
-  // }
-  .descriptionContainer
-  {
+
+  .descriptionContainer {
     margin: 7%;
     font-size: 16px;
   }
-  
-  
+
   .md-card1:hover {
-    background-color: #ffa31a
+    background-color: #ffa31a;
   }
-  
 }
 .md-dialog {
   border-radius: 6px;
   width: 50% !important;
   height: 200px;
 
-  .toolbarContainer{
+  .toolbarContainer {
     background-color: #ffcc00;
   }
-  .titleToolbarContainer{
+  .titleToolbarContainer {
     font-size: 16px;
     color: white;
     margin-left: 12%;
   }
-  // .md-feature{
-  //   padding: 0 24px;
-  // }
-  .md-button{
-    background-color: #0e89c2;;
+
+  .md-button {
+    background-color: #0e89c2;
     height: 22px;
     min-width: 88px;
     margin: 6px 8px;
-  
+
     border-radius: 2px;
     font-size: 11px;
     font-weight: 500;
-  
   }
-  .md-button1{
-    background-color: #0e89c2;;
-    height: 22px;
-    min-width: 88px;
-    margin: 6px 8px;
-  
-    border-radius: 2px;
-    font-size: 11px;
-    font-weight: 500;
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
   }
 }
-

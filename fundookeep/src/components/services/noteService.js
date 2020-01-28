@@ -11,8 +11,8 @@ export const messageService = {
 };
 export default {
   archive(data) {
-    console.log("gjhkjhk",data);
-    
+    console.log("gjhkjhk", data);
+
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.archive,
       data,
@@ -62,8 +62,7 @@ export default {
   },
   updateNotes() {
     return axios.get(
-      "http://fundoonotes.incubation.bridgelabz.com/api" +
-        apiConstant.update,
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.update,
       {
         headers: {
           Authorization: localStorage.getItem("token")

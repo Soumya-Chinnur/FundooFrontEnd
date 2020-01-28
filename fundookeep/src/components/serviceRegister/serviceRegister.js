@@ -1,5 +1,4 @@
-import { userService }  from "../services/userServices";
-
+import { userService } from "../services/userServices";
 export default {
   name: "service-register",
   components: {},
@@ -8,7 +7,6 @@ export default {
     return {
       cards: {
         type: Array
-      
       },
       dialogdata: Object,
       showDialog: false,
@@ -17,22 +15,19 @@ export default {
   },
   computed: {},
   mounted() {
-    this.serviceRegister()
+    this.serviceRegister();
   },
   methods: {
     openDialog(card) {
       this.dialogdata = card;
       this.showDialog = true;
     },
-    serviceRegister()
-    {
+    serviceRegister() {
       userService().then(res => {
         console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
-      this.cards=res.data.data.data;
-      console.log("jjjjjjjjj",this.cards)
+        this.cards = res.data.data.data;
+        console.log("jjjjjjjjj", this.cards);
       });
-      
     }
-
   }
 };
