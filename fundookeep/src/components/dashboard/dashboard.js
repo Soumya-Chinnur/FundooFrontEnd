@@ -10,7 +10,6 @@ export default {
   props: [],
   data() {
     return {
-      label: [],
       labels: [],
       flag: false
     };
@@ -20,14 +19,16 @@ export default {
   },
   mounted() {
     labelService.getLabelList().then(res => {
-      console.log("labellllllllllllllll", res.data.data.details.label);
+      // console.log("labellllllllllllllll", res.data.data.details);
 
-      this.labels.push(res.data.data.data);
-      for (let index = 0; index < res.data.data.data.length; index++) {
-        if (res.data.data.data[index]) {
-          this.labels.push(res.data.data.data[index]);
-        }
-      }
+      this.labels = res.data.data.details
+      console.log("",this.labels)
+
+      // for (let index = 0; index < res.data.data.details[index].length; index++) {
+      //   if (res.data.data.details[index]) {
+      //     this.labels.push(res.data.data.details[index]);
+      //   }
+      // }
     });
    
   },

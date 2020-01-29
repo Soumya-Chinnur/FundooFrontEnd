@@ -24,7 +24,7 @@
         {{card.description}}
       </div>
       <div>
-        <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash">
+        <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash" @unarchiveCard="archive">
         </icons>
       </div>
     </md-card>
@@ -36,8 +36,8 @@
         <div class="originalcard">
           <div class="title">
             <div class="textareaContainer">
-            <input placeholder="Title" v-model= "dilogdata.title">
-          </div>
+              <input placeholder="Title" v-model="dilogdata.title" />
+            </div>
             <div v-if="pins == true" class="originalfilledpin">
               <md-button
                 class="md-icon-button"
@@ -61,7 +61,7 @@
 
         <div class="subtitle">
           <!-- <div class="subtitle">Take a note...</div> -->
-          <input placeholder="Title" v-model= "dilogdata.description">
+          <input placeholder="Title" v-model="dilogdata.description" />
 
           <!-- <textarea v-model="addNote.description" placeholder="enter optional message"></textarea> -->
         </div>
@@ -69,11 +69,12 @@
 
       <div style="display:flex; justify-content:space-between;">
         <div>
-          <icons></icons>
+          <icons :more="archived" @cards="archive" @unarchivecard="unarchive"></icons>
         </div>
         <div>
-          <md-button class="button" v-model="Array" @click="save()">close</md-button>
-          
+          <md-button class="button" v-model="Array" @click="save()"
+            >close</md-button
+          >
         </div>
       </div>
     </md-dialog>

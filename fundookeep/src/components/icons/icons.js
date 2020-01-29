@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       flag:true,
-     
+      click:true,
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -54,6 +54,17 @@ export default {
         this.$emit("archivedCard", card);
       });
     },
+    unarchive(card) {
+      var obj1 = {
+        noteIdList: [card.id],
+        isArchived: false
+      };
+      noteService.archive(obj1).then(res => {
+        console.log("unarchive", res);
+        this.$emit("unarchivedCard", card);
+        this.click = ! this.click;
+      });
+    },
     trash(card) {
       console.log("hhhhhhhhhhhhhhhhhhhhhhh");
       
@@ -66,6 +77,16 @@ export default {
         this.$emit("deleteCard", card);
       });
     },
+    // restore(card) {
+    // var obj1 = {
+    //     noteIdList: [card.id],
+    //     isDeleted: false
+    //   };
+    //   noteService.trash(obj).then(res => {
+    //     console.log("restoreeeeeeeeeeeee", res);
+    //     this.$emit("restorecard", card);
+    //   });
+    // },
     colorDisplay(color, card) {
       if (card == undefined) {
         this.$emit("changeColor", color);

@@ -7,13 +7,16 @@ export default {
   props: [],
   data() {
     return {
-      archiveCards: []
+      archiveCards: [],
+      // more: "archive"
+      
     };
   },
   computed: {},
   mounted() {
     noteService.getNotes().then(res => {
       console.log("fsd", res);
+
       for (let index = 0; index < res.data.data.data.length; index++) {
         if (res.data.data.data[index].isArchived) {
           this.archiveCards.push(res.data.data.data[index]);

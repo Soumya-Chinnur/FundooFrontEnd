@@ -35,9 +35,18 @@
           </div>
         </div>
         <div>
-          <md-avatar class="md-medium">
+            <md-menu class="menuContainer" md-size="medium" md-align-trigger>
+
+          <md-avatar md-menu-trigger class="md-medium">
             <img src="../../assets/dog.jpg" alt="People" />
           </md-avatar>
+          <md-menu-content>
+                    
+                <div>soumya chinnur</div>
+            <md-menu-item>My Item 2</md-menu-item>
+            <md-menu-item>My Item 3</md-menu-item>
+          </md-menu-content>
+        </md-menu>
         </div>
       </div>
     </md-toolbar>
@@ -61,11 +70,14 @@
         </div>
         <hr />
 
-        <div v-for="label in labels">
-          <div class="labels">
+          <div  class="labels">
             <span class="labelContainer">LABELS</span>
           </div>
-          <div class="labelContainer">{{label.description}}</div>
+         
+          <div class="iconAndLabelContainer" v-for="label in labels" >
+              <img src="../../assets/path.svg" alt="" />
+          <div class="labelContainer">{{label.label}}</div>
+        </div>
           <div id="note-item">
             <md-list-item>
               <div>
@@ -107,7 +119,7 @@
               </md-list-item>
             </div>
           </div>
-        </div>
+       
       </md-list>
     </div>
     <div class="pass2">
