@@ -1,4 +1,5 @@
 <div class="icons">
+    <div v-if="!route1">
   <md-button class="md-icon-button">
     <img src="../../assets/bell.svg" alt="" srcset="" />
   </md-button>
@@ -39,18 +40,21 @@
       <img src="../../assets/unarchive-24px.svg" alt="" srcset="" />
     </md-button>
 
+ 
   <md-menu md-size="small">
     <md-button md-menu-trigger class="md-icon-button">
       <img src="../../assets/menu.svg" alt="" srcset="" />
     </md-button>
 
     <md-menu-content>
-       <md-menu-item v-if="!route1" @click="trash(cardObj)">delete note</md-menu-item>
+       <md-menu-item  @click="trash(cardObj)">delete note</md-menu-item>
     </md-menu-content>
-</md-menu>
+  </md-menu>
+</div>
 
-<md-button  v-if="route1" class="md-icon-button" @click="restore(cardObj)">
+  <div v-if="route1">
+   <md-button   class="md-icon-button" @click="restore(cardObj)">
     <img src="../../assets/restore.svg" alt="" srcset="" />
-  </md-button>
-  
+   </md-button>
+ </div>
 </div>

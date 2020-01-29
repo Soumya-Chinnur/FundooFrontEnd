@@ -46,8 +46,6 @@ export default {
       console.log(this.$router.currentRoute.fullPath)
       this.route = false;
     }
-  },
-
   if (this.$router.currentRoute.fullPath === '/dashboard/trash'){
     console.log(this.$router.currentRoute.fullPath)
     this.route1 = true;
@@ -56,7 +54,7 @@ export default {
     console.log(this.$router.currentRoute.fullPath)
     this.route1 = false;
   }
-}
+},
   methods: {
     // label() {
     //   this.flag = !this.flag;
