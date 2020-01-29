@@ -24,7 +24,7 @@
         {{card.description}}
       </div>
       <div>
-        <icons :cardObj="card" @archivedCard="archive" @deleteCard="trash" @unarchiveCard="archive">
+        <icons :cardObj="card" >
         </icons>
       </div>
     </md-card>
@@ -69,7 +69,7 @@
 
       <div style="display:flex; justify-content:space-between;">
         <div>
-          <icons :more="archived" @cards="archive" @unarchivecard="unarchive"></icons>
+          <icons ></icons>
         </div>
         <div>
           <md-button class="button" v-model="Array" @click="save()"

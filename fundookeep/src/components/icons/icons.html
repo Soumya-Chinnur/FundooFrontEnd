@@ -29,35 +29,28 @@
     <img src="../../assets/image.svg" alt="" srcset="" />
   </md-button>
 
-  <!-- <div v-if="more != 'archive'"> -->
-  <md-button class="md-icon-button"  @click="archive(cardObj)">
+ 
+  <md-button v-if="!route" class="md-icon-button"  @click="archive(cardObj)" >
     <img src="../../assets/archive.svg" alt="" srcset="" />
   </md-button>
-<!-- </div> -->
-<!-- <div v-if="more == 'archive'" > -->
-  <md-button class="md-icon-button" @click="unarchive(cardObj)" >
+
+
+  <md-button v-if="route" class="md-icon-button" @click="unarchive(cardObj)"  >
       <img src="../../assets/unarchive-24px.svg" alt="" srcset="" />
     </md-button>
-  <!-- </div> -->
+
   <md-menu md-size="small">
     <md-button md-menu-trigger class="md-icon-button">
       <img src="../../assets/menu.svg" alt="" srcset="" />
     </md-button>
 
     <md-menu-content>
-      <div v-if="flag==true" class="displaylabel">
-        <md-menu-item @click="label" md-menu-trigger>Add label</md-menu-item>
-      </div>
-      <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
+       <md-menu-item v-if="!route1" @click="trash(cardObj)">delete note</md-menu-item>
     </md-menu-content>
+</md-menu>
 
-        <md-menu-content>
-            <div v-if="flag ==false" class="displaylabel">
-              <md-menu-item @click="addLabel">label note</md-menu-item>
-            </div>
-          </md-menu-content>
-     
-
-  </md-menu>
+<md-button  v-if="route1" class="md-icon-button" @click="restore(cardObj)">
+    <img src="../../assets/restore.svg" alt="" srcset="" />
+  </md-button>
   
 </div>

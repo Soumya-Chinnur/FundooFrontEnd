@@ -7,8 +7,9 @@ export default {
   },
   data() {
     return {
-      flag:true,
-      click:true,
+      // flag:true,
+      route:true,
+      route1:true,
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -35,15 +36,35 @@ export default {
   },
 
   computed: {},
-  mounted() {},
+  mounted() {
+   // console.log(this.$router.currentRoute.fullPath)
+    if (this.$router.currentRoute.fullPath === '/dashboard/archive'){
+      console.log(this.$router.currentRoute.fullPath)
+      this.route = true;
+    }
+    else{
+      console.log(this.$router.currentRoute.fullPath)
+      this.route = false;
+    }
+  },
+
+  if (this.$router.currentRoute.fullPath === '/dashboard/trash'){
+    console.log(this.$router.currentRoute.fullPath)
+    this.route1 = true;
+  }
+  else{
+    console.log(this.$router.currentRoute.fullPath)
+    this.route1 = false;
+  }
+}
   methods: {
-    label() {
-      this.flag = !this.flag;
+    // label() {
+    //   this.flag = !this.flag;
       
     // addLabel() {
     //   this.flag1 = !this.flag1;
     // },
-    },
+    // },
     archive(card) {
       var obj = {
         noteIdList: [card.id],
@@ -66,27 +87,28 @@ export default {
       });
     },
     trash(card) {
-      console.log("hhhhhhhhhhhhhhhhhhhhhhh");
+  
+      
       
       var obj = {
         noteIdList: [card.id],
         isDeleted: true
       };
       noteService.trash(obj).then(res => {
-        console.log("frg", res);
+        console.log("deleteeeeeeeeeeeeeeeeeeeeeeee", res);
         this.$emit("deleteCard", card);
       });
     },
-    // restore(card) {
-    // var obj1 = {
-    //     noteIdList: [card.id],
-    //     isDeleted: false
-    //   };
-    //   noteService.trash(obj).then(res => {
-    //     console.log("restoreeeeeeeeeeeee", res);
-    //     this.$emit("restorecard", card);
-    //   });
-    // },
+    restore(card) {
+    var obj1 = {
+        noteIdList: [card.id],
+        isDeleted: false
+      };
+      noteService.trash(obj1).then(res => {
+        console.log("restoreeeeeeeeeeeee", res);
+        this.$emit("restorecard", card);
+      });
+    },
     colorDisplay(color, card) {
       if (card == undefined) {
         this.$emit("changeColor", color);
