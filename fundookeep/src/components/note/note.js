@@ -1,12 +1,11 @@
 import { messageService } from "../services/noteService";
-
 import { dashboard } from "../services/userServices";
 import takeANote from "../takeANote";
 import displayNote from "../displayNote";
 export default {
   name: "note",
-  components: { takeANote, displayNote },
-  props: [],
+  components: { takeANote, displayNote },//They help you extend basic HTML elements to encapsulate reusable code.
+  props: [],//Props are how you pass data from a parent component down to a child component
   data() {
     return {
       messages: []
@@ -36,8 +35,6 @@ export default {
       }
     });
   },
-  computed: {},
-
   beforeDestroy() {
     // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();

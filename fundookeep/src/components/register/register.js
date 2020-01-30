@@ -4,7 +4,7 @@ import { register } from "../services/userServices";
 export default {
   //syntax for instantiating an object that has been defined
   name: "register",
-  components: {}, //logical entities of code that contain functionality
+  components: {}, //They help you extend basic HTML elements to encapsulate reusable code.
 
   data() {
     return {
