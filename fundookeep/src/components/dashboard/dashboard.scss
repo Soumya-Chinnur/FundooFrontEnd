@@ -145,17 +145,38 @@ hr {
   width: 22%;
   justify-content: space-evenly;
 }
-.iconAndLabelContainer{
-display: flex;
-margin: 2%;
-/* min-height: 24px; */
-align-items: center;
-padding: 6px 12px;
-justify-content: space-between;
+.iconAndLabelContainer {
+  display: flex;
+  margin: 2%;
+  /* min-height: 24px; */
+  align-items: center;
+  padding: 6px 12px;
+  justify-content: space-between;
 }
-.labelContainer{
+.labelContainer {
   margin-right: 60%;
   font-weight: 600;
   font-size: 13px;
   opacity: 0.81;
+}
+.md-dialog {
+  width: 22% !important;
+  height: 350px;
+}
+.editContainer{
+  font-size: initial;
+    padding: 3%;
+    margin: 3%
+}
+input {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 80%;
+  overflow: hidden;
+  margin-left: 4%;
+}
+.editlineContainer{
+  padding: 4%;
 }

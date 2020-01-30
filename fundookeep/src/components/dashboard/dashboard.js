@@ -11,7 +11,9 @@ export default {
   data() {
     return {
       labels: [],
-      flag: false
+      flag: false,
+
+      showDialog: false
     };
   },
   computed: {
@@ -35,6 +37,12 @@ export default {
   methods: {
     showNavigation() {
       this.flag = !this.flag;
+    },
+    openDialog() {
+
+      
+      this.showDialog = true;
+
     }
   }
 };
