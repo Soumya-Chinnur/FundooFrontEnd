@@ -1,13 +1,12 @@
 import noteService from "../services/noteService";
-export default {
+export default { //syntax for instantiating object that has already been defined
   name: "icons",
   components: {},
-  props: {
+  props: { //Props are how you pass data from a parent component down to a child component
     cardObj: Object
   },
   data() {
     return {
-      // flag:true,
       route: true,
       route1: true,
       route2: true,
@@ -38,8 +37,7 @@ export default {
   },
 
   computed: {},
-  mounted() {
-    // console.log(this.$router.currentRoute.fullPath)
+  mounted() { //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     if (this.$router.currentRoute.fullPath === "/dashboard/archive") {
       console.log(this.$router.currentRoute.fullPath);
       this.route = true;
@@ -56,13 +54,7 @@ export default {
       this.route1 = false;
       this.route2 = false
     }
-    // if (this.$router.currentRoute.fullPath === "/dashboard/deleteforever") {
-    //   console.log(this.$router.currentRoute.fullPath);
-    //   this.route2 = true;
-    // } else {
-    //   console.log(this.$router.currentRoute.fullPath);
-    //   this.route2 = false;
-    // }
+  
   },
   methods: {
     addLabel(){
