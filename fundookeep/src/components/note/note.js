@@ -39,7 +39,7 @@ export default {
     // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();
   },
-  mounted() {
+  mounted() { ////mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     dashboard()
       .then(res => {
         this.messages = [];

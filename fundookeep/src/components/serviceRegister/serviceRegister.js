@@ -1,8 +1,6 @@
 import { userService } from "../services/userServices";
 export default {
   name: "service-register",
-  components: {},
-  props: [],
   data() {
     return {
       cards: {
@@ -13,8 +11,7 @@ export default {
       hover: false
     };
   },
-  computed: {},
-  mounted() {
+  mounted() { //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     this.serviceRegister();
   },
   methods: {
