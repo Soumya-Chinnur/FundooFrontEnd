@@ -12,7 +12,6 @@ export default {
       }
     };
   },
-
   methods: {
     auth() {
       var obj = {
@@ -20,11 +19,9 @@ export default {
       };
       forgotPassword(obj)
         .then(res => {
-          // eslint-disable-next-line no-console
           console.log(res);
         })
         .catch(err => {
-          // eslint-disable-next-line no-console
           console.log(err);
         });
       // your code to login user
