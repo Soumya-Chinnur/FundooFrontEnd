@@ -10,7 +10,6 @@ export default {
     return {
       labels: [],
       flag: false,
-
       showDialog: false
     };
   },
