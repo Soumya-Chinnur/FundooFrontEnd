@@ -1,19 +1,16 @@
 import noteService from "../services/noteService";
 import displayNote from "../displayNote";
-
 export default {
+    //standard syntax for instantiating an object that has been defined.
   name: "archieve",
-  components: { displayNote },
+  components: { displayNote }, //logical entities of code that contain functionality
   props: [],
   data() {
     return {
       archiveCards: [],
-      // more: "archive"
-      
-    };
+      };
   },
-  computed: {},
-  mounted() {
+  mounted() {//mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     noteService.getNotes().then(res => {
       console.log("fsd", res);
 
@@ -24,5 +21,4 @@ export default {
       }
     });
   },
-  methods: {}
 };

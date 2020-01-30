@@ -3,7 +3,7 @@ import icons from "../icons";
 export default {
   //standard syntax for instantiating an object that has been defined.
   name: "display-note",
-  components: { icons },
+  components: { icons }, //logical entities of code that contain functionality
   props: {
     cards: {
       type: Array
