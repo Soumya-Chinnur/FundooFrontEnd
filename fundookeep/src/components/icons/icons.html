@@ -1,9 +1,15 @@
 <div class="icons">
   <div v-if="!route1">
     <div v-if="!route2" class="iconContainer">
-      <md-button class="md-icon-button">
-        <img src="../../assets/bell.svg" alt="" srcset="" />
-      </md-button>
+      <md-menu md-direction="bottom-start" class="remainderContainer">
+        <md-button class="md-icon-button" md-menu-trigger>
+          <img src="../../assets/bell.svg" alt="" srcset="" />
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>My Item 1</md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
       <md-button class="md-icon-button">
         <img src="../../assets/collaborator.svg" alt="" srcset="" />
       </md-button>
@@ -48,9 +54,17 @@
           <img src="../../assets/menu.svg" alt="" srcset="" />
         </md-button>
 
-        <md-menu-content>
+        <md-menu-content v-if="pin==true" @click="addLabel">
+          <md-menu-item>Add label</md-menu-item>
+
           <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
         </md-menu-content>
+
+        <md-menu md-size="small">
+          <md-menu-content v-if="pin==false" @click="addLabel">
+            <md-menu-item>Change label</md-menu-item>
+          </md-menu-content>
+        </md-menu>
       </md-menu>
     </div>
   </div>

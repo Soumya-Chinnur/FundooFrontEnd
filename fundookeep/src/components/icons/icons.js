@@ -11,6 +11,7 @@ export default {
       route: true,
       route1: true,
       route2: true,
+      pin: true,
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -64,7 +65,9 @@ export default {
     // }
   },
   methods: {
-    
+    addLabel(){
+      this.pin =! this.pin;
+    },
     archive(card) {
       var obj = {
         noteIdList: [card.id],
