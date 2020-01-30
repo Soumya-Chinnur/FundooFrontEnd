@@ -4,13 +4,12 @@ import icons from "../icons";
 import { messageService } from "../services/noteService";
 export default {
   name: "take-a-note",
-  components: { icons },
-  props: [],
+  components: { icons },//They help you extend basic HTML elements to encapsulate reusable code.
+  props: [], //used to pass data from parent to child component
   data() {
     return {
       flag: true,
       pin: true,
-
       addNote: {
         title: "",
         description: ""
@@ -22,8 +21,6 @@ export default {
       background: "#FFFF"
     };
   },
-  computed: {},
-  mounted() {},
   methods: {
     reversecard() {
       console.log("heloooo");
