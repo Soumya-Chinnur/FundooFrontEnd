@@ -1,11 +1,9 @@
 import { register } from "../services/userServices";
-
 // import register from "../services/userServices";
 export default {
   //syntax for instantiating an object that has been defined
   name: "register",
   components: {}, //They help you extend basic HTML elements to encapsulate reusable code.
-
   data() {
     return {
       loading: false,
@@ -17,7 +15,6 @@ export default {
       }
     };
   },
-
   methods: {
     auth() {
       // eslint-disable-next-line no-console
@@ -39,11 +36,6 @@ export default {
         // eslint-disable-next-line no-console
         console.log(err);
       });
-
-      // this.loading = true;
-      // setTimeout(() => {
-      //   this.loading = false;
-      // }, 5000);
     }
   }
 };
