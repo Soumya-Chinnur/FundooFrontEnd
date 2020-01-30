@@ -1,6 +1,7 @@
 import icons from "../icons";
 
 export default {
+  //standard syntax for instantiating an object that has been defined.
   name: "display-note",
   components: { icons },
   props: {
@@ -19,15 +20,12 @@ export default {
       description: ""
     };
   },
-  computed: {},
-  mounted() {},
   methods: {
     filledpin() {
       this.pin = !this.pin;
     },
     save() {
       console.log("in saveeee", this.dilogdata);
-     
 
       this.showDialog = false;
     },
@@ -37,13 +35,10 @@ export default {
       this.cards.splice(ind, 1);
     },
     openDialog(card) {
-      this.dilogdata = card,
-       console.log("editttttttt", this.dilogdata);
+      (this.dilogdata = card), console.log("editttttttt", this.dilogdata);
       this.showDialog = true;
       let editNote = {
         id: this.dilogdata.id
-        // title: this.addNote.title,
-        // description: this.addNote.description
       };
       console.log("hhhhhhhhhhjjjk", editNote);
     },

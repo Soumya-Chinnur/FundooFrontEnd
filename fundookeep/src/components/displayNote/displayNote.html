@@ -1,3 +1,8 @@
+<!-- /*******************************************************************************************
+*@purpose: Display Component
+*@author: Soumya Chinnur
+*@Date: 31-12-2019
+******************************************************************************************/ -->
 <section class="display-note">
   <div class="flex">
     <md-card
@@ -24,8 +29,7 @@
         {{card.description}}
       </div>
       <div>
-        <icons :cardObj="card" >
-        </icons>
+        <icons :cardObj="card"> </icons>
       </div>
     </md-card>
   </div>
@@ -60,16 +64,13 @@
         </div>
 
         <div class="subtitle">
-          <!-- <div class="subtitle">Take a note...</div> -->
           <input placeholder="Title" v-model="dilogdata.description" />
-
-          <!-- <textarea v-model="addNote.description" placeholder="enter optional message"></textarea> -->
         </div>
       </div>
 
       <div style="display:flex; justify-content:space-between;">
         <div>
-          <icons ></icons>
+          <icons></icons>
         </div>
         <div>
           <md-button class="button" v-model="Array" @click="save()"
