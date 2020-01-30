@@ -1,60 +1,68 @@
 <div class="icons">
-    <div v-if="!route1">
-  <md-button class="md-icon-button">
-    <img src="../../assets/bell.svg" alt="" srcset="" />
-  </md-button>
-  <md-button class="md-icon-button">
-    <img src="../../assets/collaborator.svg" alt="" srcset="" />
-  </md-button>
+  <div v-if="!route1">
+    <div v-if="!route2" class="iconContainer">
+      <md-button class="md-icon-button">
+        <img src="../../assets/bell.svg" alt="" srcset="" />
+      </md-button>
+      <md-button class="md-icon-button">
+        <img src="../../assets/collaborator.svg" alt="" srcset="" />
+      </md-button>
 
-  <md-menu>
-    <md-button class="md-icon-button" md-menu-trigger>
-      <img src="../../assets/color.svg" alt="" srcset="" />
+      <md-menu>
+        <md-button class="md-icon-button" md-menu-trigger>
+          <img src="../../assets/color.svg" alt="" srcset="" />
+        </md-button>
+
+        <md-menu-content>
+          <div class="displayColor" v-for="colors in colorArray">
+            <div v-for="color in colors">
+              <md-button
+                class="md-fab md-mini"
+                @click="colorDisplay(color.color,cardObj)"
+                v-bind:style="{ 'background-color': color.color }"
+              >
+              </md-button>
+            </div>
+          </div>
+        </md-menu-content>
+      </md-menu>
+
+      <md-button class="md-icon-button">
+        <img src="../../assets/image.svg" alt="" srcset="" />
+      </md-button>
+
+      <md-button v-if="!route" class="md-icon-button" @click="archive(cardObj)">
+        <img src="../../assets/archive.svg" alt="" srcset="" />
+      </md-button>
+
+      <md-button
+        v-if="route"
+        class="md-icon-button"
+        @click="unarchive(cardObj)"
+      >
+        <img src="../../assets/unarchive-24px.svg" alt="" srcset="" />
+      </md-button>
+
+      <md-menu md-size="small">
+        <md-button md-menu-trigger class="md-icon-button">
+          <img src="../../assets/menu.svg" alt="" srcset="" />
+        </md-button>
+
+        <md-menu-content>
+          <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </div>
+
+  <div v-if="route2">
+    <md-button class="md-icon-button" @click="deleteforever(cardObj)">
+      <img src="../../assets/deleteforever.svg" alt="" srcset="" />
     </md-button>
-
-    <md-menu-content>
-      <div class="displayColor" v-for="colors in colorArray">
-        <div v-for="color in colors">
-          <md-button
-            class="md-fab md-mini"
-            @click="colorDisplay(color.color,cardObj)"
-            v-bind:style="{ 'background-color': color.color }"
-          >
-          </md-button>
-        </div>
-      </div>
-    </md-menu-content>
-  </md-menu>
-
-  <md-button class="md-icon-button">
-    <img src="../../assets/image.svg" alt="" srcset="" />
-  </md-button>
-
- 
-  <md-button v-if="!route" class="md-icon-button"  @click="archive(cardObj)" >
-    <img src="../../assets/archive.svg" alt="" srcset="" />
-  </md-button>
-
-
-  <md-button v-if="route" class="md-icon-button" @click="unarchive(cardObj)"  >
-      <img src="../../assets/unarchive-24px.svg" alt="" srcset="" />
-    </md-button>
-
- 
-  <md-menu md-size="small">
-    <md-button md-menu-trigger class="md-icon-button">
-      <img src="../../assets/menu.svg" alt="" srcset="" />
-    </md-button>
-
-    <md-menu-content>
-       <md-menu-item  @click="trash(cardObj)">delete note</md-menu-item>
-    </md-menu-content>
-  </md-menu>
-</div>
-
+  </div>
   <div v-if="route1">
-   <md-button   class="md-icon-button" @click="restore(cardObj)">
-    <img src="../../assets/restore.svg" alt="" srcset="" />
-   </md-button>
- </div>
+    <md-button class="md-icon-button" @click="restore(cardObj)">
+      <img src="../../assets/restore.svg" alt="" srcset="" />
+    </md-button>
+  </div>
 </div>

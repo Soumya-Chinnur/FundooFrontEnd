@@ -11,5 +11,6 @@ export const apiConstant = {
  color: "/notes/changesColorNotes",
  updateNote: "/notes/updateNotes",
  getlabel: "/noteLabels/getNoteLabelList",
- userService: "/user/service"
+ userService: "/user/service",
+ deleteForever: "/notes/deleteForeverNotes"
 };

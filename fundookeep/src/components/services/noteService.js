@@ -49,6 +49,19 @@ export default {
       }
     );
   },
+   deleteforever(data) {
+  
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.deleteForever,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+  
   getNotes() {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +
