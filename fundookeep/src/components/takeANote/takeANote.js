@@ -38,7 +38,7 @@ export default {
       console.log("dwsa", obj);
       addNote(obj)
         .then(res => {
-          console.log("eeeeeeee", res);
+          console.log("addnoteeeeeeeeeeeeeee", res);
           messageService.sendMessage(
             "Message from Home Page Component to App Component!"
           );

@@ -97,7 +97,7 @@
           <hr />
           <div>
             <div>
-              <md-list-item id="note1-item">
+              <md-list-item id="note1-item" @click="archive()" v-bind:class="item === 'archive' ? 'bacclass':'bacclassss'" >
                 <img
                   src="../../assets/archiveOutline.svg"
                   alt=""
@@ -131,7 +131,7 @@
   <div>
     <md-dialog :md-active.sync="showDialog">
       <div class="editContainer">Edit labels</div>
-      <div class="editlineContainer">
+      <div class="eTakeditlineContainer">
         <img src="../../assets/crossmark.svg" alt="" srcser="" />
         <input placeholder="Create new labels" />
         <img src="../../assets/tikmark.svg" alt="" srcser="" />

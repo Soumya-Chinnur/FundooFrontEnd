@@ -10,13 +10,16 @@ export default {
     return {
       labels: [],
       flag: false,
-      showDialog: false
+      showDialog: false,
+      item: String,
+      img: true
     };
   },
-  mounted() { //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
+  mounted() {
+    //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     labelService.getLabelList().then(res => {
       this.labels = res.data.data.details;
-      console.log("", this.labels);
+      console.log("labelllllllll", this.labels);
     });
   },
   methods: {
@@ -25,6 +28,11 @@ export default {
     },
     openDialog() {
       this.showDialog = true;
+    },
+    archive() {
+      if (this.$router.currentRoute.fullPath === "/dashboard/archive") {
+        this.item = "archive";
+      }
     }
   }
 };

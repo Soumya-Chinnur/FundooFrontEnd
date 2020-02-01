@@ -12,7 +12,7 @@ export default {
   },
   mounted() {//mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     noteService.getNotes().then(res => {
-      console.log("fsd", res);
+      console.log("Archiveeeeeeeeeeee", res);
 
       for (let index = 0; index < res.data.data.data.length; index++) {
         if (res.data.data.data[index].isArchived) {

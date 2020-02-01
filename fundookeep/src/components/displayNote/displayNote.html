@@ -29,7 +29,7 @@
         {{card.description}}
       </div>
       <div>
-        <icons :cardObj="card"> </icons>
+        <icons @deleteCard="trash"  @restorecard="restore"  @deleteforvercard="deleteforever" :cardObj="card"> </icons>
       </div>
     </md-card>
   </div>

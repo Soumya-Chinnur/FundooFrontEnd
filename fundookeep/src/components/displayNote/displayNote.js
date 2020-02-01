@@ -43,6 +43,15 @@ export default {
       console.log("hhhhhhhhhhjjjk", editNote);
     },
     trash(e) {
+      console.log("eeeeeeeeeeeee", e);
+      let ind = this.cards.indexOf(e);
+      this.cards.splice(ind, 1);
+    },
+    restore(e) {
+      let ind = this.cards.indexOf(e);
+      this.cards.splice(ind, 1);
+    },
+    deleteforever(e) {
       let ind = this.cards.indexOf(e);
       this.cards.splice(ind, 1);
     },

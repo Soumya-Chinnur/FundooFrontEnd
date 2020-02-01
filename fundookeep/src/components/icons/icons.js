@@ -1,8 +1,10 @@
 import noteService from "../services/noteService";
-export default { //syntax for instantiating object that has already been defined
+export default {
+  //syntax for instantiating object that has already been defined
   name: "icons",
   components: {},
-  props: { //Props are how you pass data from a parent component down to a child component
+  props: {
+    //Props are how you pass data from a parent component down to a child component
     cardObj: Object
   },
   data() {
@@ -36,8 +38,11 @@ export default { //syntax for instantiating object that has already been defined
     };
   },
 
-  computed: {},
-  mounted() { //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
+  computed: {
+    
+  },
+  mounted() {
+    //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     if (this.$router.currentRoute.fullPath === "/dashboard/archive") {
       console.log(this.$router.currentRoute.fullPath);
       this.route = true;
@@ -52,13 +57,12 @@ export default { //syntax for instantiating object that has already been defined
     } else {
       console.log(this.$router.currentRoute.fullPath);
       this.route1 = false;
-      this.route2 = false
+      this.route2 = false;
     }
-  
   },
   methods: {
-    addLabel(){
-      this.pin =! this.pin;
+    addLabel() {
+      this.pin = !this.pin;
     },
     archive(card) {
       var obj = {
@@ -66,7 +70,7 @@ export default { //syntax for instantiating object that has already been defined
         isArchived: true
       };
       noteService.archive(obj).then(res => {
-        console.log("frd", res);
+        console.log("archiveeeeeeeee", res);
         this.$emit("archivedCard", card);
       });
     },
@@ -76,7 +80,7 @@ export default { //syntax for instantiating object that has already been defined
         isArchived: false
       };
       noteService.archive(obj1).then(res => {
-        console.log("unarchive", res);
+        console.log("unarchiveeeeeeee", res);
         this.$emit("unarchivedCard", card);
         this.click = !this.click;
       });
@@ -125,9 +129,11 @@ export default { //syntax for instantiating object that has already been defined
         color: color
       };
       noteService.color(obj).then(res => {
-        console.log("gou", res);
+        console.log("colorrrrrrrrrrrrrrr", res);
         //
       });
-    }
+    },
+   
+    
   }
 };
