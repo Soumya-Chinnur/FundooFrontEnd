@@ -27,6 +27,8 @@ export default {
           localStorage.setItem("token", res.data.id);
           // eslint-disable-next-line no-console
           console.log("asdfghjkk", res);
+          localStorage.setItem("email",res.data.email)
+          localStorage.setItem("firstName",res.data.firstName)
           this.$router.push("/dashboard");
         })
         .catch(err => {

@@ -15,7 +15,9 @@
         </div>
 
         <span class="md-title">Keep</span>
-
+        <!-- <md-autocomplete md-layout="box">
+          <label>search</label>
+        </md-autocomplete> -->
         <div class="md-toolbar-section-end">
           <div class="iconContainer">
             <div class="refreshContainer">
@@ -36,14 +38,25 @@
             </div>
           </div>
           <div>
-            <md-menu class="menuContainer" md-size="medium" md-align-trigger>
+            <md-menu class="menuContainer" md-size="huge" md-align-trigger>
               <md-avatar md-menu-trigger class="md-medium">
                 <img src="../../assets/dog.jpg" alt="People" />
               </md-avatar>
               <md-menu-content>
-                <div>soumya chinnur</div>
-                <md-menu-item>My Item 2</md-menu-item>
-                <md-menu-item>My Item 3</md-menu-item>
+                <md-avatar>
+                  <img src="../../assets/dog.jpg" alt="People" />
+                </md-avatar>
+                <div class="nameandgmailContainer">
+                  <div class="nameContainer">{{firstname}}</div>
+
+                  <div class="gmailidContainer">{{email}}</div>
+                </div>
+                <hr />
+                <div class="signoutButton">
+                  <md-button @click="logout" class="md-raised"
+                    >Signout</md-button
+                  >
+                </div>
               </md-menu-content>
             </md-menu>
           </div>
@@ -55,7 +68,11 @@
       <div v-if="flag" class="pass1">
         <md-list>
           <div>
-            <md-list-item id="notes-item">
+            <md-list-item
+              id="notes-item"
+              @click="note()"
+              v-bind:class="item === 'note' ? 'bacclass':'bacclassss'"
+            >
               <md-icon>lightbulb_outline</md-icon>
               <router-link to="/dashboard/note">
                 <span class="md-list-item-text">Notes</span>
@@ -64,7 +81,9 @@
 
             <md-list-item>
               <md-icon>notifications_none</md-icon>
+              <!-- <router-link to="/dashboard/reminder" class="links"> -->
               <span class="md-list-item-text">Reminder</span>
+              <!-- </router-link> -->
             </md-list-item>
           </div>
           <hr />
@@ -75,6 +94,7 @@
 
           <div class="iconAndLabelContainer" v-for="label in labels">
             <img src="../../assets/path.svg" alt="" />
+
             <div class="labelContainer">{{label.label}}</div>
           </div>
           <div id="note-item">
@@ -97,7 +117,11 @@
           <hr />
           <div>
             <div>
-              <md-list-item id="note1-item" @click="archive()" v-bind:class="item === 'archive' ? 'bacclass':'bacclassss'" >
+              <md-list-item
+                id="note1-item"
+                @click="archive()"
+                v-bind:class="item === 'archive' ? 'bacclass':'bacclassss'"
+              >
                 <img
                   src="../../assets/archiveOutline.svg"
                   alt=""
@@ -110,7 +134,11 @@
               </md-list-item>
             </div>
             <div>
-              <md-list-item id="note2-item">
+              <md-list-item
+                id="note2-item"
+                @click="trash()"
+                v-bind:class="item === 'trash' ? 'bacclass':'bacclassss'"
+              >
                 <md-icon>
                   <img src="../../assets/trash.svg" alt="" srcset="" />
                 </md-icon>

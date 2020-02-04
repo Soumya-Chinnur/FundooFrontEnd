@@ -189,3 +189,30 @@ input {
   background-color: white;
   border-radius: 0 25px 25px 0;
 }
+#note-item {
+  cursor: pointer;
+}
+// .menuContainer{
+//   border-radius: 3%;
+// }
+.nameContainer {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.gmailidContainer {
+  display: flex;
+  justify-content: center;
+}
+.nameandgmailContainer {
+  margin: 4%;
+  padding: 3%;
+}
+.signoutButton {
+  display: flex;
+  justify-content: center;
+}
+.md-menu-content-container {
+  border-radius: 8px !important;
+}

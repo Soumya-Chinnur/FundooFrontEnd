@@ -1,18 +1,28 @@
 import noteService from "../services/noteService";
+import labelService from "../services/labelService";
+//import { Datetime } from "vue-datetime";
+import datetime from "vuejs-datetimepicker";
+
 export default {
   //syntax for instantiating object that has already been defined
   name: "icons",
-  components: {},
-  props: {
+  components: {
+    datetime
+  },
+    props: {
     //Props are how you pass data from a parent component down to a child component
     cardObj: Object
   },
   data() {
+    // let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd';
+    // let now = new Date();
     return {
       route: true,
       route1: true,
       route2: true,
       pin: true,
+      items: [],
+      date: null,
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -38,10 +48,13 @@ export default {
     };
   },
 
-  computed: {
-    
-  },
+  computed: {},
   mounted() {
+    labelService.getLabelList().then(res => {
+      this.items = res.data.data.details;
+      console.log("labelllllllll", this.items);
+    });
+
     //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     if (this.$router.currentRoute.fullPath === "/dashboard/archive") {
       console.log(this.$router.currentRoute.fullPath);
@@ -132,8 +145,6 @@ export default {
         console.log("colorrrrrrrrrrrrrrr", res);
         //
       });
-    },
-   
-    
+    }
   }
 };

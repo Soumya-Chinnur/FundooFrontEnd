@@ -7,6 +7,8 @@ import archive from "../components/archieve";
 import dashboard from "../components/dashboard";
 import note from "../components/note";
 import trash from "../components/trash";
+import reminder from "../components/reminder";
+import label from "../components/label";
 import serviceRegister from "../components/serviceRegister";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
@@ -60,6 +62,14 @@ const routes = [
       {
         path: "trash",
         component: trash
+      },
+      {
+        path: "reminder",
+        component: reminder
+      },
+      {
+        path: "label",
+        component: label
       }
     ]
   },

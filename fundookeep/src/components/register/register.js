@@ -32,7 +32,7 @@ export default {
         // eslint-disable-next-line no-console
         console.log("hjkhbkjhjkhjkhk", res);
       });
-      this.$router.push("/login").catch(err => {
+      this.$router.push("/").catch(err => {
         // eslint-disable-next-line no-console
         console.log(err);
       });
