@@ -1,5 +1,6 @@
 import noteService from "../services/noteService";
 import labelService from "../services/labelService";
+import { reminder } from "../services/userServices";
 //import { Datetime } from "vue-datetime";
 import datetime from "vuejs-datetimepicker";
 
@@ -9,7 +10,7 @@ export default {
   components: {
     datetime
   },
-    props: {
+  props: {
     //Props are how you pass data from a parent component down to a child component
     cardObj: Object
   },
@@ -23,6 +24,10 @@ export default {
       pin: true,
       items: [],
       date: null,
+      country: null,
+      selectedDate: null,
+      dateObj: new Date(),
+
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -95,7 +100,6 @@ export default {
       noteService.archive(obj1).then(res => {
         console.log("unarchiveeeeeeee", res);
         this.$emit("unarchivedCard", card);
-        this.click = !this.click;
       });
     },
     trash(card) {
@@ -136,6 +140,7 @@ export default {
         this.colorsEdit(color, card);
       }
     },
+
     colorsEdit(color, card) {
       var obj = {
         noteIdList: [card.id],
@@ -143,6 +148,51 @@ export default {
       };
       noteService.color(obj).then(res => {
         console.log("colorrrrrrrrrrrrrrr", res);
+        //
+      });
+    },
+    latertoday(card) {
+      const rem = new Date(
+        this.dateObj.getFullYear(),
+        this.dateObj.getMonth(),
+        this.dateObj.getDate(),
+        20,
+        0,
+        0,
+        0
+      );
+      console.log(rem);
+
+      var obj = {
+        noteIdList: [card.id],
+        reminder: rem
+      };
+      console.log(obj, "kkkkkkkkkkkkkkkk");
+      reminder(obj).then(res => {
+        console.log("reminderrrrrrrrrrrrrrrrrrrrr", res);
+        //
+      });
+    },
+    nextweek(card) {
+      const nextWeek = new Date(
+        this.dateObj.getFullYear(),
+        this.dateObj.getMonth(),
+        this.dateObj.getDate() + 7,
+        8,
+        0,
+        0,
+        0
+      );
+
+      console.log(nextWeek);
+
+      var obj = {
+        noteIdList: [card.id],
+        reminder: nextWeek
+      };
+      console.log(obj, "jjjjjjjjj");
+      reminder(obj).then(res => {
+        console.log("111111111111111111", res);
         //
       });
     }

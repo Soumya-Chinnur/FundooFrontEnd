@@ -64,6 +64,19 @@ export function updateNote(data) {
     }
   );
 }
+export function reminder(data) {
+  console.log("weeeeeeeeeeeeeeeee",data)
+  
+  return axios.post(
+    "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.reminder,
+    data,
+    {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }
+  );
+}
 export function userService() {
   //   eslint-disable-next-line no-console
   return axios.get(

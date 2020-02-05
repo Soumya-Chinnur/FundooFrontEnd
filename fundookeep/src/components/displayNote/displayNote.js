@@ -35,6 +35,9 @@ export default {
       let ind = this.cards.indexOf(e);
       this.cards.splice(ind, 1);
     },
+    unarchive(e){
+      this.archive(e);
+    },
     openDialog(card) {
       (this.dilogdata = card), console.log("editttttttt", this.dilogdata);
       this.showDialog = true;
@@ -63,5 +66,6 @@ export default {
     filledpins() {
       this.pins = !this.pins;
     }
+    
   }
 };

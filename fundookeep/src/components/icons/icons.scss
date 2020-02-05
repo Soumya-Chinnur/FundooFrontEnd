@@ -45,7 +45,11 @@ input {
   flex: 1;
   overflow: initial !important;
 }
-.md-menu-content.md-menu-content-huge {
-  min-width: 260px;
-  min-height: 320px;
+// .md-menu-content.md-menu-content-huge {
+//   min-width: 260px;
+//   min-height: 320px;
+// }
+.dateandtime{
+  display: flex;
+  margin-left: 5%;
 }

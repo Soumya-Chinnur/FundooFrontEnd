@@ -23,11 +23,39 @@
               <div class="header">Select date and time</div>
             </div>
             <md-divider />
-            <div>
-                <datetime  width="280px" v-model="date"></datetime>
+            <div class="md-layout-item">
+              <md-field>
+                <md-select
+                  v-model="country"
+                  name="country"
+                  id="country"
+                  placeholder="Country"
+                  v-on:click.stop
+                >
+                  <md-option>Reminder:</md-option>
+                  <div style="display:flex">
+                      <div class="latertoday" @click ="latertoday(cardObj)">Later Today
+                          <md-option value="option0" @click="time('08:00')">8:00 AM</md-option>
+                      </div>
+                    </div>
+
+                    <div style="display:flex">
+                        <div class="nextweek" @click ="nextweek(cardObj)">Next Week
+                            <md-option value="option1" @click="time('13:00')">1:00 PM</md-option>
+                  >
+                  </div>
+                  </div>
+                    <md-datepicker v-model="selectedDate">
+                      <label>Select date</label>
+                    </md-datepicker>
+                  </md-option>
+                </md-select>
+              </md-field>
+            </div>
+            <!-- <div>
 
               
-            </div>
+            </div> -->
           </md-menu-content>
         </md-menu>
 

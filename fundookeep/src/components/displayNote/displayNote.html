@@ -29,7 +29,21 @@
         {{card.description}}
       </div>
       <div>
-        <icons @deleteCard="trash"  @restorecard="restore"  @deleteforvercard="deleteforever" :cardObj="card"> </icons>
+          <md-chip  md-deletable @click="delete">
+
+            {{ card.reminder |moment("ddd,DD,HH,A") }}
+          </md-chip>
+        </div>
+      <div>
+        <icons
+          @deleteCard="trash"
+          @archivedCard="archive"
+          @restorecard="restore"
+          @unarchivedCard="unarchive"
+          @deleteforvercard="deleteforever"
+          :cardObj="card"
+        >
+        </icons>
       </div>
     </md-card>
   </div>
