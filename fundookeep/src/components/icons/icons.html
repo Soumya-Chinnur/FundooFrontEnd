@@ -18,10 +18,7 @@
             <img src="../../assets/bell.svg" alt="" srcset="" />
           </md-button>
           <md-menu-content>
-            <div class="reminderContainer">
-              <img src="../../assets/backarrow.svg" alt="" srcset="" />
-              <div class="header">Select date and time</div>
-            </div>
+           
             <md-divider />
             <div class="md-layout-item">
               <md-field>
@@ -29,28 +26,30 @@
                   v-model="country"
                   name="country"
                   id="country"
-                  placeholder="Country"
+                  placeholder="Reminder"
                   v-on:click.stop
-                >
-                  <md-option>Reminder:</md-option>
-                  <div style="display:flex">
+                ><div>
                       <div class="latertoday" @click ="latertoday(cardObj)">Later Today
                           <md-option value="option0" @click="time('08:00')">8:00 AM</md-option>
-                      </div>
+                      </div class="latertoday">
                     </div>
 
-                    <div style="display:flex">
+                    <div>
                         <div class="nextweek" @click ="nextweek(cardObj)">Next Week
                             <md-option value="option1" @click="time('13:00')">1:00 PM</md-option>
-                  >
                   </div>
-                  </div>
-                    <md-datepicker v-model="selectedDate">
-                      <label>Select date</label>
-                    </md-datepicker>
-                  </md-option>
+                </div>
+                 
+                  
                 </md-select>
               </md-field>
+              <div class="reminderContainer">
+                <img src="../../assets/backarrow.svg" alt="" srcset="" />
+                <div class="header">Select date and time</div>
+
+              </div>
+              <datetime format="MM/DD/YYYY" width="300px" v-model="val"></datetime>
+
             </div>
             <!-- <div>
 
@@ -123,8 +122,12 @@
                     <input placeholder="Enter label name" v-on:click.stop />
                     <img src="../../assets/searchicon.svg" alt="" srcset="" />
                   </div>
-                  <div v-for="item in items" class="checkbox">
-                    <md-checkbox>{{item.label}}</md-checkbox>
+                  <div v-for="item in items" class="checkbox" >
+                    
+                    <div @click="ischeckAll!=isCheckAll">
+
+                      <md-checkbox v-model="isCheckAll">{{item.label}}</md-checkbox>
+                    </div>
                   </div>
                 </md-menu-content>
               </md-menu>

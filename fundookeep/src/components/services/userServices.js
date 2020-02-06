@@ -88,5 +88,16 @@ export function userService() {
     }
   );
 }
+export function removeReminder(data) {
+  //   eslint-disable-next-line no-console
+  return axios.post(
+    "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.removeReminder,data,
+    {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }
+  );
+}
 
 

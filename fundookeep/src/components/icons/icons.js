@@ -2,6 +2,8 @@ import noteService from "../services/noteService";
 import labelService from "../services/labelService";
 import { reminder } from "../services/userServices";
 //import { Datetime } from "vue-datetime";
+// import datetime from "vuejs-datetimepicker";
+// import Datepicker from 'vuejs-datepicker'
 import datetime from "vuejs-datetimepicker";
 
 export default {
@@ -25,9 +27,9 @@ export default {
       items: [],
       date: null,
       country: null,
-      selectedDate: null,
+      val: null,
       dateObj: new Date(),
-
+      isCheckAll: false,
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -57,23 +59,23 @@ export default {
   mounted() {
     labelService.getLabelList().then(res => {
       this.items = res.data.data.details;
-      console.log("labelllllllll", this.items);
+      // console.log("labelllllllll", this.items);
     });
 
     //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     if (this.$router.currentRoute.fullPath === "/dashboard/archive") {
-      console.log(this.$router.currentRoute.fullPath);
+      // console.log(this.$router.currentRoute.fullPath);
       this.route = true;
     } else {
-      console.log(this.$router.currentRoute.fullPath);
+      // console.log(this.$router.currentRoute.fullPath);
       this.route = false;
     }
     if (this.$router.currentRoute.fullPath === "/dashboard/trash") {
-      console.log(this.$router.currentRoute.fullPath);
+      // console.log(this.$router.currentRoute.fullPath);
       this.route1 = true;
       this.route2 = true;
     } else {
-      console.log(this.$router.currentRoute.fullPath);
+      // console.log(this.$router.currentRoute.fullPath);
       this.route1 = false;
       this.route2 = false;
     }
@@ -190,7 +192,7 @@ export default {
         noteIdList: [card.id],
         reminder: nextWeek
       };
-      console.log(obj, "jjjjjjjjj");
+      // console.log(obj, "jjjjjjjjj");
       reminder(obj).then(res => {
         console.log("111111111111111111", res);
         //

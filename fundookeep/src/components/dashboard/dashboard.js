@@ -15,7 +15,9 @@ export default {
       item1: String,
       img: true,
       email: String,
-      firstname: String
+      firstname: String,
+      selectedEmployee: null,
+      display: false
     };
   },
   mounted() {
@@ -62,6 +64,10 @@ export default {
     logout() {
       localStorage.clear();
       this.$router.push("/");
+    },
+    listView(){
+      this.display = !this.display;
+
     }
   }
 };

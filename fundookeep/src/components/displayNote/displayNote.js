@@ -1,6 +1,6 @@
-
 import icons from "../icons";
-
+import { messageService } from "../services/noteService";
+import { removeReminder } from "../services/userServices";
 export default {
   //standard syntax for instantiating an object that has been defined.
   name: "display-note",
@@ -35,7 +35,7 @@ export default {
       let ind = this.cards.indexOf(e);
       this.cards.splice(ind, 1);
     },
-    unarchive(e){
+    unarchive(e) {
       this.archive(e);
     },
     openDialog(card) {
@@ -65,7 +65,21 @@ export default {
     },
     filledpins() {
       this.pins = !this.pins;
+    },
+    deleteChip(card) {
+      console.log("ffffffffffff", card);
+      var obj = {
+        noteIdList: [card.id],
+        reminder: [""]
+      };
+      console.log(obj, "rrrrrrrrrrrrrrrrrrrrrr");
+      removeReminder(obj).then(res => {
+        console.log("reminderrrrrrrrr", res);
+        this.$emit("reminderCard", card);
+        messageService.sendMessage(
+          "Message from Home Page Component to App Component!"
+        );
+      });
     }
-    
   }
 };

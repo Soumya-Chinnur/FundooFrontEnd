@@ -47,7 +47,7 @@ export default {
           console.log(err);
         });
 
-      updateNote(obj)
+        updateNote(obj)
         .then(res => {
           console.log("sou", res);
         })

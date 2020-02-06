@@ -14,6 +14,8 @@ export default {
   created() {
     // subscribe to home component messages
     this.subscription = messageService.getMessage().subscribe(message => {
+      console.log("dddddddd");
+      
       if (message) {
         dashboard()
           .then(res => {
@@ -43,6 +45,8 @@ export default {
     dashboard()
       .then(res => {
         this.messages = [];
+        console.log(res,"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+        
         for (let index = 0; index < res.data.data.data.length; index++) {
           if (!res.data.data.data[index].isArchived && !res.data.data.data[index].isDeleted) {
             this.messages.push(res.data.data.data[index]);
