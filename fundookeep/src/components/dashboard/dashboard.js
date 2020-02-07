@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import labelService from "../services/labelService";
+import { dashboard } from "../services/userServices";
 Vue.use(VueRouter);
 
 export default {
@@ -17,7 +18,11 @@ export default {
       email: String,
       firstname: String,
       selectedEmployee: null,
-      display: false
+      display: false,
+      // searchs: [],
+      // searching: "",
+      // search: "",
+      // title: ""
     };
   },
   mounted() {
@@ -28,6 +33,15 @@ export default {
       this.labels = res.data.data.details;
       console.log("labelllllllll", this.labels);
     });
+    dashboard()
+      .then(res => {
+        (this.search = []), console.log("uuuuuuuuuu", res);
+        this.searchs.push(res.data.data.data);
+      })
+      .catch(err => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      });
   },
   methods: {
     showNavigation() {
@@ -65,9 +79,15 @@ export default {
       localStorage.clear();
       this.$router.push("/");
     },
-    listView(){
+    listView() {
       this.display = !this.display;
-
     }
-  }
+  },
+  // computed: {
+  //   filterBlogs: function() {
+  //     return this.searchs.filter(search => {
+  //       return search.title.includes(this.searching);
+  //     });
+  //   }
+  // }
 };

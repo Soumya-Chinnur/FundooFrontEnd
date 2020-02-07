@@ -1,7 +1,5 @@
-@font-face {
-  font-family: googlefonts;
-  src: url("../../assets/GoogleSans-Regular.ttf");
-}
+@import "../../styles/mixins";
+@import "../../styles/variables";
 .dashboard {
   .page-container {
     overflow: hidden;
@@ -19,9 +17,9 @@
     font-size: 20px;
   }
   .label {
-    display: flex;
-    justify-content: space-around;
-    font-family: "googlefonts", arial, sans-serif;
+    @include display(flex) ;
+    @include justi(space-around) ;
+       font-family:  $roboto-slab;
   }
   .md-ripple {
     margin: -3px;
@@ -32,7 +30,7 @@
   .md-toolbar.md-theme-default.md-primary {
     background-color: white;
     color: black;
-    display: flex;
+    @include display(flex) ;
 
     color: rgb(60, 60, 60);
   }
@@ -76,7 +74,7 @@
     padding-left: 2%;
     margin-left: 3%;
     padding: 5%;
-    font-family: "googlefonts", arial, sans-serif;
+    font-family:  $roboto-slab;
   }
 }
 hr {
@@ -88,7 +86,7 @@ hr {
 }
 .pass {
   width: 100%;
-  display: flex;
+  @include display(flex) ;
   height: 100vh;
 }
 .pass1 {
@@ -105,27 +103,27 @@ hr {
   margin-left: 12px;
 }
 .md-list-item-text {
-  font-family: "googlefonts", arial, sans-serif;
+  font-family:  $roboto-slab;
   font-size: 15px;
 }
 .labelContainer {
-  font-family: "googlefonts", arial, sans-serif;
+  font-family:  $roboto-slab;
   font-size: 12px;
 }
 
 #notes-item {
-  display: inline-block;
+  @include display(inline-block) ;
 }
 #note-item {
-  display: inline-block;
+  @include display(inline-block) ;
   width: 61%;
 }
 #note1-item {
-  display: inline-block;
+  @include display(inline-block) ;
   width: 54%;
 }
 #note2-item {
-  display: inline-block;
+  @include display(inline-block) ;
   width: 40%;
 }
 
@@ -141,17 +139,17 @@ hr {
 }
 
 .iconContainer {
-  display: flex;
+  @include display(flex) ;
   width: 22%;
-  justify-content: space-evenly;
+  @include justi(space-evenly) ;
 }
 .iconAndLabelContainer {
-  display: flex;
+  @include display(flex) ;
   margin: 2%;
   /* min-height: 24px; */
   align-items: center;
   padding: 6px 12px;
-  justify-content: space-between;
+  @include justi(space-between) ;
 }
 .labelContainer {
   margin-right: 60%;
@@ -168,18 +166,33 @@ hr {
   padding: 3%;
   margin: 3%;
 }
+.search {
+  width: 600px;
+  height: 43px;
+  border: 1px solid lightgrey;
+    padding: 4px;
+    border-radius: 6px;
+  // border-color: black;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+  0 2px 6px 2px rgba(60, 64, 67, 0.149);
+  padding: 9px;
+  font-size: 16px;
+}
+.searchbarContainer {
+  margin-left: 10%;
+}
 input {
   border: none;
   background-color: transparent;
   resize: none;
   outline: none;
-  width: 80%;
+  width: 60%;
   overflow: hidden;
-  margin-left: 4%;
+  // margin-left: 4%;
 }
-.editlineContainer {
-  padding: 4%;
-}
+// .editlineContainer {
+//   padding: 4%;
+// }
 .bacclass {
   background-color: #feefc3;
   border-radius: 0 25px 25px 0;
@@ -196,23 +209,39 @@ input {
 //   border-radius: 3%;
 // }
 .nameContainer {
-  display: flex;
-  justify-content: center;
+  @include display(flex) ;
+  @include justi(center) ;
   font-size: 16px;
   font-weight: 600;
 }
 .gmailidContainer {
-  display: flex;
-  justify-content: center;
+  @include display(flex) ;
+  @include justi(center) ;
 }
 .nameandgmailContainer {
   margin: 4%;
   padding: 3%;
 }
 .signoutButton {
-  display: flex;
-  justify-content: center;
+  @include display(flex) ;
+  @include justi(center) ;
 }
 .md-menu-content-container {
   border-radius: 8px !important;
+}
+.editLine{
+  @include display(flex) ;
+  @include justi(space-around) ;
+}
+.labelDisplay{
+  @include display(flex) ;
+    padding: 6px;
+    @include justi(space-between) ;
+    margin: 9px;
+}
+.searchIcon{
+  position: absolute;
+    transform: translateY(-10px);
+    right: 312px;
+    top: 50%;
 }

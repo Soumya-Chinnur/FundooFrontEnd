@@ -36,28 +36,7 @@ $goog-fonts: "googlefonts", arial, sans-serif;
     margin: 3%;
     font-family: $goog-fonts;
   }
-  .titleContainer {
-    font-family: $goog-fonts;
-    margin: 2%;
-  }
-  .title {
-    letter-spacing: 0.00625em;
-    font-family: $goog-fonts;
-    font-size: 1rem;
-    font-weight: 550;
-    line-height: 1.5rem;
-    padding: 10px;
-    opacity: 0.5;
-  }
-  .subtitle {
-    letter-spacing: 0.01428571em;
-    font-family: $goog-fonts;
-    font-size: 0.875rem;
-    font-weight: 550;
-    line-height: 1.25rem;
-    padding: 10px;
-    opacity: 0.5;
-  }
+
   .alert {
     padding: 4%;
     margin: 0 8px;
@@ -73,14 +52,7 @@ $goog-fonts: "googlefonts", arial, sans-serif;
     position: relative;
     bottom: 2px;
   }
-  input {
-    border: none;
-    background-color: transparent;
-    resize: none;
-    outline: none;
-    width: 80%;
-    overflow: hidden;
-  }
+
   textarea {
     border: none;
     background-color: transparent;
@@ -92,12 +64,45 @@ $goog-fonts: "googlefonts", arial, sans-serif;
   .originalcard {
     height: 50px;
   }
-  .md-dialog {
-    border-radius: 6px;
-    width: 500px !important;
-    height: 150px;
-  }
+
   .button {
     text-transform: none;
   }
+}
+.md-dialog {
+  border-radius: 6px;
+  width: 500px !important;
+  height: 150px;
+}
+input {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 80%;
+  overflow: hidden;
+}
+.titleContainer {
+  font-family: $goog-fonts;
+  margin: 2%;
+}
+.subtitle {
+  letter-spacing: 0.01428571em;
+  font-family: $goog-fonts;
+  font-size: 0.875rem;
+  font-weight: 550;
+  line-height: 1.25rem;
+  padding: 10px;
+  opacity: 0.5;
+}
+.title {
+  letter-spacing: 0.00625em;
+  font-family: $goog-fonts;
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.5rem;
+  padding: 10px;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
 }
