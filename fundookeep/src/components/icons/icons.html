@@ -18,8 +18,7 @@
             <img src="../../assets/bell.svg" alt="" srcset="" />
           </md-button>
           <md-menu-content>
-           
-            <md-divider />
+           <md-divider />
             <div class="md-layout-item">
               <md-field>
                 <md-select
@@ -29,35 +28,25 @@
                   placeholder="Reminder"
                   v-on:click.stop
                 ><div>
-                      <div class="latertoday" @click ="latertoday(cardObj)">Later Today
-                          <md-option value="option0" @click="time('08:00')">8:00 AM</md-option>
-                      </div class="latertoday">
+                  <div class="latertoday" @click ="latertoday(cardObj)">Later Today
+                       <md-option value="option0" @click="time('08:00')">8:00 AM</md-option>
+                  </div class="latertoday">
                     </div>
-
-                    <div>
-                        <div class="nextweek" @click ="nextweek(cardObj)">Next Week
-                            <md-option value="option1" @click="time('13:00')">1:00 PM</md-option>
-                  </div>
-                </div>
-                 
-                  
+                   <div>
+                     <div class="nextweek" @click ="nextweek(cardObj)">Next Week
+                       <md-option value="option1" @click="time('13:00')">1:00 PM</md-option>
+                     </div>
+                   </div>
                 </md-select>
-              </md-field>
+              </md-field> 
               <div class="reminderContainer">
                 <img src="../../assets/backarrow.svg" alt="" srcset="" />
                 <div class="header">Select date and time</div>
-
               </div>
               <datetime format="MM/DD/YYYY" width="300px" v-model="val"></datetime>
-
             </div>
-            <!-- <div>
-
-              
-            </div> -->
-          </md-menu-content>
+          `</md-menu-content>
         </md-menu>
-
         <md-button class="md-icon-button">
           <img src="../../assets/collaborator.svg" alt="" srcset="" />
         </md-button>
@@ -90,7 +79,7 @@
           class="md-icon-button"
           @click="archive(cardObj)"
         >
-          <img src="../../assets/archive.svg" alt="" srcset="" />
+        <img src="../../assets/archive.svg" alt="" srcset="" />
         </md-button>
 
         <md-button
@@ -123,10 +112,8 @@
                     <img src="../../assets/searchicon.svg" alt="" srcset="" />
                   </div>
                   <div v-for="item in items" class="checkbox" >
-                    
                     <div @click="ischeckAll!=isCheckAll">
-
-                      <md-checkbox v-model="isCheckAll">{{item.label}}</md-checkbox>
+                        <md-checkbox v-model="isCheckAll">{{item.label}}</md-checkbox>
                     </div>
                   </div>
                 </md-menu-content>
