@@ -86,8 +86,7 @@ export default {
 
     listView() {
       this.Liston = !this.Liston;
-      EventBus.$emit("listoff",this.Liston)
-      
+      EventBus.$emit("listoff", this.Liston);
     }
   },
   computed: {

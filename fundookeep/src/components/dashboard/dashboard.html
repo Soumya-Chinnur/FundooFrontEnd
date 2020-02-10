@@ -34,17 +34,17 @@
                 <img src="../../assets/refresh.svg" alt="People" />
               </md-avatar>
             </div>
-            <div  @click="listView()">
-            <div   v-if="Liston==true">
-              <md-avatar class="md-small" >
-                <img src="../../assets/toolbarIcon.svg" alt="People" />
-              </md-avatar>
-            </div>
-            <div v-if="Liston==false">
-              <md-avatar class="md-small" >
-                <img src="../../assets/listview.svg" alt="People" />
-              </md-avatar>
-            </div>
+            <div @click="listView()">
+              <div v-if="Liston==true">
+                <md-avatar class="md-small">
+                  <img src="../../assets/toolbarIcon.svg" alt="People" />
+                </md-avatar>
+              </div>
+              <div v-if="Liston==false">
+                <md-avatar class="md-small">
+                  <img src="../../assets/listview.svg" alt="People" />
+                </md-avatar>
+              </div>
             </div>
             <div>
               <md-avatar class="md-small">
