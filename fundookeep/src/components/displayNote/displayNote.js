@@ -1,6 +1,7 @@
 import icons from "../icons";
 import { messageService } from "../services/noteService";
 import { removeReminder } from "../services/userServices";
+import { EventBus } from "../../main";
 export default {
   //standard syntax for instantiating an object that has been defined.
   name: "display-note",
@@ -18,8 +19,16 @@ export default {
       showDialog: false,
       dilogdata: Object,
       title: "",
-      description: ""
+      description: "",
+      Liston: ""
     };
+  },
+  mounted() {
+    console.log("dddddddddddddd");
+    EventBus.$on("listoff", Liston => {
+      console.log("777777", Liston);
+      this.Liston = Liston;
+    });
   },
   methods: {
     filledpin() {
@@ -65,6 +74,9 @@ export default {
     },
     filledpins() {
       this.pins = !this.pins;
+    },
+    grid() {
+      this.Liston = !this.Liston;
     },
     deleteChip(card) {
       console.log("ffffffffffff", card);

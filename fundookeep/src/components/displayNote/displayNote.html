@@ -6,8 +6,61 @@
 <section class="display-note">
   <div class="flex">
     <md-card
+      v-if="Liston==false"
+      @click="grid"
       v-for="card in cards"
       class="card"
+      v-bind:style="{ 'background-color': card.color }"
+    >
+      <div class="titleAndPincontainer">
+        <div class="titleContainer" @click="openDialog(card) ">
+          {{card.title}}
+        </div>
+        <div class="originalpin" v-if="pin== true">
+          <md-button class="md-icon-button" @click="filledpin">
+            <img src="../../assets/pin.svg" alt="" srcset="" />
+          </md-button>
+        </div>
+        <div v-if="pin== false" class="displaypin" @click="filledpin">
+          <md-button class="md-icon-button">
+            <img src="../../assets/filledpin.svg" alt="" srcset="" />
+          </md-button>
+        </div>
+      </div>
+      <div class="cardContainer">
+        {{card.description}}
+      </div>
+      <div v-for="note in card.reminder">
+        <md-chip
+          v-if="card.reminder.length>0"
+          md-deletable
+          @md-delete="deleteChip(card)"
+          md-placeholder="Add genre..."
+        >
+          {{note| moment("ddd,DD,HH,A") }}
+        </md-chip>
+      </div>
+      <div>
+        <icons
+          @deleteCard="trash"
+          @archivedCard="archive"
+          @restorecard="restore"
+          @unarchivedCard="unarchive"
+          @deleteforvercard="deleteforever"
+          @updateNote="updateNote"
+          @reminderCard="deleteChip"
+          :cardObj="card"
+        >
+        </icons>
+      </div>
+    </md-card>
+
+    <!---------------grid---------------------->
+    <md-card
+      @click="grid"
+      v-if="Liston==false"
+      v-for="card in cards"
+      class="card1"
       v-bind:style="{ 'background-color': card.color }"
     >
       <div class="titleAndPincontainer">

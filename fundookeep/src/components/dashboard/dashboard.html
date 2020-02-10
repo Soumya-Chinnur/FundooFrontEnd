@@ -17,27 +17,35 @@
         <span class="md-title">Keep</span>
 
         <div class="md-toolbar-section-end">
-          <div>
-            <img src="../../assets/searchicon.svg" alt="keepLogo" class="searchIcon"/>
-            <input class="search" placeholder="Search" />
-            <!-- v-model="searching" -->
-            <!-- <div v-for="search in filterBlogs"></div>
-            {{search}}
-            <h2>{{search.title}}</h2> -->
+          <div class="searchContainer">
+            <img
+              src="../../assets/searchicon.svg"
+              alt="keepLogo"
+              class="searchIcon"
+            />
+            <input class="search" placeholder="Search" v-model="search" />
+            <div v-for="blog in filterBlogs"></div>
+            <h2>{{blog.title}}</h2>
           </div>
-            
-            <div class="iconContainer">
-              <div class="refreshContainer">
+
+          <div class="iconContainer">
+            <div class="refreshContainer">
               <md-avatar class="md-small">
                 <img src="../../assets/refresh.svg" alt="People" />
               </md-avatar>
             </div>
-            <div>
-              <md-avatar class="md-small" @click="listView()">
+            <div  @click="listView()">
+            <div   v-if="Liston==true">
+              <md-avatar class="md-small" >
                 <img src="../../assets/toolbarIcon.svg" alt="People" />
               </md-avatar>
             </div>
-
+            <div v-if="Liston==false">
+              <md-avatar class="md-small" >
+                <img src="../../assets/listview.svg" alt="People" />
+              </md-avatar>
+            </div>
+            </div>
             <div>
               <md-avatar class="md-small">
                 <img src="../../assets/setting.svg" alt="People" />
@@ -165,19 +173,18 @@
 
   <div>
     <md-dialog :md-active.sync="showDialog">
-       <div class="editContainer">Edit labels</div>
-      
-<div class="editLine">
-      <img src="../../assets/crossmark.svg" alt="" srcser="" />
-      <input class="input" placeholder="Create new labels" />
-      <img src="../../assets/tikmark.svg" alt="" srcser="" />
+      <div class="editContainer">Edit labels</div>
 
-</div>
-<div class="labelDisplay" v-for="label in labels">
-<img src="../../assets/filledpath.svg" alt="" srcser="" />
-{{label.label}}
-<img src="../../assets/fiilededit.svg" alt="" srcser="" />
-</div>
+      <div class="editLine">
+        <img src="../../assets/crossmark.svg" alt="" srcser="" />
+        <input class="input" placeholder="Create new labels" />
+        <img src="../../assets/tikmark.svg" alt="" srcser="" />
+      </div>
+      <div class="labelDisplay" v-for="label in labels">
+        <img src="../../assets/filledpath.svg" alt="" srcser="" />
+        {{label.label}}
+        <img src="../../assets/fiilededit.svg" alt="" srcser="" />
+      </div>
     </md-dialog>
   </div>
 </section>

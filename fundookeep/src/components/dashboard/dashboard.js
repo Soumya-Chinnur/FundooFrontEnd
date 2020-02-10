@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import labelService from "../services/labelService";
 import { dashboard } from "../services/userServices";
 Vue.use(VueRouter);
+import { EventBus } from "../../main";
 
 export default {
   //standard syntax for instantiating an object that has been defined.
@@ -18,11 +19,11 @@ export default {
       email: String,
       firstname: String,
       selectedEmployee: null,
-      display: false,
-      // searchs: [],
-      // searching: "",
-      // search: "",
-      // title: ""
+      blogs: [],
+      search: "",
+      blog: "",
+      title: String,
+      Liston: true
     };
   },
   mounted() {
@@ -35,8 +36,11 @@ export default {
     });
     dashboard()
       .then(res => {
-        (this.search = []), console.log("uuuuuuuuuu", res);
-        this.searchs.push(res.data.data.data);
+        // this.title="title";
+
+        (this.blogs = []), console.log("uuuuuuuuuu", res);
+        this.blogs = res.data.data.data;
+        console.log("zxzzzz", this.blogs);
       })
       .catch(err => {
         // eslint-disable-next-line no-console
@@ -79,15 +83,19 @@ export default {
       localStorage.clear();
       this.$router.push("/");
     },
+
     listView() {
-      this.display = !this.display;
+      this.Liston = !this.Liston;
+      EventBus.$emit("listoff",this.Liston)
+      
     }
   },
-  // computed: {
-  //   filterBlogs: function() {
-  //     return this.searchs.filter(search => {
-  //       return search.title.includes(this.searching);
-  //     });
-  //   }
-  // }
+  computed: {
+    filterBlogs: function() {
+      return this.blogs.filter(blog => {
+        return blog.title.toUpperCase().includes(this.search.toUpperCase());
+      });
+    }
+  }
 };
+// post.title.toLowerCase().includes(this.search.toLowerCase())
