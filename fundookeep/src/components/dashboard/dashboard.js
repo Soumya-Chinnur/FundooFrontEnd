@@ -36,8 +36,6 @@ export default {
     });
     dashboard()
       .then(res => {
-        // this.title="title";
-
         (this.blogs = []), console.log("uuuuuuuuuu", res);
         this.blogs = res.data.data.data;
         console.log("zxzzzz", this.blogs);
@@ -97,4 +95,3 @@ export default {
     }
   }
 };
-// post.title.toLowerCase().includes(this.search.toLowerCase())
