@@ -11,6 +11,8 @@ export const messageService = {
 };
 export default {
   archive(data) {
+   
+
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.archive,
       data,
@@ -22,7 +24,8 @@ export default {
     );
   },
   trash(data) {
-    console.log("kkkkkkkkkkkk", data);
+   
+console.log("kkkkkkkkkkkk",data);
 
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.trash,
@@ -35,6 +38,8 @@ export default {
     );
   },
   color(data) {
+  
+
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.color,
       data,
@@ -45,10 +50,10 @@ export default {
       }
     );
   },
-  deleteforever(data) {
+   deleteforever(data) {
+  
     return axios.post(
-      "http://fundoonotes.incubation.bridgelabz.com/api" +
-        apiConstant.deleteForever,
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.deleteForever,
       data,
       {
         headers: {
@@ -57,7 +62,7 @@ export default {
       }
     );
   },
-
+  
   getNotes() {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +

@@ -1,5 +1,5 @@
-import { messageService } from "../services/noteService";
-import { dashboard } from "../services/userServices";
+import { messageService } from "../../services/noteService";
+import userServices from "../../services/userServices";
 import takeANote from "../takeANote";
 import displayNote from "../displayNote";
 export default {
@@ -14,10 +14,9 @@ export default {
   created() {
     // subscribe to home component messages
     this.subscription = messageService.getMessage().subscribe(message => {
-      console.log("dddddddd");
 
       if (message) {
-        dashboard()
+        userServices.dashboard()
           .then(res => {
             this.messages = [];
             for (let index = 0; index < res.data.data.data.length; index++) {
@@ -29,7 +28,6 @@ export default {
               }
             }
 
-            console.log("hsa111111111111111111111111k", this.messages);
           })
           .catch(err => {
             console.log(err);
@@ -43,10 +41,9 @@ export default {
   },
   mounted() {
     ////mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
-    dashboard()
+    userServices.dashboard()
       .then(res => {
         this.messages = [];
-        console.log(res, "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
         for (let index = 0; index < res.data.data.data.length; index++) {
           if (
@@ -56,8 +53,7 @@ export default {
             this.messages.push(res.data.data.data[index]);
           }
         }
-         console.log("wed", res);
-        console.log("hsak", this.messages);
+ 
       })
       .catch(err => {
         // eslint-disable-next-line no-console

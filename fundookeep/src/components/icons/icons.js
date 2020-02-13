@@ -1,10 +1,9 @@
-import noteService from "../services/noteService";
-import labelService from "../services/labelService";
-import { reminder } from "../services/userServices";
-//import { Datetime } from "vue-datetime";
-// import datetime from "vuejs-datetimepicker";
-// import Datepicker from 'vuejs-datepicker'
+import noteService from "../../services/noteService";
+import labelService from "../../services/labelService";
+import userServices from "../../services/userServices";
 import datetime from "vuejs-datetimepicker";
+import { filterBy } from "../icons/filterBy";
+import { filterBylabel } from "../icons/filterBy";
 
 export default {
   //syntax for instantiating object that has already been defined
@@ -17,19 +16,24 @@ export default {
     cardObj: Object
   },
   data() {
-    // let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd';
-    // let now = new Date();
     return {
       route: true,
       route1: true,
       route2: true,
       pin: true,
       items: [],
+      box: [],
       date: null,
       country: null,
+      collaborators: [],
+      collab: [],
       val: null,
+      email: String,
       dateObj: new Date(),
       isCheckAll: false,
+      showDialog: false,
+      userInput: "",
+      userInput1: "",
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -57,33 +61,42 @@ export default {
 
   computed: {},
   mounted() {
+    this.email = localStorage.getItem("email");
+
     labelService.getLabelList().then(res => {
       this.items = res.data.data.details;
-      // console.log("labelllllllll", this.items);
+      for (let i = 0; i < this.items.length; i++) {
+        this.box.push(this.items[i].label);
+      }
     });
 
     //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     if (this.$router.currentRoute.fullPath === "/dashboard/archive") {
-      // console.log(this.$router.currentRoute.fullPath);
       this.route = true;
     } else {
-      // console.log(this.$router.currentRoute.fullPath);
       this.route = false;
     }
     if (this.$router.currentRoute.fullPath === "/dashboard/trash") {
-      // console.log(this.$router.currentRoute.fullPath);
       this.route1 = true;
       this.route2 = true;
     } else {
-      // console.log(this.$router.currentRoute.fullPath);
       this.route1 = false;
       this.route2 = false;
     }
+    userServices.collaborator().then(res => {
+      for (let i = 0; i < res.data.length - 2200; i++) {
+        this.collaborators.push(res.data[i]);
+      }
+      console.log(this.collaborators, "uuuuuuuu");
+    });
   },
   methods: {
+    filterBy,
+    filterBylabel,
     addLabel() {
       this.pin = !this.pin;
     },
+
     archive(card) {
       var obj = {
         noteIdList: [card.id],
@@ -134,6 +147,7 @@ export default {
         this.$emit("deleteforvercard", card);
       });
     },
+
     colorDisplay(color, card) {
       if (card == undefined) {
         this.$emit("changeColor", color);
@@ -153,6 +167,16 @@ export default {
         //
       });
     },
+    addCollaborator() {
+      var obj = {
+        noteIdList: "",
+        userId: localStorage.getItem("userid"),
+        collaborator: [{}]
+      };
+      userServices.addCollaborator(obj).then(res => {
+        console.log("collaaab", res);
+      });
+    },
     latertoday(card) {
       const rem = new Date(
         this.dateObj.getFullYear(),
@@ -170,7 +194,7 @@ export default {
         reminder: rem
       };
       console.log(obj, "kkkkkkkkkkkkkkkk");
-      reminder(obj).then(res => {
+      userServices.reminder(obj).then(res => {
         console.log("reminderrrrrrrrrrrrrrrrrrrrr", res);
         //
       });
@@ -193,7 +217,7 @@ export default {
         reminder: nextWeek
       };
       // console.log(obj, "jjjjjjjjj");
-      reminder(obj).then(res => {
+      userServices.reminder(obj).then(res => {
         console.log("111111111111111111", res);
         //
       });

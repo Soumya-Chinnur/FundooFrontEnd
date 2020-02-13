@@ -1,4 +1,4 @@
-import { register } from "../services/userServices";
+import { register } from "../../services/userServices";
 // import register from "../services/userServices";
 export default {
   //syntax for instantiating an object that has been defined

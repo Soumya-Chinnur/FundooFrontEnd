@@ -11,7 +11,7 @@
           <md-icon>menu</md-icon>
         </md-button>
         <div class="image">
-          <img src="../../assets/keep-512.png" alt="keepLogo" />
+          <!-- <img src="../../assets/keep-512.png" alt="keepLogo" /> -->
         </div>
 
         <span class="md-title">Keep</span>
@@ -19,11 +19,16 @@
         <div class="md-toolbar-section-end">
           <div class="searchContainer">
             <img
-              src="../../assets/searchicon.svg"
+              src="../../assets/icons/searchicon.svg"
               alt="keepLogo"
               class="searchIcon"
             />
-            <input class="search" placeholder="Search" v-model="search" />
+            <input
+              class="search"
+              placeholder="Search"
+              v-model="search"
+              @keyup.enter="searchKey"
+            />
             <div v-for="blog in filterBlogs"></div>
             <h2>{{blog.title}}</h2>
           </div>
@@ -31,36 +36,58 @@
           <div class="iconContainer">
             <div class="refreshContainer">
               <md-avatar class="md-small">
-                <img src="../../assets/refresh.svg" alt="People" />
+                <img src="../../assets/icons/refresh.svg" alt="People" />
               </md-avatar>
             </div>
             <div @click="listView()">
-              <div v-if="Liston==true">
+              <div v-if="Liston">
                 <md-avatar class="md-small">
-                  <img src="../../assets/toolbarIcon.svg" alt="People" />
+                  <img src="../../assets/icons/toolbarIcon.svg" alt="People" />
                 </md-avatar>
               </div>
-              <div v-if="Liston==false">
+              <div v-if="!Liston">
                 <md-avatar class="md-small">
-                  <img src="../../assets/listview.svg" alt="People" />
+                  <img src="../../assets/icons/listview.svg" alt="People" />
                 </md-avatar>
               </div>
             </div>
             <div>
               <md-avatar class="md-small">
-                <img src="../../assets/setting.svg" alt="People" />
+                <img src="../../assets/icons/setting.svg" alt="People" />
               </md-avatar>
             </div>
           </div>
-          <div>
+          <div class="profilepic">
             <md-menu class="menuContainer" md-size="huge" md-align-trigger>
-              <md-avatar md-menu-trigger class="md-medium">
+              <!-- <md-avatar md-menu-trigger class="md-medium">
                 <img src="../../assets/dog.jpg" alt="People" />
-              </md-avatar>
+              </md-avatar> -->
+              <md-button
+                md-menu-trigger
+                class="md-fab md-mini"
+                v-bind:style="{ 'background-image':'url(' +image+ ')','background-size':'cover'}"
+              >
+              </md-button>
+              <md-tooltip md-direction="bottom">{{firstname}}</md-tooltip>
+
               <md-menu-content>
-                <md-avatar>
+                <!-- <md-avatar>
                   <img src="../../assets/dog.jpg" alt="People" />
-                </md-avatar>
+                </md-avatar> -->
+                <div class="pro-icon">
+                  <md-menu-item>
+                    <md-button
+                      class="md-fab md-mini"
+                      v-bind:style="{ 'background-image':'url(' +image+ ')','background-size':'cover'}"
+                      @click="$refs.file.click()"
+                      @change="processFile($event)"
+                    >
+                      <input type="file" ref="file" style="display: none;" />
+                    </md-button>
+                    <md-tooltip md-direction="bottom">{{firstname}}</md-tooltip>
+                  </md-menu-item>
+                </div>
+
                 <div class="nameandgmailContainer">
                   <div class="nameContainer">{{firstname}}</div>
 
@@ -89,7 +116,7 @@
               v-bind:class="item === 'note' ? 'bacclass':'bacclassss'"
             >
               <md-icon>lightbulb_outline</md-icon>
-              <router-link to="/dashboard/note">
+              <router-link to="/dashboard/note" class="router">
                 <span class="md-list-item-text">Notes</span>
               </router-link>
             </md-list-item>
@@ -108,7 +135,7 @@
           </div>
 
           <div class="iconAndLabelContainer" v-for="label in labels">
-            <img src="../../assets/path.svg" alt="" />
+            <img src="../../assets/icons/path.svg" alt="" />
 
             <div class="labelContainer">{{label.label}}</div>
           </div>
@@ -116,7 +143,7 @@
             <md-list-item>
               <div>
                 <img
-                  src="../../assets/create-24px.svg"
+                  src="../../assets/icons/create-24px.svg"
                   alt=""
                   srcset=""
                   height="24px"
@@ -138,12 +165,12 @@
                 v-bind:class="item === 'archive' ? 'bacclass':'bacclassss'"
               >
                 <img
-                  src="../../assets/archiveOutline.svg"
+                  src="../../assets/icons/archiveOutline.svg"
                   alt=""
                   srcset=""
                   height="24px"
                 />
-                <router-link to="/dashboard/archive" class="links">
+                <router-link to="/dashboard/archive" class="router">
                   <span class="md-list-item-text">Archive</span>
                 </router-link>
               </md-list-item>
@@ -155,9 +182,9 @@
                 v-bind:class="item === 'trash' ? 'bacclass':'bacclassss'"
               >
                 <md-icon>
-                  <img src="../../assets/trash.svg" alt="" srcset="" />
+                  <img src="../../assets/icons/trash.svg" alt="" srcset="" />
                 </md-icon>
-                <router-link to="/dashboard/trash" class="links">
+                <router-link to="/dashboard/trash" class="router">
                   <span class="md-list-item-text">Bin</span>
                 </router-link>
               </md-list-item>
@@ -176,14 +203,16 @@
       <div class="editContainer">Edit labels</div>
 
       <div class="editLine">
-        <img src="../../assets/crossmark.svg" alt="" srcser="" />
-        <input class="input" placeholder="Create new labels" />
-        <img src="../../assets/tikmark.svg" alt="" srcser="" />
+        <img src="../../assets/icons/crossmark.svg" alt="" srcser="" />
+        <input class="input" v-model="lab" placeholder="Create new labels" />
+        <md-button @click="Addlabel">
+          <img src="../../assets/icons/tikmark.svg" alt="" srcser="" />
+        </md-button>
       </div>
       <div class="labelDisplay" v-for="label in labels">
-        <img src="../../assets/filledpath.svg" alt="" srcser="" />
+        <img src="../../assets/icons/path.svg" alt="" srcser="" />
         {{label.label}}
-        <img src="../../assets/fiilededit.svg" alt="" srcser="" />
+        <img src="../../assets/icons/fiilededit.svg" alt="" srcser="" />
       </div>
     </md-dialog>
   </div>

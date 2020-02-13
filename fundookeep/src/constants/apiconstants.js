@@ -14,5 +14,8 @@ export const apiConstant = {
  userService: "/user/service",
  deleteForever: "/notes/deleteForeverNotes",
  reminder: "/notes/addUpdateReminderNotes",
- removeReminder: "/notes/removeReminderNotes"
+ removeReminder: "/notes/removeReminderNotes",
+ getUser: "/user",
+ addLabel: "/noteLabels",
+ addCollaborator: "/notes/{id}/AddcollaboratorsNotes"
 };

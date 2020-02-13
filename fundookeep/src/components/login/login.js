@@ -1,4 +1,4 @@
-import { login } from "../services/userServices";
+import userServices from "../../services/userServices"
 export default {
   //syntax for instantiating an object that has been defined
   name: "login",
@@ -21,20 +21,20 @@ export default {
         email: this.login.email,
         password: this.login.password
       };
-      login(obj)
+      userServices.login(obj)
         .then(res => {
-          console.log("niiiiiiiiiiiiiiiiiiiii", res.data.id);
+          console.log("niiiiiiiiiiiiiiiiiiiii", res.data);
           localStorage.setItem("token", res.data.id);
           // eslint-disable-next-line no-console
-          console.log("asdfghjkk", res);
-          localStorage.setItem("email",res.data.email)
-          localStorage.setItem("firstName",res.data.firstName)
+          localStorage.setItem("email", res.data.email);
+          localStorage.setItem("firstName", res.data.firstName);
+          localStorage.setItem("userid", res.data.userId);
           this.$router.push("/dashboard");
         })
         .catch(err => {
           // eslint-disable-next-line no-console
           console.log(err);
-        }); 
+        });
     }
   }
 };

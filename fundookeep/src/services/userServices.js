@@ -1,11 +1,10 @@
 import axios from "axios";
-import { apiConstant } from "../../constants/apiconstants";
+import { apiConstant } from "../constants/apiconstants";
+// import apiConstant from "../constants/apiconstants";
 export default {
-  // import apiConstant from "../constants/apiconstants";
   login(loginData) {
     // eslint-disable-next-line no-console
     console.log("res in servicesData", loginData);
-
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" +
         apiConstant.userLogin,
@@ -30,17 +29,20 @@ export default {
       data
     );
   },
-  aaddlabel(data) {
-    console.log("mmmmmmmm", data);
-    return axios.post(
-      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.addLabel,
-      data
-    );
-  },
   dashboard() {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +
         apiConstant.dashboard,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+  collaborator() {
+    return axios.get(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.getUser,
       {
         headers: {
           Authorization: localStorage.getItem("token")
@@ -72,6 +74,17 @@ export default {
       }
     );
   },
+  addLabel(data) {
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.addLabel,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
   reminder(data) {
     console.log("weeeeeeeeeeeeeeeee", data);
 
@@ -90,18 +103,6 @@ export default {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +
         apiConstant.userService,
-      {
-        headers: {
-          Authorization: localStorage.getItem("token")
-        }
-      }
-    );
-  },
-  addCollaborator(data) {
-    return axios.post(
-      "http://fundoonotes.incubation.bridgelabz.com/api" +
-        apiConstant.addCollaborator,
-      data,
       {
         headers: {
           Authorization: localStorage.getItem("token")

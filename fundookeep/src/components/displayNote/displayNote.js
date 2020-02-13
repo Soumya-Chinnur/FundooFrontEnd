@@ -1,7 +1,8 @@
 import icons from "../icons";
-import { messageService } from "../services/noteService";
-import { removeReminder } from "../services/userServices";
+import { messageService } from "../../services/noteService";
+import userServices from "../../services/userServices";
 import { EventBus } from "../../main";
+import { normal } from "../../main";
 export default {
   //standard syntax for instantiating an object that has been defined.
   name: "display-note",
@@ -20,15 +21,31 @@ export default {
       dilogdata: Object,
       title: "",
       description: "",
-      Liston: ""
+      Liston: "",
+      character: "",
+      search: "",
+      richy: []
     };
   },
-  mounted() {
+  mounted() {},
+  created() {
+    normal.$on("searching", character => {
+      this.character = character;
+      console.log("anushhhhhhhhhhhhhhhhhhhhhhhhhaaaa", character);
+      console.log("nnnnnnnnnnnnnnnnnnnnnn", this.character);
+    });
     console.log("dddddddddddddd");
     EventBus.$on("listoff", Liston => {
       console.log("777777", Liston);
       this.Liston = Liston;
     });
+  },
+  computed: {
+    filteredList() {
+      return this.cards.filter(card => {
+        return card.title.toLowerCase().includes(this.character.toLowerCase());
+      });
+    }
   },
   methods: {
     filledpin() {
@@ -75,9 +92,7 @@ export default {
     filledpins() {
       this.pins = !this.pins;
     },
-    grid() {
-      this.Liston = !this.Liston;
-    },
+
     deleteChip(card) {
       console.log("ffffffffffff", card);
       var obj = {
@@ -85,7 +100,7 @@ export default {
         reminder: [""]
       };
       console.log(obj, "rrrrrrrrrrrrrrrrrrrrrr");
-      removeReminder(obj).then(res => {
+      userServices.removeReminder(obj).then(res => {
         console.log("reminderrrrrrrrr", res);
         this.$emit("reminderCard", card);
         messageService.sendMessage(

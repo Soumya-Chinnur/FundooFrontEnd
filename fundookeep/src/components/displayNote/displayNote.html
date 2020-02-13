@@ -3,154 +3,106 @@
 *@author: Soumya Chinnur
 *@Date: 31-12-2019
 ******************************************************************************************/ -->
-<section class="display-note">
-  <div class="flex">
-    <md-card
-      v-if="Liston==false"
-      @click="grid"
-      v-for="card in cards"
-      class="card"
-      v-bind:style="{ 'background-color': card.color }"
-    >
-      <div class="titleAndPincontainer">
-        <div class="titleContainer" @click="openDialog(card) ">
-          {{card.title}}
+<div v-bind:class="Liston==true ? 'listview':'gridview'">
+  <div class="display-note">
+    <div class="flex">
+      <md-card
+        v-for="card in filteredList"
+        class="card"
+        v-bind:style="{ 'background-color': card.color }"
+      >
+        <div class="titleAndPincontainer">
+          <div class="titleContainer" @click="openDialog(card)">
+            {{card.title}}
+          </div>
+          <div class="originalpin" v-if="pin== true">
+            <md-button class="md-icon-button" @click="filledpin">
+              <img src="../../assets/icons/pin.svg" alt="" srcset="" />
+            </md-button>
+          </div>
+          <div v-if="pin== false" class="displaypin" @click="filledpin">
+            <md-button class="md-icon-button">
+              <img src="../../assets/icons/filledpin.svg" alt="" srcset="" />
+            </md-button>
+          </div>
         </div>
-        <div class="originalpin" v-if="pin== true">
-          <md-button class="md-icon-button" @click="filledpin">
-            <img src="../../assets/pin.svg" alt="" srcset="" />
-          </md-button>
+        <div class="cardContainer">
+          {{card.description}}
         </div>
-        <div v-if="pin== false" class="displaypin" @click="filledpin">
-          <md-button class="md-icon-button">
-            <img src="../../assets/filledpin.svg" alt="" srcset="" />
-          </md-button>
+        <div v-for="note in card.reminder">
+          <md-chip
+            v-if="card.reminder.length>0"
+            @md-delete="deleteChip(card)"
+            md-placeholder="Add genre..."
+          >
+            {{note| moment("ddd,DD,HH,A") }}
+          </md-chip>
         </div>
-      </div>
-      <div class="cardContainer">
-        {{card.description}}
-      </div>
-      <div v-for="note in card.reminder">
-        <md-chip
-          v-if="card.reminder.length>0"
-          md-deletable
-          @md-delete="deleteChip(card)"
-          md-placeholder="Add genre..."
-        >
-          {{note| moment("ddd,DD,HH,A") }}
-        </md-chip>
-      </div>
-      <div>
-        <icons
-          @deleteCard="trash"
-          @archivedCard="archive"
-          @restorecard="restore"
-          @unarchivedCard="unarchive"
-          @deleteforvercard="deleteforever"
-          @updateNote="updateNote"
-          @reminderCard="deleteChip"
-          :cardObj="card"
-        >
-        </icons>
-      </div>
-    </md-card>
+        <div>
+          <icons
+            @deleteCard="trash"
+            @archivedCard="archive"
+            @restorecard="restore"
+            @unarchivedCard="unarchive"
+            @deleteforvercard="deleteforever"
+            @updateNote="updateNote"
+            @reminderCard="deleteChip"
+            :cardObj="card"
+          >
+          </icons>
+        </div>
+      </md-card>
+    </div>
 
-    <!---------------grid---------------------->
-    <md-card
-      @click="grid"
-      v-if="Liston==false"
-      v-for="card in cards"
-      class="card1"
-      v-bind:style="{ 'background-color': card.color }"
-    >
-      <div class="titleAndPincontainer">
-        <div class="titleContainer" @click="openDialog(card) ">
-          {{card.title}}
-        </div>
-        <div class="originalpin" v-if="pin== true">
-          <md-button class="md-icon-button" @click="filledpin">
-            <img src="../../assets/pin.svg" alt="" srcset="" />
-          </md-button>
-        </div>
-        <div v-if="pin== false" class="displaypin" @click="filledpin">
-          <md-button class="md-icon-button">
-            <img src="../../assets/filledpin.svg" alt="" srcset="" />
-          </md-button>
-        </div>
-      </div>
-      <div class="cardContainer">
-        {{card.description}}
-      </div>
-      <div v-for="note in card.reminder">
-        <md-chip
-          v-if="card.reminder.length>0"
-          md-deletable
-          @md-delete="deleteChip(card)"
-          md-placeholder="Add genre..."
-        >
-          {{note| moment("ddd,DD,HH,A") }}
-        </md-chip>
-      </div>
-      <div>
-        <icons
-          @deleteCard="trash"
-          @archivedCard="archive"
-          @restorecard="restore"
-          @unarchivedCard="unarchive"
-          @deleteforvercard="deleteforever"
-          @updateNote="updateNote"
-          @reminderCard="deleteChip"
-          :cardObj="card"
-        >
-        </icons>
-      </div>
-    </md-card>
-  </div>
-
-  <div>
-    <md-dialog :md-active.sync="showDialog">
-      <div>
-        <div class="originalcard">
-          <div class="title">
-            <div class="textareaContainer">
-              <input placeholder="Title" v-model="dilogdata.title" />
-            </div>
-            <div v-if="pins == true" class="originalfilledpin">
-              <md-button
-                class="md-icon-button"
+    <div>
+      <md-dialog :md-active.sync="showDialog">
+        <div>
+          <div class="originalcard">
+            <div class="title">
+              <div class="textareaContainer">
+                <input placeholder="Title" v-model="dilogdata.title" />
+              </div>
+              <div v-if="pins == true" class="originalfilledpin">
+                <md-button
+                  class="md-icon-button"
+                  @click="filledpins"
+                  style="bottom:8px"
+                >
+                  <img src="../../assets/icons/pin.svg" alt="" srcset="" />
+                </md-button>
+              </div>
+              <div
+                v-if="pins == false"
+                class="displayfilledpin"
                 @click="filledpins"
-                style="bottom:8px"
               >
-                <img src="../../assets/pin.svg" alt="" srcset="" />
-              </md-button>
+                <md-button class="md-icon-button" style="bottom:8px">
+                  <img
+                    src="../../assets/icons/filledpin.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </md-button>
+              </div>
             </div>
-            <div
-              v-if="pins == false"
-              class="displayfilledpin"
-              @click="filledpins"
-            >
-              <md-button class="md-icon-button" style="bottom:8px">
-                <img src="../../assets/filledpin.svg" alt="" srcset="" />
-              </md-button>
-            </div>
+          </div>
+
+          <div class="subtitle">
+            <input placeholder="Title" v-model="dilogdata.description" />
           </div>
         </div>
 
-        <div class="subtitle">
-          <input placeholder="Title" v-model="dilogdata.description" />
+        <div style="display:flex; justify-content:space-between;">
+          <div>
+            <icons></icons>
+          </div>
+          <div>
+            <md-button class="button" v-model="Array" @click="save()"
+              >close</md-button
+            >
+          </div>
         </div>
-      </div>
-
-      <div style="display:flex; justify-content:space-between;">
-        <div>
-          <icons></icons>
-        </div>
-        <div>
-          <md-button class="button" v-model="Array" @click="save()"
-            >close</md-button
-          >
-        </div>
-      </div>
-    </md-dialog>
+      </md-dialog>
+    </div>
   </div>
-</section>
+</div>

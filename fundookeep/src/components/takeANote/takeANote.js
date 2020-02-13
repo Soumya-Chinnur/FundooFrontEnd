@@ -1,7 +1,7 @@
-import { addNote } from "../services/userServices";
-import { updateNote } from "../services/userServices";
+import { addNote } from "../../services/userServices";
+import { updateNote } from "../../services/userServices";
 import icons from "../icons";
-import { messageService } from "../services/noteService";
+import { messageService } from "../../services/noteService";
 export default {
   name: "take-a-note",
   components: { icons },//They help you extend basic HTML elements to encapsulate reusable code.
@@ -23,9 +23,7 @@ export default {
   },
   methods: {
     reversecard() {
-      console.log("heloooo");
       this.flag = !this.flag;
-      console.log("hiiiiiiiiiiiiiiii", this.flag);
     },
     originalcard() {
       this.flag = !this.flag;

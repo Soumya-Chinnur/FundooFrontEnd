@@ -1,9 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import labelService from "../services/labelService";
-import { dashboard } from "../services/userServices";
+import labelService from "../../services/labelService";
+import userServices from "../../services/userServices";
 Vue.use(VueRouter);
 import { EventBus } from "../../main";
+import { normal } from "../../main";
 
 export default {
   //standard syntax for instantiating an object that has been defined.
@@ -23,25 +24,26 @@ export default {
       search: "",
       blog: "",
       title: String,
-      Liston: true
+      Liston: true,
+      image: String,
+      lab: ""
     };
   },
   mounted() {
     this.email = localStorage.getItem("email");
     this.firstname = localStorage.getItem("firstName");
-    //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     labelService.getLabelList().then(res => {
       this.labels = res.data.data.details;
-      console.log("labelllllllll", this.labels);
     });
-    dashboard()
+
+    userServices
+      .dashboard()
       .then(res => {
-        (this.blogs = []), console.log("uuuuuuuuuu", res);
+        (this.blogs = []), 
         this.blogs = res.data.data.data;
         console.log("zxzzzz", this.blogs);
       })
       .catch(err => {
-        // eslint-disable-next-line no-console
         console.log(err);
       });
   },
@@ -81,10 +83,23 @@ export default {
       localStorage.clear();
       this.$router.push("/");
     },
-
     listView() {
       this.Liston = !this.Liston;
       EventBus.$emit("listoff", this.Liston);
+    },
+    searchKey() {
+      console.log("wwwwwwwwwww", this.search);
+      normal.$emit("searching", this.search);
+    },
+    Addlabel() {
+       var obj = {
+        label: this.lab,
+        isDeleted: false,
+        userId: localStorage.getItem("userid")
+      };
+      userServices.addLabel(obj).then(res => {
+        this.labels.push(res.data.label);
+      });
     }
   },
   computed: {
@@ -93,5 +108,10 @@ export default {
         return blog.title.toUpperCase().includes(this.search.toUpperCase());
       });
     }
+  },
+  processFile(e) {
+    const filedata = new FormData();
+    filedata.append("image", e.target.files[0]);
+
   }
 };

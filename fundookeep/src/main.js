@@ -5,6 +5,8 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 export const EventBus = new Vue();
+export const normal = new Vue();
+
 
 // const statebus = new vue;
 // Vue.filter('to-uppercase', (value) => { 

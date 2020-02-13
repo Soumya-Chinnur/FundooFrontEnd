@@ -1,4 +1,4 @@
-import noteService from "../services/noteService";
+import noteService from "../../services/noteService";
 import displayNote from "../displayNote";
 export default {
     //standard syntax for instantiating an object that has been defined.
