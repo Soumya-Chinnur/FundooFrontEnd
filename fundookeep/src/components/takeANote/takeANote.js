@@ -1,5 +1,5 @@
-import { addNote } from "../../services/userServices";
-import { updateNote } from "../../services/userServices";
+
+import noteService from "../../services/noteService";
 import icons from "../icons";
 import { messageService } from "../../services/noteService";
 export default {
@@ -34,7 +34,7 @@ export default {
       };
 
       console.log("dwsa", obj);
-      addNote(obj)
+      noteService.addNote(obj)
         .then(res => {
           console.log("addnoteeeeeeeeeeeeeee", res);
           messageService.sendMessage(
@@ -45,7 +45,7 @@ export default {
           console.log(err);
         });
 
-        updateNote(obj)
+        noteService.updateNote(obj)
         .then(res => {
           console.log("sou", res);
         })

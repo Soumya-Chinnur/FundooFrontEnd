@@ -34,6 +34,7 @@ export default {
       showDialog: false,
       userInput: "",
       userInput1: "",
+      label: "",
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -55,7 +56,9 @@ export default {
           { color: "#E6C9A8", name: "Brown" },
           { color: "#E8EAED", name: "Gray" }
         ]
-      ]
+      ],
+      emailFlag: false,
+      lab: ""
     };
   },
 
@@ -83,7 +86,8 @@ export default {
       this.route1 = false;
       this.route2 = false;
     }
-    userServices.collaborator().then(res => {
+    noteService.collaborator().then(res => {
+      console.log("ooo", res);
       for (let i = 0; i < res.data.length - 2200; i++) {
         this.collaborators.push(res.data[i]);
       }
@@ -156,7 +160,6 @@ export default {
         this.colorsEdit(color, card);
       }
     },
-
     colorsEdit(color, card) {
       var obj = {
         noteIdList: [card.id],
@@ -167,13 +170,46 @@ export default {
         //
       });
     },
-    addCollaborator() {
+    createLabel() {
+      console.log("shdw");
+
       var obj = {
-        noteIdList: "",
-        userId: localStorage.getItem("userid"),
-        collaborator: [{}]
+        label: this.userInput,
+        isDeleted: false,
+        userId: localStorage.getItem("userid")
       };
-      userServices.addCollaborator(obj).then(res => {
+      console.log("000", obj);
+
+      userServices
+        .addLabel(obj)
+        .then(res => {
+          console.log("123", res);
+          this.items.push(res.data.label);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    addCollaborator(email) {
+      this.userInput1 = email;
+      this.emailFlag = true;
+      //
+      setTimeout(function() {
+        this.emailFlag = false;
+      }, 5000);
+    },
+    saveCollaborator(cardObj) {
+      console.log("iii", cardObj, this.userInput1);
+      this.showDialog = false;
+
+      var obj = {
+        firstName: localStorage.getItem("firstName"),
+        lastName: localStorage.getItem("lastName"),
+        email: this.userInput1,
+        userId: this.userInput1
+        // id: cardObj.id
+      };
+      noteService.addCollaborator(obj, cardObj.id).then(res => {
         console.log("collaaab", res);
       });
     },
@@ -194,7 +230,7 @@ export default {
         reminder: rem
       };
       console.log(obj, "kkkkkkkkkkkkkkkk");
-      userServices.reminder(obj).then(res => {
+      noteService.reminder(obj).then(res => {
         console.log("reminderrrrrrrrrrrrrrrrrrrrr", res);
         //
       });
@@ -217,7 +253,7 @@ export default {
         reminder: nextWeek
       };
       // console.log(obj, "jjjjjjjjj");
-      userServices.reminder(obj).then(res => {
+      noteService.reminder(obj).then(res => {
         console.log("111111111111111111", res);
         //
       });

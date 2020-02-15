@@ -17,5 +17,6 @@ export const apiConstant = {
  removeReminder: "/notes/removeReminderNotes",
  getUser: "/user",
  addLabel: "/noteLabels",
- addCollaborator: "/notes/{id}/AddcollaboratorsNotes"
+ addCollaborator: "/notes/{id}/AddcollaboratorsNotes",
+ profilePic: "/user/uploadProfileImage"
 };

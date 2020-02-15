@@ -11,8 +11,6 @@ export const messageService = {
 };
 export default {
   archive(data) {
-   
-
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.archive,
       data,
@@ -24,9 +22,7 @@ export default {
     );
   },
   trash(data) {
-   
-console.log("kkkkkkkkkkkk",data);
-
+    console.log("kkkkkkkkkkkk", data);
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.trash,
       data,
@@ -38,8 +34,6 @@ console.log("kkkkkkkkkkkk",data);
     );
   },
   color(data) {
-  
-
     return axios.post(
       "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.color,
       data,
@@ -50,10 +44,10 @@ console.log("kkkkkkkkkkkk",data);
       }
     );
   },
-   deleteforever(data) {
-  
+  profilePic(data) {
     return axios.post(
-      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.deleteForever,
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.profilePic,
       data,
       {
         headers: {
@@ -62,7 +56,19 @@ console.log("kkkkkkkkkkkk",data);
       }
     );
   },
-  
+  deleteforever(data) {
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.deleteForever,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+
   getNotes() {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +
@@ -74,11 +80,76 @@ console.log("kkkkkkkkkkkk",data);
       }
     );
   },
-  updateNotes() {
-    console.log("iiiiiiiiiiiii");
+  addNote(data) {
+    //   eslint-disable-next-line no-console
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.addNote,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+  updateNote(data) {
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.updateNote,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
 
+  reminder(data) {
+    console.log("weeeeeeeeeeeeeeeee", data);
+
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.reminder,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+  collaborator() {
     return axios.get(
-      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.update,
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.getUser,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+
+  addCollaborator(data, id) {
+    console.log(id);
+
+    //   eslint-disable-next-line no-console
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.addCollaborator,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+  removeReminder(data) {
+    //   eslint-disable-next-line no-console
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.removeReminder,
+      data,
       {
         headers: {
           Authorization: localStorage.getItem("token")

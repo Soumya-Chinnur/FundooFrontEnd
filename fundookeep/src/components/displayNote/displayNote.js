@@ -1,6 +1,5 @@
 import icons from "../icons";
-import { messageService } from "../../services/noteService";
-import userServices from "../../services/userServices";
+import noteService, { messageService } from "../../services/noteService";
 import { EventBus } from "../../main";
 import { normal } from "../../main";
 export default {
@@ -100,7 +99,7 @@ export default {
         reminder: [""]
       };
       console.log(obj, "rrrrrrrrrrrrrrrrrrrrrr");
-      userServices.removeReminder(obj).then(res => {
+      noteService.removeReminder(obj).then(res => {
         console.log("reminderrrrrrrrr", res);
         this.$emit("reminderCard", card);
         messageService.sendMessage(

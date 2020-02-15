@@ -1,4 +1,4 @@
-import { userService } from "../services/userServices";
+import userServices from "../../services/userServices";
 export default {
   name: "service-register",
   data() {
@@ -20,7 +20,7 @@ export default {
       this.showDialog = true;
     },
     serviceRegister() {
-      userService().then(res => {
+      userServices().then(res => {
         console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
         this.cards = res.data.data.data;
         console.log("jjjjjjjjj", this.cards);

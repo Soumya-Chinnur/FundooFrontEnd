@@ -13,4 +13,16 @@ getLabelList() {
       }
     );
   },
+  addLabel(data) {
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.addLabel,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
+ 
 }

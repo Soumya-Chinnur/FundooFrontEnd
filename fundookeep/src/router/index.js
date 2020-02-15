@@ -44,6 +44,17 @@ const routes = [
     path: "/dashboard",
     name: "dashboard",
     component: dashboard,
+    beforeEnter: (to, from, next) => {
+      if (
+        localStorage.getItem("token") === null ||
+        localStorage.getItem("token") === undefined ||
+        localStorage.getItem("token") === ""
+      ) {
+        next("/");
+      } else {
+        next(true);
+      }
+    },
 
     children: [
       {
@@ -63,7 +74,6 @@ const routes = [
         path: "trash",
         component: trash
       }
-     
     ]
   },
   {

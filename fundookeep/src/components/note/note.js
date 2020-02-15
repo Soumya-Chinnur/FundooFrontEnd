@@ -1,7 +1,8 @@
 import { messageService } from "../../services/noteService";
-import userServices from "../../services/userServices";
+
 import takeANote from "../takeANote";
 import displayNote from "../displayNote";
+import  userServices from "../../services/userServices";
 export default {
   name: "note",
   components: { takeANote, displayNote }, //They help you extend basic HTML elements to encapsulate reusable code.

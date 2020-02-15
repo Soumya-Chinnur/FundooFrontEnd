@@ -1,4 +1,4 @@
-import { forgotPassword } from "../services/userServices";
+import userServices from "../../services/userServices";
 export default {
   //syntax for instantiating object that has already been defined
   name: "forgotpassword",
@@ -17,7 +17,7 @@ export default {
       var obj = {
         email: this.forgotpassword.email
       };
-      forgotPassword(obj)
+      userServices.forgotPassword(obj)
         .then(res => {
           console.log(res);
         })

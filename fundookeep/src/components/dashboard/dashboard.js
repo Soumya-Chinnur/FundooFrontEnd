@@ -5,6 +5,7 @@ import userServices from "../../services/userServices";
 Vue.use(VueRouter);
 import { EventBus } from "../../main";
 import { normal } from "../../main";
+import noteService from "../../services/noteService";
 
 export default {
   //standard syntax for instantiating an object that has been defined.
@@ -32,15 +33,20 @@ export default {
   mounted() {
     this.email = localStorage.getItem("email");
     this.firstname = localStorage.getItem("firstName");
+    // labelService.getLabelList().then(res => {
+    //   this.labels = res.data.data.details;
+    // });
+
     labelService.getLabelList().then(res => {
+      console.log("were", res);
+
       this.labels = res.data.data.details;
     });
 
     userServices
       .dashboard()
       .then(res => {
-        (this.blogs = []), 
-        this.blogs = res.data.data.data;
+        (this.blogs = []), (this.blogs = res.data.data.data);
         console.log("zxzzzz", this.blogs);
       })
       .catch(err => {
@@ -92,13 +98,26 @@ export default {
       normal.$emit("searching", this.search);
     },
     Addlabel() {
-       var obj = {
+      console.log("jjjjjj");
+      var obj = {
         label: this.lab,
         isDeleted: false,
         userId: localStorage.getItem("userid")
       };
-      userServices.addLabel(obj).then(res => {
-        this.labels.push(res.data.label);
+      console.log("popo", obj);
+
+      labelService.addLabel(obj).then(res => {
+        console.log("pppp", res);
+       this.labels.push(res.data.label);
+      });
+    },
+    processFile(e) {
+      const filedata = new FormData();
+      filedata.append("image", e.target.files[0]);
+      console.log("image", e.target.files[0]);
+      noteService.profilePic(filedata).then(res => {
+        this.image = res.data;
+        localStorage.setItem("image", res.data);
       });
     }
   },
@@ -108,10 +127,5 @@ export default {
         return blog.title.toUpperCase().includes(this.search.toUpperCase());
       });
     }
-  },
-  processFile(e) {
-    const filedata = new FormData();
-    filedata.append("image", e.target.files[0]);
-
   }
 };

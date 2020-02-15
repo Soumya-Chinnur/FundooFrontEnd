@@ -101,20 +101,24 @@
                 :md-offset-x="227"
                 :md-offset-y="-36"
               >
+              
                 <div class="addlableContainer" md-menu-trigger v-on:click.stop>
-                  Change label
+                  Add label
                 </div>
-                <md-menu-content>
+                <md-menu-content >
                   <md-menu-item>Label note</md-menu-item>
                   <div class="labelandsearchContainer">
                     <input placeholder="Enter label name" v-on:click.stop v-model="userInput"/>
                     <img src="../../assets/icons/searchicon.svg" alt="" srcset="" />
                   </div>
-                  <div v-for="item in filterBylabel(box, userInput)" class="checkbox" >
-                    <div @click="ischeckAll!=isCheckAll">
-                        <md-checkbox v-model="isCheckAll">{{item}}</md-checkbox>
+                  <div v-for="label in filterBylabel(box, userInput)" class="checkbox" >
+                    <div v-for="label in " @click="ischeckAll!=isCheckAll">
+                      <md-checkbox v-model="isCheckAll">{{label}}</md-checkbox>
                     </div>
                   </div>
+                  <!-- <div v-for="item in items" :key="item.id" >{{item.label}}</div> -->
+                  <div @click="createLabel">create  {{userInput}}</div>
+
                 </md-menu-content>
               </md-menu>
             </md-menu-item>
@@ -152,23 +156,24 @@
       <div class="emailContainer">{{email}}</div>
     </div>
       </div>
-      <div class="collaboratorIcon2" style="display: flex;" >
+      <div class="collaboratorIcon2" >
       <md-avatar class="md-avatar-icon">
         <img src="../../assets/icons/collaboratoricon.svg" /> 
       </md-avatar> 
       <div class="inputContainer">
       <input v-model="userInput1" class="collabMenu" />            
-          <div v-for="collaborator in filterBy(collaborators, userInput1)">
-          <div class="collaboratormenu" @click="addCollaborator()">
-            {{collaborator.email}} 
+          <div v-for="collaborator in filterBy(collaborators, userInput1)" :key="collaborator.id" :value="collaborator.email">
+          <div class="collaboratormenu" >
+            <div v-if="!emailFlag" @click="addCollaborator(collaborator.email)">{{collaborator.email}} </div>
          </div>
         </div>
-  </div>
-</div>
+     </div>
+    </div>
 <div class="bottonContainer">
     <md-button>cancel</md-button>
-    <md-button>save</md-button>
+    <md-button @click="saveCollaborator(collaborator.id)">save</md-button>
 </div>
+
 </md-dialog>
 </div>
 </div>

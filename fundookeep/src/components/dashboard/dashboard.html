@@ -134,7 +134,11 @@
             <span class="labelContainer">LABELS</span>
           </div>
 
-          <div class="iconAndLabelContainer" v-for="label in labels">
+          <div
+            class="iconAndLabelContainer"
+            v-for="label in labels"
+            :key="label.id"
+          >
             <img src="../../assets/icons/path.svg" alt="" />
 
             <div class="labelContainer">{{label.label}}</div>

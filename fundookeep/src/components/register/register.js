@@ -1,4 +1,4 @@
-import { register } from "../../services/userServices";
+import userServices from "../../services/userServices";
 // import register from "../services/userServices";
 export default {
   //syntax for instantiating an object that has been defined
@@ -28,7 +28,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log("kjdkdldw", obj);
 
-      register(obj).then(res => {
+      userServices.register(obj).then(res => {
         // eslint-disable-next-line no-console
         console.log("hjkhbkjhjkhjkhk", res);
       });
