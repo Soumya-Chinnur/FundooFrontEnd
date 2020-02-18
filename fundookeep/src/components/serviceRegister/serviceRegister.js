@@ -11,7 +11,8 @@ export default {
       hover: false
     };
   },
-  mounted() { //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
+  mounted() {
+    //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     this.serviceRegister();
   },
   methods: {
