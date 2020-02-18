@@ -227,7 +227,6 @@ export default {
         0
       );
       console.log(rem);
-
       var obj = {
         noteIdList: [card.id],
         reminder: rem
@@ -238,7 +237,6 @@ export default {
         //
       });
     },
-
     askQA(cardObj) {
       this.$router.push("/dashboard/questions");
       this.$emit("QnA", cardObj);
@@ -254,9 +252,7 @@ export default {
         0,
         0
       );
-
       console.log(nextWeek);
-
       var obj = {
         noteIdList: [card.id],
         reminder: nextWeek
