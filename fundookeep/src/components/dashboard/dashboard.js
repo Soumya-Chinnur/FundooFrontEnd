@@ -108,7 +108,7 @@ export default {
 
       labelService.addLabel(obj).then(res => {
         console.log("pppp", res);
-       this.labels.push(res.data.label);
+        this.labels.push(res.data.label);
       });
     },
     processFile(e) {
