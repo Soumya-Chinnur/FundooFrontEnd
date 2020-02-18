@@ -1,10 +1,9 @@
-
 import noteService from "../../services/noteService";
 import icons from "../icons";
 import { messageService } from "../../services/noteService";
 export default {
   name: "take-a-note",
-  components: { icons },//They help you extend basic HTML elements to encapsulate reusable code.
+  components: { icons }, //They help you extend basic HTML elements to encapsulate reusable code.
   props: [], //used to pass data from parent to child component
   data() {
     return {
@@ -34,7 +33,8 @@ export default {
       };
 
       console.log("dwsa", obj);
-      noteService.addNote(obj)
+      noteService
+        .addNote(obj)
         .then(res => {
           console.log("addnoteeeeeeeeeeeeeee", res);
           messageService.sendMessage(
@@ -45,7 +45,8 @@ export default {
           console.log(err);
         });
 
-        noteService.updateNote(obj)
+      noteService
+        .updateNote(obj)
         .then(res => {
           console.log("sou", res);
         })
