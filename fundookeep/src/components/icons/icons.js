@@ -4,6 +4,7 @@ import userServices from "../../services/userServices";
 import datetime from "vuejs-datetimepicker";
 import { filterBy } from "../icons/filterBy";
 import { filterBylabel } from "../icons/filterBy";
+import { messageService } from "../../services/noteService";
 
 export default {
   //syntax for instantiating object that has already been defined
@@ -28,6 +29,7 @@ export default {
       collaborators: [],
       collab: [],
       val: null,
+      collaborator: "",
       email: String,
       dateObj: new Date(),
       isCheckAll: false,
@@ -35,6 +37,7 @@ export default {
       userInput: "",
       userInput1: "",
       label: "",
+      message: [],
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -234,6 +237,12 @@ export default {
         console.log("reminderrrrrrrrrrrrrrrrrrrrr", res);
         //
       });
+    },
+
+    askQA(cardObj) {
+      this.$router.push("/dashboard/questions");
+      this.$emit("QnA", cardObj);
+      messageService.sendMessage(cardObj);
     },
     nextweek(card) {
       const nextWeek = new Date(

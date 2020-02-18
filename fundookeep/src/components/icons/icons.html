@@ -112,7 +112,7 @@
                     <img src="../../assets/icons/searchicon.svg" alt="" srcset="" />
                   </div>
                   <div v-for="label in filterBylabel(box, userInput)" class="checkbox" >
-                    <div v-for="label in " @click="ischeckAll!=isCheckAll">
+                    <div v-for="label in " @click="isCheckAll!=isCheckAll">
                       <md-checkbox v-model="isCheckAll">{{label}}</md-checkbox>
                     </div>
                   </div>
@@ -123,6 +123,7 @@
               </md-menu>
             </md-menu-item>
             <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
+            <md-menu-item @click="askQA(cardObj)">Ask Question</md-menu-item>
           </md-menu-content>
         </md-menu>
       </div>
@@ -171,7 +172,7 @@
     </div>
 <div class="bottonContainer">
     <md-button>cancel</md-button>
-    <md-button @click="saveCollaborator(collaborator.id)">save</md-button>
+    <md-button @click="saveCollaborator(collaborator)">save</md-button>
 </div>
 
 </md-dialog>

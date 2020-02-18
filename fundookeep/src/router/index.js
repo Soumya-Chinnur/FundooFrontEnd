@@ -7,12 +7,15 @@ import archive from "../components/archieve";
 import dashboard from "../components/dashboard";
 import note from "../components/note";
 import trash from "../components/trash";
+import questions from "../components/Questions"
 
 import serviceRegister from "../components/serviceRegister";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
 import VueMaterial from "vue-material";
+import wysiwyg from "vue-wysiwyg";
+Vue.use(wysiwyg, {}); // config is optional. more below
 Vue.use(require("vue-moment"));
 
 Vue.use(MdButton);
@@ -73,6 +76,10 @@ const routes = [
       {
         path: "trash",
         component: trash
+      },
+      {
+        path: "questions",
+        component: questions
       }
     ]
   },

@@ -1,0 +1,28 @@
+@import "~vue-wysiwyg/dist/vueWysiwyg.css";
+
+.questions {
+}
+.titleContainer {
+  // padding: 1%;
+  margin: 1%;
+  font-size: 18px;
+}
+.descriptionContainer {
+  // padding: 1%;
+  margin: 1%;
+  font-size: 15px;
+}
+.headerContainer {
+  padding: 1%;
+}
+.header {
+  font-size: 18px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+hr {
+  opacity: 0.5;
+  border: inset;
+}
