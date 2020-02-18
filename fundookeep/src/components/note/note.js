@@ -2,7 +2,7 @@ import { messageService } from "../../services/noteService";
 
 import takeANote from "../takeANote";
 import displayNote from "../displayNote";
-import  userServices from "../../services/userServices";
+import userServices from "../../services/userServices";
 export default {
   name: "note",
   components: { takeANote, displayNote }, //They help you extend basic HTML elements to encapsulate reusable code.
@@ -15,9 +15,9 @@ export default {
   created() {
     // subscribe to home component messages
     this.subscription = messageService.getMessage().subscribe(message => {
-
       if (message) {
-        userServices.dashboard()
+        userServices
+          .dashboard()
           .then(res => {
             this.messages = [];
             for (let index = 0; index < res.data.data.data.length; index++) {
@@ -28,7 +28,6 @@ export default {
                 this.messages.push(res.data.data.data[index]);
               }
             }
-
           })
           .catch(err => {
             console.log(err);
@@ -42,7 +41,8 @@ export default {
   },
   mounted() {
     ////mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
-    userServices.dashboard()
+    userServices
+      .dashboard()
       .then(res => {
         this.messages = [];
 
@@ -54,7 +54,6 @@ export default {
             this.messages.push(res.data.data.data[index]);
           }
         }
- 
       })
       .catch(err => {
         // eslint-disable-next-line no-console
