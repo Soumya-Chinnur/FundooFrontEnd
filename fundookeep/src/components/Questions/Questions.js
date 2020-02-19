@@ -35,15 +35,6 @@ export default {
       this.title = message.text.title;
       this.description = message.text.description;
       console.log("1212", this.description);
-
-      // if (message) {
-      //   // add message to local state if not empty
-      //   this.message.push(message);
-      //   console.log(message, "1111111");
-      // } else {
-      //   // clear messages when empty message received
-      //   this.message = [];
-      // }
     });
   },
   computed: {
