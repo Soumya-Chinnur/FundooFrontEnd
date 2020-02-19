@@ -1,9 +1,12 @@
 .title {
   text-align: center;
 }
-.subtitleContainer{
+.subtitleContainer {
   display: flex;
   justify-content: center;
+}
+.cardContainer{
+  height:90%;
 }
 .form {
   margin-top: 2%;
@@ -48,7 +51,12 @@
   border: groove;
   border-radius: 8px;
 }
-
+.class1 {
+  display: flex;
+}
+.class2 {
+  display: flex;
+}
 @media (min-width: 560px) {
   .cardContainer {
     margin-left: 27%;
@@ -59,7 +67,7 @@
 @media (min-width: 700px) {
   .cardContainer {
     margin-left: 20%;
-    margin-top: 4%;
+    // margin-top: 4%;
     width: 50%;
   }
 }
@@ -82,5 +90,60 @@
     margin-left: 30%;
     // margin-top: 8%;
     width: 40%;
+  }
+}
+.service-register {
+  .md-title {
+    margin-left: 7%;
+    // font-size: 25px;
+  }
+
+  .cardContainer {
+    display: flex;
+  }
+  .twoCardContainer {
+    margin-left: 20%;
+  }
+  .md-card1 {
+    width: 150px;
+    // margin: 4px;
+    display: inline-block;
+
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 40%;
+    height: 100px;
+    margin-top: 19%;
+    background-color: lightgrey;
+    border-radius: 2px;
+    margin: 6%;
+  }
+
+  .md-card2 {
+    height: 100px;
+    width: 150px;
+    // margin: 4px;
+    display: inline-block;
+
+    box-sizing: border-box;
+    display: flex;
+    margin-top: -14%;
+    margin-left: -10%;
+    border-radius: 2px;
+  }
+
+  .linkContainer {
+    display: flex;
+    justify-content: center;
+    margin: 6%;
+  }
+
+  .descriptionContainer {
+    margin: 7%;
+    font-size: 16px;
+  }
+
+  .md-card1:hover {
+    background-color: #ffa31a;
   }
 }

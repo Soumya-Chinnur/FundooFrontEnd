@@ -18,5 +18,6 @@ export const apiConstant = {
  getUser: "/user",
  addLabel: "/noteLabels",
  addCollaborator: "/notes/{id}/AddcollaboratorsNotes",
- profilePic: "/user/uploadProfileImage"
+ profilePic: "/user/uploadProfileImage",
+ qandaNotes: "/questionAndAnswerNotes/{id}"
 };

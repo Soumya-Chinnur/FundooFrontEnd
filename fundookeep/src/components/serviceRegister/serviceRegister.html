@@ -18,7 +18,7 @@
             <div class="md-title" @click="openDialog(card)">
               {{card.price}}
             </div>
-            <a href="/register" style="margin:7%">{{card.name}}</a>
+            <a  @click="openDialog(card)" style="margin:7%">{{card.name}}</a>
             <div class="descriptionContainer">
               <li _ngcontent-c1="" class="features">
                 {{card.description}}
@@ -27,28 +27,7 @@
           </md-card-header>
         </md-card>
       </md-card>
-    </div>
-    <!-- <div class="cardContainer1">
-      <md-card md-with-hover class="md-card3">
-        <md-card mar-with-hover class="md-card4">
-          <md-card-header>
-            <div class="md-title" @click="openDialog(card)">
-              Price: $49 per month
-            </div>
-            <a href="/register" style="margin:7%">basic</a>
-            <div class="descriptionContainer">
-              <li _ngcontent-c1="" class="features">
-                $99/month
-              </li>
-              <li _ngcontent-c1="" class="features">
-                Ability to add title, description, images, labels, checklist and
-                colors
-              </li>
-            </div>
-          </md-card-header>
-        </md-card>
-      </md-card>
-    </div>  -->
+     </div>
   </div>
   <div class="linkContainer">
     <a href="/register">Sign in instead</a>
@@ -67,7 +46,7 @@
       </md-tabs>
       <div class="buttonContainer">
         <md-button class="md-button">remove</md-button>
-        <md-button class="md-button1">Proceed to checkout</md-button>
+        <md-button class="md-button1" @click="proceedCheckout()">Proceed to checkout</md-button>
       </div>
     </md-dialog>
   </div>

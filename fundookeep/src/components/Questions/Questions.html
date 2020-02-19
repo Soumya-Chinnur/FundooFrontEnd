@@ -1,17 +1,28 @@
 <div>
   <div>
-    <div class="titleContainer">Title</div>
-    <div class="descriptionContainer">description</div>
+    <div>
+      <div class="titleContainer" v-model="title">afewf</div>
+      <div class="descriptionContainer" v-model="description">werew</div>
+    </div>
+    <hr />
+    <div class="headerContainer">
+      <label class="header">AskedQuestion</label>
+    </div>
+    <div class="questions">
+      <wysiwyg v-model="myHTML" :config="config" />
+    </div>
+    <div class="buttonContainer">
+      <md-button @click="Ask()">Ask</md-button>
+    </div>
+    <hr />
   </div>
-  <hr />
-  <div class="headerContainer">
-    <label class="header">AskedQuestion</label>
-  </div>
-  <div class="questions">
-    <wysiwyg v-model="myHTML" :config="config" />
-  </div>
-  <div class="buttonContainer">
-    <md-button>Ask</md-button>
-  </div>
-  <hr />
+
+  <!-- <div>
+    <div>
+      <div>title</div>
+      <div>description</div>
+      <hr />
+      <div>Question Asked</div>
+    </div>
+  </div> -->
 </div>

@@ -25,6 +25,7 @@
       </div>
 
       <div class="form">
+        <div  class="class1">
         <div class="fName">
           <md-field>
             <label>First-Name</label>
@@ -38,7 +39,8 @@
             <md-input v-model="register.lastName" autofocus></md-input>
           </md-field>
         </div>
-
+      </div>
+      <div class="class2">
         <div class="email">
           <md-field>
             <label>E-mail</label>
@@ -53,15 +55,35 @@
           </md-field>
         </div>
       </div>
-
-    
+      </div>
+<!-------------------------------------serviceRegiter---------------------------------------------------->
+      <div class="twoCardContainer">
+        <div class="cardContainer">
+          <md-card md-with-hover class="md-card1">
+            <md-card md-with-hover class="md-card2">
+              <md-card-header>
+                <div class="md-title" @click="openDialog(card)">
+                  jguygku
+                </div>
+                <a @click="openDialog(card)" style="margin:7%">ghfhfhj</a>
+                <div class="descriptionContainer">
+                  <li _ngcontent-c1="" class="features">
+                    hkjhk
+                  </li>
+                </div>
+              </md-card-header>
+            </md-card>
+          </md-card>
+        </div>
+      </div>
+<!----------------------------------------------------------------------------------------------->
       <div class="actions md-layout md-alignment-center-space-between">
         <a href="/">Sign In</a>
         <div>
-        <md-button class="md-raised md-primary" @click="auth"
-          >Sign Up</md-button
-        >
-      </div>
+          <md-button class="md-raised md-primary" @click="auth"
+            >Sign Up</md-button
+          >
+        </div>
       </div>
     </md-card>
   </div>

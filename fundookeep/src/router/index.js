@@ -7,9 +7,9 @@ import archive from "../components/archieve";
 import dashboard from "../components/dashboard";
 import note from "../components/note";
 import trash from "../components/trash";
-import questions from "../components/Questions"
+import questions from "../components/Questions";
 
-import serviceRegister from "../components/serviceRegister";
+import serviceRegister from "../components/serviceRegister"
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";

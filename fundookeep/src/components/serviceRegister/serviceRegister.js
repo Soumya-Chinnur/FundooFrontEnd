@@ -21,11 +21,14 @@ export default {
       this.showDialog = true;
     },
     serviceRegister() {
-      userServices().then(res => {
+      userServices.userService().then(res => {
         console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
         this.cards = res.data.data.data;
         console.log("jjjjjjjjj", this.cards);
       });
-    }
+    },
+  proceedCheckout(){
+     this.$router.push("/register");
   }
+}
 };

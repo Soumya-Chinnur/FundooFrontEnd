@@ -1,12 +1,15 @@
 import { messageService } from "../../services/noteService";
-
+import qandaServices from "../../services/qandaService";
 export default {
   name: "questions",
   components: {},
   props: [],
   data() {
     return {
+      title: "",
+      description: "",
       myHTML: "",
+      flag: true,
       config: {
         // { [module]: boolean (set true to hide) }
         hideModules: { bold: true },
@@ -27,12 +30,34 @@ export default {
     };
   },
   created() {
-    // subscribe to home component messages
     this.subscription = messageService.getMessage().subscribe(message => {
-      console.log(message, "wwwwwwwwwwwwwwwwwww");
+      console.log(message.text.title, "wwwwwwwwwwwwwwwwwww");
+      this.title = message.text.title;
+      this.description = message.text.description;
+      console.log("1212", this.description);
+
+      // if (message) {
+      //   // add message to local state if not empty
+      //   this.message.push(message);
+      //   console.log(message, "1111111");
+      // } else {
+      //   // clear messages when empty message received
+      //   this.message = [];
+      // }
     });
   },
-  computed: {},
+  computed: {
+    // subscribe to home component messages
+  },
   mounted() {},
-  methods: {}
+  methods: {
+    Ask() {
+      var obj = {
+        message: ""
+      };
+      qandaServices.Ask(obj).then(res => {
+        console.log("qanda", res);
+      });
+    }
+  }
 };
