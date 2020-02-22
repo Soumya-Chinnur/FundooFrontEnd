@@ -27,8 +27,8 @@ export default {
         console.log("jjjjjjjjj", this.cards);
       });
     },
-  proceedCheckout(){
-     this.$router.push("/register");
+    proceedCheckout() {
+      this.$router.push("/register");
+    }
   }
-}
 };

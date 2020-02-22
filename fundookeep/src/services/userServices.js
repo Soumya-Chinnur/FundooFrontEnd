@@ -32,7 +32,7 @@ export default {
   dashboard() {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api" +
-        apiConstant.dashboard,
+        apiConstant.getNotes,
       {
         headers: {
           Authorization: localStorage.getItem("token")

@@ -126,3 +126,13 @@ input {
   display: flex;
   justify-content: flex-end;
 }
+.sortabel{
+  cursor: move;
+}
+.flip-list-move{
+  transition: transform;
+}
+.ghost{
+  box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.14);
+  opacity: 0.7;
+}

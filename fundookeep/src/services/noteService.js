@@ -9,6 +9,13 @@ export const messageService = {
   clearMessages: () => subject.next(),
   getMessage: () => subject.asObservable()
 };
+const newSubject = new Subject();
+
+export const textService = {
+  sendMessage: message => newSubject.next({ text: message }),
+  clearMessages: () => newSubject.next(),
+  getMessage: () => newSubject.asObservable()
+};
 export default {
   archive(data) {
     return axios.post(

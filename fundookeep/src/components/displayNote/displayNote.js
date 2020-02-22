@@ -2,6 +2,7 @@ import icons from "../icons";
 import noteService, { messageService } from "../../services/noteService";
 import { EventBus } from "../../main";
 import { normal } from "../../main";
+// import draggable from 'vuedraggable';
 export default {
   //standard syntax for instantiating an object that has been defined.
   name: "display-note",
@@ -42,7 +43,10 @@ export default {
   computed: {
     filteredList() {
       return this.cards.filter(card => {
-        return card.title.toLowerCase().includes(this.character.toLowerCase());
+        return (
+          card.title.toLowerCase().includes(this.character.toLowerCase()) ||
+          card.description.toLowerCase().includes(this.character.toLowerCase())
+        );
       });
     }
   },

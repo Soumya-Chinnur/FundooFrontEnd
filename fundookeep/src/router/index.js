@@ -9,7 +9,7 @@ import note from "../components/note";
 import trash from "../components/trash";
 import questions from "../components/Questions";
 
-import serviceRegister from "../components/serviceRegister"
+import serviceRegister from "../components/serviceRegister";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
@@ -35,7 +35,18 @@ const routes = [
   {
     path: "/register",
     name: "register",
-    component: register
+    component: register,
+    beforeEnter: (to, from, next) => {
+      if (
+        localStorage.getItem("token") === null ||
+        localStorage.getItem("token") === undefined ||
+        localStorage.getItem("token") === ""
+      ) {
+        next("/serviceRegister");
+      } else {
+        next(true);
+      }
+    }
   },
   {
     path: "/forgotpassword",
@@ -78,7 +89,7 @@ const routes = [
         component: trash
       },
       {
-        path: "questions",
+        path: "questions/:noteid",
         component: questions
       }
     ]

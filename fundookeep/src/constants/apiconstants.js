@@ -4,7 +4,7 @@ export const apiConstant = {
   userLogin: "/user/login",
   userRegistration: "/user/userSignUp",
   userResetPassword: "/user/reset-password",
-  dashboard: "/notes/getNotesList",
+  getNotes: "/notes/getNotesList",
   addNote: "/notes/addNotes",
  archive: "/notes/archiveNotes",
  trash: "/notes/trashNotes",
@@ -19,5 +19,5 @@ export const apiConstant = {
  addLabel: "/noteLabels",
  addCollaborator: "/notes/{id}/AddcollaboratorsNotes",
  profilePic: "/user/uploadProfileImage",
- qandaNotes: "/questionAndAnswerNotes/{id}"
+ qandaNotes: "/questionAndAnswerNotes/addQuestionAndAnswer"
 };

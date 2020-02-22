@@ -1,3 +1,16 @@
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  border-radius: 6px;
+}
+.md-content {
+  z-index: 1;
+  padding: 30px;
+  width: 100%;
+}
 .title {
   text-align: center;
 }
@@ -5,13 +18,14 @@
   display: flex;
   justify-content: center;
 }
-.cardContainer{
-  height:90%;
+.firstNlastname {
+  display: flex;
+  justify-content: space-around;
 }
-.form {
-  margin-top: 2%;
+.emailNpassword {
+  display: flex;
+  justify-content: space-around;
 }
-
 .f {
   color: rgb(66, 133, 244);
   font-size: 20px;
@@ -43,107 +57,74 @@
   font-size: 20px;
   font-weight: 700;
 }
-
-[class*=""] {
-  width: 100%;
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.buttonContainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+#card1 {
+  background-color: gray;
+  border: 1px solid black;
+}
+#card1:hover {
+  background-color: #e6b800;
+}
+#card2 {
+  position: relative;
+  top: 15px;
+  left: 30px;
+  border: 1px solid black;
+  height: 101%;
+}
+.class1 {
+  font-size: 17px;
 }
 #header {
   border: groove;
   border-radius: 8px;
 }
-.class1 {
-  display: flex;
-}
-.class2 {
-  display: flex;
-}
+
 @media (min-width: 560px) {
-  .cardContainer {
-    margin-left: 27%;
-    // margin-top: 10%;
-    width: 50%;
+  .card{
+    
   }
 }
-@media (min-width: 700px) {
-  .cardContainer {
-    margin-left: 20%;
-    // margin-top: 4%;
-    width: 50%;
-  }
-}
-@media (min-width: 850px) {
-  .cardContainer {
-    margin-left: 26%;
-    // margin-top: 10%;
-    width: 50%;
-  }
-}
-@media (min-width: 1210px) {
-  .cardContainer {
-    margin-left: 30%;
-    // margin-top: 8%;
-    width: 35%;
-  }
-}
-@media (min-width: 2200px) {
-  .cardContainer {
-    margin-left: 30%;
-    // margin-top: 8%;
-    width: 40%;
-  }
-}
-.service-register {
-  .md-title {
-    margin-left: 7%;
-    // font-size: 25px;
-  }
-
-  .cardContainer {
-    display: flex;
-  }
-  .twoCardContainer {
-    margin-left: 20%;
-  }
-  .md-card1 {
-    width: 150px;
-    // margin: 4px;
-    display: inline-block;
-
-    box-sizing: border-box;
-    display: flex;
-    margin-left: 40%;
-    height: 100px;
-    margin-top: 19%;
-    background-color: lightgrey;
-    border-radius: 2px;
-    margin: 6%;
-  }
-
-  .md-card2 {
-    height: 100px;
-    width: 150px;
-    // margin: 4px;
-    display: inline-block;
-
-    box-sizing: border-box;
-    display: flex;
-    margin-top: -14%;
-    margin-left: -10%;
-    border-radius: 2px;
-  }
-
-  .linkContainer {
-    display: flex;
-    justify-content: center;
-    margin: 6%;
-  }
-
-  .descriptionContainer {
-    margin: 7%;
-    font-size: 16px;
-  }
-
-  .md-card1:hover {
-    background-color: #ffa31a;
-  }
-}
+// @media (min-width: 700px) {
+//   .cardContainer {
+//     // margin-left: 20%;
+//     // margin-top: 4%;
+//     width: 60%;
+//   }
+// }
+// @media (min-width: 850px) {
+//   .cardContainer {
+//     // margin-left: 26%;
+//     // margin-top: 10%;
+//     width: 50%;
+//   }
+// }
+// @media (min-width: 1210px) {
+//   .cardContainer {
+//     margin-left: 30%;
+//     // margin-top: 8%;
+//     width: 50%;
+//   }
+// }
+// @media (min-width: 2200px) {
+//   .cardContainer {
+//     // margin-left: 30%;
+//     // margin-top: 8%;
+//     width: 40%;
+//   }
+// }
+// .twoCardContainer{
+//   width:50%;
+// }
+// .cardContainer{
+//   display: flex;
+//   margin: 0;
+// }

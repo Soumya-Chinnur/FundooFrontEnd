@@ -1,28 +1,48 @@
 <div>
   <div>
     <div>
-      <div class="titleContainer" v-model="title">afewf</div>
-      <div class="descriptionContainer" v-model="description">werew</div>
+      <div v-for="test in testing">
+        <div class="titleContainer">{{test.title}}</div>
+        <div class="descriptionContainer">{{test.title}}</div>
+      </div>
     </div>
     <hr />
+
     <div class="headerContainer">
       <label class="header">AskedQuestion</label>
     </div>
-    <div class="questions">
-      <wysiwyg v-model="myHTML" :config="config" />
+    <div v-if="flag" class="questions">
+      <wysiwyg v-model="myHTML" />
+    </div>
+
+    <div class="buttonContainer">
+      <md-button @click="Ask()">Ask</md-button>
+    </div>
+
+    <hr />
+  </div>
+  <!------------------------------------------------------------------------------------------------------->
+
+  <!-- <div>
+    <div>
+      <div v-for="test in testing">
+        <div class="titleContainer">{{test.title}}</div>
+        <div class="descriptionContainer">{{test.title}}</div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="headerContainer">
+      <label class="header">AskedQuestion</label>
+    </div>
+    <div @click="Ask()">
+      <div v-if="!flag" class="questions">
+        <wysiwyg v-model="myHTML" />
+      </div>
     </div>
     <div class="buttonContainer">
       <md-button @click="Ask()">Ask</md-button>
     </div>
     <hr />
   </div>
-
-  <!-- <div>
-    <div>
-      <div>title</div>
-      <div>description</div>
-      <hr />
-      <div>Question Asked</div>
-    </div>
-  </div> -->
-</div>
+</div> -->

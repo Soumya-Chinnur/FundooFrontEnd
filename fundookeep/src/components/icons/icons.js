@@ -1,10 +1,11 @@
 import noteService from "../../services/noteService";
+// import { textService } from "../../services/noteService";
 import labelService from "../../services/labelService";
 import userServices from "../../services/userServices";
 import datetime from "vuejs-datetimepicker";
 import { filterBy } from "../icons/filterBy";
 import { filterBylabel } from "../icons/filterBy";
-import { messageService } from "../../services/noteService";
+// import { EventBus } from '../../main';
 
 export default {
   //syntax for instantiating object that has already been defined
@@ -90,11 +91,9 @@ export default {
       this.route2 = false;
     }
     noteService.collaborator().then(res => {
-      console.log("ooo", res);
       for (let i = 0; i < res.data.length - 2200; i++) {
         this.collaborators.push(res.data[i]);
       }
-      console.log(this.collaborators, "uuuuuuuu");
     });
   },
   methods: {
@@ -238,9 +237,10 @@ export default {
       });
     },
     askQA(cardObj) {
-      this.$router.push("/dashboard/questions");
-      this.$emit("QnA", cardObj);
-      messageService.sendMessage(cardObj);
+      console.log("241 icons =================", cardObj);
+      // EventBus.$emit('i-got-clicked', cardObj);
+      // textService.sendMessage(JSON.stringify(cardObj));
+      this.$router.push("/dashboard/questions/" + cardObj.id);
     },
     nextweek(card) {
       const nextWeek = new Date(
@@ -257,10 +257,8 @@ export default {
         noteIdList: [card.id],
         reminder: nextWeek
       };
-      // console.log(obj, "jjjjjjjjj");
       noteService.reminder(obj).then(res => {
         console.log("111111111111111111", res);
-        //
       });
     }
   }

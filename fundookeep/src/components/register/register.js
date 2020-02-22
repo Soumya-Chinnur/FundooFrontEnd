@@ -6,6 +6,9 @@ export default {
   components: {}, //They help you extend basic HTML elements to encapsulate reusable code.
   data() {
     return {
+      cards: {
+        type: Array
+      },
       loading: false,
       register: {
         firstName: "",
@@ -15,8 +18,18 @@ export default {
       }
     };
   },
+  mounted(){
+    this.serviceRegister();
+},
   methods: {
-    auth() {
+    serviceRegister() {
+      userServices.userService().then(res => {
+        console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
+        this.cards = res.data.data.data;
+        console.log("jjjjjjjjj", this.cards);
+      });
+    },
+auth() {
       // eslint-disable-next-line no-console
       var obj = {
         firstName: this.register.firstName,
