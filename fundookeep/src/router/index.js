@@ -35,18 +35,7 @@ const routes = [
   {
     path: "/register",
     name: "register",
-    component: register,
-    beforeEnter: (to, from, next) => {
-      if (
-        localStorage.getItem("token") === null ||
-        localStorage.getItem("token") === undefined ||
-        localStorage.getItem("token") === ""
-      ) {
-        next("/serviceRegister");
-      } else {
-        next(true);
-      }
-    }
+    component: register, 
   },
   {
     path: "/forgotpassword",
