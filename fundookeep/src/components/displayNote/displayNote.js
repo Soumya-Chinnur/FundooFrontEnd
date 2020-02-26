@@ -1,12 +1,13 @@
 import icons from "../icons";
 import noteService, { messageService } from "../../services/noteService";
-import { EventBus } from "../../main";
+import { EventBus } from "../../eventBus";
 import { normal } from "../../main";
+import draggable from "vuedraggable";
 // import draggable from 'vuedraggable';
 export default {
   //standard syntax for instantiating an object that has been defined.
   name: "display-note",
-  components: { icons }, //logical entities of code that contain functionality
+  components: { icons, draggable }, //logical entities of code that contain functionality
   props: {
     cards: {
       type: Array
@@ -24,7 +25,8 @@ export default {
       Liston: "",
       character: "",
       search: "",
-      richy: []
+      richy: [],
+      cards: []
     };
   },
   mounted() {},

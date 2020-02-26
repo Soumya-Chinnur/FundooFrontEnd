@@ -1,4 +1,5 @@
 import userServices from "../../services/userServices";
+import { messageService } from "../../services/noteService";
 export default {
   name: "service-register",
   data() {
@@ -6,9 +7,11 @@ export default {
       cards: {
         type: Array
       },
+      card: Object,
       dialogdata: Object,
       showDialog: false,
-      hover: false
+      hover: false,
+      event: ""
     };
   },
   mounted() {
@@ -19,6 +22,12 @@ export default {
     openDialog(card) {
       this.dialogdata = card;
       this.showDialog = true;
+      var object = {
+        price: card.price,
+        description: card.description
+      };
+      this.card = object;
+      // EventBus.$emit("clicked",this.card)
     },
     serviceRegister() {
       userServices.userService().then(res => {
@@ -29,6 +38,8 @@ export default {
     },
     proceedCheckout() {
       this.$router.push("/register");
+      messageService.sendMessage(this.card);
+      console.log(this.card, "ok");
     }
   }
 };

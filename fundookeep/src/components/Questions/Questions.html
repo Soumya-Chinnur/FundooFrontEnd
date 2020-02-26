@@ -1,49 +1,55 @@
 <div>
   <div>
-    <div>
-      <div v-for="test in testing">
-        <div class="titleContainer">{{test.title}}</div>
-        <div class="descriptionContainer">{{test.title}}</div>
+    <div class="titleDesContainer">
+      <div class="titleDescDetails">
+        <div class="titleContainer">{{testing.title}}</div>
+        <div class="descriptionContainer">{{testing.description}}</div>
+      </div>
+      <div v-if="flag==false" @click="close">
+        <md-button>close</md-button>
       </div>
     </div>
     <hr />
 
     <div class="headerContainer">
-      <label class="header">AskedQuestion</label>
+      <label class="header">{{header}}</label>
     </div>
-    <div v-if="flag" class="questions">
+    <div v-if="flag == true" class="questions">
       <wysiwyg v-model="myHTML" />
     </div>
 
-    <div class="buttonContainer">
-      <md-button @click="Ask()">Ask</md-button>
+    <div v-if="flag == false" class="data">
+      <div v-html="myHTML">{{myHTML}}</div>
     </div>
 
-    <hr />
-  </div>
-  </div>
-  <!------------------------------------------------------------------------------------------------------->
-
-  <!-- <div>
-    <div>
-      <div v-for="test in testing">
-        <div class="titleContainer">{{test.title}}</div>
-        <div class="descriptionContainer">{{test.title}}</div>
+    <div class="buttonContainer">
+      <md-button @click="Ask">Ask</md-button>
+    </div>
+    <hr class="hrtag" />
+    <div class="iconContainer" v-if="flag == false">
+      <div class="details">
+        <div class="nameContainer">
+          <div class="nameContainer">{{firstname}}</div>
+          <div class="nameContainer">{{lastname}}</div>
+        </div>
+      </div>
+      <div class="iconContainer1">
+        <div class="replyContainer">
+          <img src="../../assets/icons/reply.svg" alt="keepLogo" />
+        </div>
+        <div class="thumbContainer">
+          <img src="../../assets/icons/thumb.svg" alt="keepLogo" />
+        </div>
+        <div class="likeContainer">n likes</div>
+        <div @click="Star" class="star">
+          <div v-for="n in 5">
+            <img src="../../assets/icons/star.svg" alt="keepLogo" />
+          </div>
+        </div>
+      </div>
+      <div class="data">
+        <div v-html="myHTML">{{myHTML}}</div>
       </div>
     </div>
-    <hr />
-
-    <div class="headerContainer">
-      <label class="header">AskedQuestion</label>
-    </div>
-    <div @click="Ask()">
-      <div v-if="!flag" class="questions">
-        <wysiwyg v-model="myHTML" />
-      </div>
-    </div>
-    <div class="buttonContainer">
-      <md-button @click="Ask()">Ask</md-button>
-    </div>
-    <hr />
   </div>
-</div> -->
+</div>

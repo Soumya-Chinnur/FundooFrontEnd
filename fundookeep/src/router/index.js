@@ -29,6 +29,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "serviceRegister",
+    component: serviceRegister
+  },
+  {
+    path: "/login",
     name: "login",
     component: login
   },
@@ -83,11 +88,7 @@ const routes = [
       }
     ]
   },
-  {
-    path: "/serviceRegister",
-    name: "serviceRegister",
-    component: serviceRegister
-  }
+  
 ];
 
 const router = new VueRouter({

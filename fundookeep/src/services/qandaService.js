@@ -14,6 +14,19 @@ export default {
         }
     );
   },
+  Rating(data) {
+    console.log("445554", data);
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant. Ratings,
+      data,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token")
+          }
+        }
+    );
+  },
   getNote(noteid) {
     return axios.get(
       "http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesDetail/" +

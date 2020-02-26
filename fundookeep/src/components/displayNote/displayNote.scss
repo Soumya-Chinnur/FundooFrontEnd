@@ -40,11 +40,7 @@ $goog-fonts: "googlefonts", arial, sans-serif;
 .icons {
   display: flex;
 }
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1%;
-}
+
 textarea {
   border: none;
   background-color: transparent;
@@ -56,7 +52,6 @@ textarea {
 .originalcard {
   height: 50px;
 }
-
 .alert {
   padding: 4%;
   margin: 0 8px;
@@ -126,13 +121,18 @@ input {
   display: flex;
   justify-content: flex-end;
 }
-.sortabel{
+.sortabel {
   cursor: move;
 }
-.flip-list-move{
+.flip-list-move {
   transition: transform;
 }
-.ghost{
-  box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.14);
+.ghost {
+  box-shadow: 10px 10px 5px -1px rgba(0, 0, 0, 0.14);
   opacity: 0.7;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1%;
 }

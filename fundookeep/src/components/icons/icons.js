@@ -5,7 +5,6 @@ import userServices from "../../services/userServices";
 import datetime from "vuejs-datetimepicker";
 import { filterBy } from "../icons/filterBy";
 import { filterBylabel } from "../icons/filterBy";
-// import { EventBus } from '../../main';
 
 export default {
   //syntax for instantiating object that has already been defined

@@ -92,11 +92,7 @@
 
 <div>
   <div class="centered-container">
-    <md-card
-      md-with-hover
-      class="card"
-      id="header"
-    >
+    <md-card md-with-hover class="card" id="header">
       <md-content>
         <md-card-header>
           <md-card-header-text>
@@ -153,9 +149,10 @@
               v-for="card in cards"
             >
               <label class="class1">ADD TO CART</label>
+              <!-- <label v-if="service==false" class="class1">SELECTED</label> -->
               <md-card md-with-hover id="card2">
                 <md-card-header>
-                  <div class="md-title" @click="openDialog(card)">
+                  <div class="md-title">
                     {{card.price}}
                   </div>
                   <a @click="openDialog(card)">{{card.name}}</a>

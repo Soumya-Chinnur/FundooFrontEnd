@@ -26,3 +26,41 @@ hr {
   opacity: 0.5;
   // border: inset;
 }
+.hrtag{
+   border: inset;
+
+}
+.star {
+  display: flex;
+  margin: 5px;
+}
+.replyContainer {
+  margin: 5px;
+}
+.thumbContainer {
+  margin: 5px;
+}
+.likeContainer {
+  margin: 5px;
+}
+.details {
+  display: contents;
+}
+.nameContainer {
+  display: flex;
+}
+.data {
+  font-size: 20px;
+  margin-left: 8px;
+}
+.iconContainer1 {
+  display: flex;
+  justify-content: center;
+}
+.titleDesContainer{
+  display:flex;
+  justify-content: space-between;
+}
+.titleDescDetails{
+  margin:7px;
+}

@@ -1,4 +1,6 @@
 import userServices from "../../services/userServices";
+import { messageService } from "../../services/noteService";
+// import { EventBus } from "../../main";
 // import register from "../services/userServices";
 export default {
   //syntax for instantiating an object that has been defined
@@ -9,18 +11,34 @@ export default {
       cards: {
         type: Array
       },
+      // object: Object,
+      service: true,
       loading: false,
       register: {
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
+        password: "",
+        text: Object,
+        selected: true
       }
     };
   },
-  mounted(){
+  mounted() {
     this.serviceRegister();
-},
+  },
+  created() {
+    this.subscription = messageService.getMessage().subscribe(message => {
+      console.log("wqwq", message);
+    });
+    console.log(this.message.text.price,"ooo");
+    
+
+    // if (this.text.price == 99 || this.text.price == 49) {
+    //   console.log("sdf",this.text);
+      
+    // }
+  },
   methods: {
     serviceRegister() {
       userServices.userService().then(res => {
@@ -29,7 +47,7 @@ export default {
         console.log("jjjjjjjjj", this.cards);
       });
     },
-auth() {
+    auth() {
       // eslint-disable-next-line no-console
       var obj = {
         firstName: this.register.firstName,

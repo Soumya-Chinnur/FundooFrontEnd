@@ -5,8 +5,8 @@
 ******************************************************************************************/ -->
 <div v-bind:class="Liston==true ? 'listview':'gridview'">
   <div class="display-note">
-    <div class="flex">
-   
+    <div>
+      <draggable  class="flex" >
           <md-card
             v-for="card in filteredList"
             class="card"
@@ -63,7 +63,7 @@
               </icons>
             </div>
           </md-card>
-     
+        </draggable>
      
     </div>
 

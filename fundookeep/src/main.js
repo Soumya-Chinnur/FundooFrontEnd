@@ -4,8 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 
 Vue.config.productionTip = false;
-export const EventBus = new Vue();
-export const normal = new Vue();
+
 
 
 new Vue({
