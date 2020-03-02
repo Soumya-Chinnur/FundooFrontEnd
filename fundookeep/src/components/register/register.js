@@ -27,8 +27,7 @@ export default {
   mounted() {
     this.serviceRegister();
     this.card.id = localStorage.getItem("cartId");
-    console.log(this.card.id,"iuiu");
-    
+    console.log(this.card.id, "iuiu");
   },
   created() {},
   methods: {
