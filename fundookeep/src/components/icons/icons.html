@@ -123,7 +123,8 @@
               </md-menu>
             </md-menu-item>
             <md-menu-item @click="trash(cardObj)">delete note</md-menu-item>
-            <md-menu-item @click="askQA(cardObj)">Ask Question</md-menu-item>
+            <md-menu-item @click="askQA(cardObj)" v-if="!cardObj.questionAndAnswerNotes.length">Ask Question</md-menu-item>
+            <md-menu-item @click="showQuestions(cardObj)" v-if="cardObj.questionAndAnswerNotes.length>0">Show Question</md-menu-item>
           </md-menu-content>
         </md-menu>
       </div>

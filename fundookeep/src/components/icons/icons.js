@@ -38,6 +38,9 @@ export default {
       userInput1: "",
       label: "",
       message: [],
+      flag:true,
+      task:Object,
+     
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -239,6 +242,10 @@ export default {
       console.log("241 icons =================", cardObj);
       // EventBus.$emit('i-got-clicked', cardObj);
       // textService.sendMessage(JSON.stringify(cardObj));
+      this.$router.push("/dashboard/questions/" + cardObj.id);
+      
+    },
+    showQuestions(cardObj){
       this.$router.push("/dashboard/questions/" + cardObj.id);
     },
     nextweek(card) {

@@ -5,36 +5,39 @@
 ***********************************************************************************************/ -->
 <section class="service-register">
   <div>
-    <md-toolbar class="toolbarContainer">
-      <h1 class="md-title">fundooNotes</h1>
-    </md-toolbar>
-    <div class="subtitleContainer">
-      <p>fundooNotes offered. Choose below service to Register.</p>
-    </div>
-    <!------------------------------------------------------------------------------------------>
-    <div class="twoCardContainer">
-      <div class="cardContainer">
-        <md-card
-          md-with-hover
-          class="md-layout-item md-size-30 md-small-size-30"
-          id="card1"
-          v-for="card in cards"
-        >
-          <label class="class1">ADD TO CART</label>
-          <md-card md-with-hover id="card2" >
-            <md-card-header>
-              <div class="md-title" @click="openDialog(card)">
-                {{card.price}}
-              </div>
-              <a @click="openDialog(card)">{{card.name}}</a>
-              <div class="descriptionContainer">
-                <li _ngcontent-c1="" class="features">
-                  {{card.description}}
-                </li>
-              </div>
-            </md-card-header>
+    <div>
+      <md-toolbar class="toolbarContainer">
+        <h1 class="md-title">fundooNotes</h1>
+      </md-toolbar>
+
+      <div class="subtitleContainer">
+        <p>fundooNotes offered. Choose below service to Register.</p>
+      </div>
+      <!------------------------------------------------------------------------------------------>
+      <div class="twoCardContainer">
+        <div class="cardContainer">
+          <md-card
+            md-with-hover
+            class="md-layout-item md-size-30 md-small-size-30"
+            id="card1"
+            v-for="card in cards"
+          >
+            <label class="class1">ADD TO CART</label>
+            <md-card md-with-hover id="card2">
+              <md-card-header>
+                <div class="md-title" @click="clickAtcard(card)">
+                  {{card.price}}
+                </div>
+                <a @click="openDialog(card)">{{card.name}}</a>
+                <div class="descriptionContainer">
+                  <li _ngcontent-c1="" class="features">
+                    {{card.description}}
+                  </li>
+                </div>
+              </md-card-header>
+            </md-card>
           </md-card>
-        </md-card>
+        </div>
       </div>
     </div>
     <div class="linkContainer">

@@ -31,8 +31,7 @@ export default {
   },
   dashboard() {
     return axios.get(
-      "http://fundoonotes.incubation.bridgelabz.com/api" +
-        apiConstant.getNotes,
+      "http://fundoonotes.incubation.bridgelabz.com/api" + apiConstant.getNotes,
       {
         headers: {
           Authorization: localStorage.getItem("token")
@@ -40,7 +39,19 @@ export default {
       }
     );
   },
-
+  productCart(data) {
+    console.log(data, "iiiiiiiiiiiiiiiiiiiiiiiiii");
+    return axios.post(
+      "http://fundoonotes.incubation.bridgelabz.com/api" +
+        apiConstant.productCartId,
+      data,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+    );
+  },
   userService() {
     //   eslint-disable-next-line no-console
     return axios.get(

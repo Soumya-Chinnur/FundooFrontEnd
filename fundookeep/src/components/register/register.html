@@ -3,93 +3,6 @@
 *@author: Soumya Chinnur
 *@Date: 31-12-2019
 ***********************************************************************************************/ -->
-<!-- <section class="register">
-  <div class="centered-container">
-    <md-card
-      md-with-hover
-      class="cardContainer"
-      style="padding: 3%;position:fixed"
-      id="header"
-    >
-      <div class="title">
-        <span class="f">F</span>
-        <span class="u">U</span>
-        <span class="n">N</span>
-        <span class="d">D</span>
-        <span class="o">O</span>
-        <span class="o">O</span>
-         <h1>Fundoo</h1>  -->
-<!-- </div>
-      <div class="subtitleContainer">
-        <h2>Create your Account</h2>
-      </div>
-
-      <div class="form">
-        <div  class="class1">
-        <div class="fName">
-          <md-field>
-            <label>First-Name</label>
-            <md-input v-model="register.firstName" autofocus></md-input>
-          </md-field>
-        </div>
-
-        <div class="lName">
-          <md-field>
-            <label>Last-Name</label>
-            <md-input v-model="register.lastName" autofocus></md-input>
-          </md-field>
-        </div>
-      </div>
-      <div class="class2">
-        <div class="email">
-          <md-field>
-            <label>E-mail</label>
-            <md-input v-model="register.email" autofocus></md-input>
-          </md-field>
-        </div>
-
-        <div class="password">
-          <md-field md-has-password>
-            <label>Password</label>
-            <md-input v-model="register.password" type="password"></md-input>
-          </md-field>
-        </div>
-      </div>
-      </div> -->
-<!-------------------------------------serviceRegiter---------------------------------------------------->
-<!-- <div class="twoCardContainer">
-        <div class="cardContainer">
-          <md-card md-with-hover class="md-card1" v-for="card in cards">
-            <md-card md-with-hover class="md-card2">
-              <md-card-header>
-                <div class="md-title" @click="openDialog(card)">
-                    {{card.price}}
-                </div>
-                <a @click="openDialog(card)" style="margin:7%">{{card.name}}</a>
-                <div class="descriptionContainer">
-                  <li _ngcontent-c1="" class="features">
-                      {{card.description}}
-                  </li>
-                </div>
-              </md-card-header>
-            </md-card>
-          </md-card>
-        </div>
-      </div> -->
-<!----------------------------------------------------------------------------------------------->
-<!-- <div class="actions md-layout md-alignment-center-space-between">
-        <a href="/">Sign In</a>
-        <div>
-          <md-button class="md-raised md-primary" @click="auth"
-            >Sign Up</md-button
-          >
-        </div>
-      </div>
-    </md-card>
-  </div>
-</section>   -->
-<!--------------------------------------------------------------------------------------->
-
 <div>
   <div class="centered-container">
     <md-card md-with-hover class="card" id="header">
@@ -148,8 +61,10 @@
               id="card1"
               v-for="card in cards"
             >
-              <label class="class1">ADD TO CART</label>
-              <!-- <label v-if="service==false" class="class1">SELECTED</label> -->
+              <div>
+                <div v-if="card.id==mycaard.id">SELECTED</div>
+                <div v-else="card.id=!mycaard.id">ADD TO CART</div>
+              </div>
               <md-card md-with-hover id="card2">
                 <md-card-header>
                   <div class="md-title">
@@ -167,8 +82,8 @@
           </div>
         </div>
 
-        <div class="buttonContainer">
-          <a href="/">Sign In</a>
+        <div class="buttonContainer" @click="signIn">
+          <a href="/login">Sign In</a>
           <div>
             <md-button class="md-raised md-primary" @click="auth"
               >Sign Up</md-button

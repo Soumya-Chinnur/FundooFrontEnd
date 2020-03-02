@@ -1,7 +1,7 @@
 import icons from "../icons";
 import noteService, { messageService } from "../../services/noteService";
 import { EventBus } from "../../eventBus";
-import { normal } from "../../main";
+import { normal } from "../../eventBus";
 import draggable from "vuedraggable";
 // import draggable from 'vuedraggable';
 export default {
@@ -26,6 +26,7 @@ export default {
       character: "",
       search: "",
       richy: [],
+      myHTML: "<p>question.message</p>",
       cards: []
     };
   },
@@ -97,7 +98,9 @@ export default {
     filledpins() {
       this.pins = !this.pins;
     },
-
+    questionAnd(cardObj) {
+      this.$router.push("/dashboard/questions/" + cardObj.id);
+    },
     deleteChip(card) {
       console.log("ffffffffffff", card);
       var obj = {

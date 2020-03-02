@@ -8,6 +8,7 @@ import dashboard from "../components/dashboard";
 import note from "../components/note";
 import trash from "../components/trash";
 import questions from "../components/Questions";
+import ShoppingCart from "../components/ShoppingCart";
 
 import serviceRegister from "../components/serviceRegister";
 import { MdButton, MdContent, MdTabs } from "vue-material/dist/components";
@@ -15,7 +16,7 @@ import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
 import VueMaterial from "vue-material";
 import wysiwyg from "vue-wysiwyg";
-Vue.use(wysiwyg, {}); // config is optional. more below
+Vue.use(wysiwyg, {});
 Vue.use(require("vue-moment"));
 
 Vue.use(MdButton);
@@ -40,14 +41,14 @@ const routes = [
   {
     path: "/register",
     name: "register",
-    component: register, 
+    component: register
   },
   {
     path: "/forgotpassword",
     name: "forgotpassword",
     component: forgotpassword
   },
-
+  
   {
     path: "/dashboard",
     name: "dashboard",
@@ -58,7 +59,7 @@ const routes = [
         localStorage.getItem("token") === undefined ||
         localStorage.getItem("token") === ""
       ) {
-        next("/");
+        next("/login");
       } else {
         next(true);
       }
@@ -85,10 +86,14 @@ const routes = [
       {
         path: "questions/:noteid",
         component: questions
-      }
+      },
+      {
+        path: "/ShoppingCart",
+        name: "ShoppingCart",
+        component: ShoppingCart
+      },
     ]
-  },
-  
+  }
 ];
 
 const router = new VueRouter({

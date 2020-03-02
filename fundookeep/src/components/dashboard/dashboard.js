@@ -27,7 +27,8 @@ export default {
       title: String,
       Liston: true,
       image: String,
-      lab: ""
+      lab: "",
+      cart: true
     };
   },
   mounted() {
@@ -96,6 +97,10 @@ export default {
     searchKey() {
       console.log("wwwwwwwwwww", this.search);
       normal.$emit("searching", this.search);
+    },
+    cartIcon(){
+      // this.cart=false
+      this.$router.push("/ShoppingCart");
     },
     Addlabel() {
       console.log("jjjjjj");

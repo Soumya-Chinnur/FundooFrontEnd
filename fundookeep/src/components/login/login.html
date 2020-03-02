@@ -3,7 +3,7 @@
 *@author: Soumya Chinnur
 *@Date: 31-12-2019
 *******************************************************************************************/ -->
-<section class="login">
+<div class="loginContainer">
   <div class="centered-container">
     <md-card
       md-with-hover
@@ -47,4 +47,39 @@
       </div>
     </md-card>
   </div>
-</section>
+  <!---------------------------------------------------------------------------------------->
+  <div class="container">
+    <md-card class="servicecard" >
+      <div class="heading">
+        <h2>Services</h2>
+      </div>
+      <div class="cardContainer">
+        <md-card
+          md-with-hover
+          class="md-layout-item md-size-30 md-small-size-0"
+          id="card1"
+          v-for="card in cards"
+        >
+        <div>
+          <div v-if="card.id==mycaard.id">SELECTED</div>
+          <div v-else="card.id=!mycaard.id">ADD TO CART</div>
+        </div>
+          <!-- <label class="class1">ADD TO CART</label> -->
+          <md-card md-with-hover id="card2">
+            <md-card-header>
+              <div class="md-title">
+                {{card.price}}
+              </div>
+              <a>{{card.name}}</a>
+              <div class="descriptionContainer">
+                <li _ngcontent-c1="" class="features">
+                  {{card.description}}
+                </li>
+              </div>
+            </md-card-header>
+          </md-card>
+        </md-card>
+      </div>
+    </md-card>
+  </div>
+</div>

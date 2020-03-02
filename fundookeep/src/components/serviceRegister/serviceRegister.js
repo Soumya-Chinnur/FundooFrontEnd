@@ -1,5 +1,4 @@
 import userServices from "../../services/userServices";
-import { messageService } from "../../services/noteService";
 export default {
   name: "service-register",
   data() {
@@ -7,19 +6,25 @@ export default {
       cards: {
         type: Array
       },
+      id: String,
       card: Object,
       dialogdata: Object,
       showDialog: false,
       hover: false,
-      event: ""
+      event: "",
+      cardId: ""
     };
   },
   mounted() {
     //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     this.serviceRegister();
+    // this.clickAtcard();
   },
+  created() {},
   methods: {
     openDialog(card) {
+      console.log(card,"hdfchgdehc");
+      
       this.dialogdata = card;
       this.showDialog = true;
       var object = {
@@ -27,7 +32,8 @@ export default {
         description: card.description
       };
       this.card = object;
-      // EventBus.$emit("clicked",this.card)
+      console.log(this.card,"jjjjjjjjjjjjjjj");
+      
     },
     serviceRegister() {
       userServices.userService().then(res => {
@@ -37,9 +43,22 @@ export default {
       });
     },
     proceedCheckout() {
+      var obj = {
+        productId: localStorage.getItem("cartId")
+      };
       this.$router.push("/register");
-      messageService.sendMessage(this.card);
-      console.log(this.card, "ok");
+      userServices
+        .productCart(obj)
+        .then(res => {
+          console.log("asds", res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    clickAtcard(card) {
+      console.log("kjkjk", card);
+      localStorage.setItem("cartId", card.id);
     }
   }
 };

@@ -1,50 +1,51 @@
 import userServices from "../../services/userServices";
-import { messageService } from "../../services/noteService";
-// import { EventBus } from "../../main";
-// import register from "../services/userServices";
+
 export default {
   //syntax for instantiating an object that has been defined
   name: "register",
   components: {}, //They help you extend basic HTML elements to encapsulate reusable code.
   data() {
     return {
-      cards: {
-        type: Array
-      },
+      cardsooo: "",
+      cards: Array,
+      card: Object,
       // object: Object,
       service: true,
       loading: false,
+      test: Object,
       register: {
         firstName: "",
         lastName: "",
         email: "",
-        password: "",
-        text: Object,
-        selected: true
-      }
+        password: ""
+      },
+      price: "",
+      flag: false,
+      mycaard: Object
     };
   },
   mounted() {
     this.serviceRegister();
-  },
-  created() {
-    this.subscription = messageService.getMessage().subscribe(message => {
-      console.log("wqwq", message);
-    });
-    console.log(this.message.text.price,"ooo");
+    this.card.id = localStorage.getItem("cartId");
+    console.log(this.card.id,"iuiu");
     
-
-    // if (this.text.price == 99 || this.text.price == 49) {
-    //   console.log("sdf",this.text);
-      
-    // }
   },
+  created() {},
   methods: {
     serviceRegister() {
       userServices.userService().then(res => {
         console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
         this.cards = res.data.data.data;
-        console.log("jjjjjjjjj", this.cards);
+        // console.log("jjjjjjjjj", this.cards);
+        // console.log(this.cards[0].id, "ekdkid");
+        for (let i = 0; i < this.cards.length; i++) {
+          console.log(this.cards[i].id, this.card.id);
+
+          if (this.card.id == this.cards[i].id) {
+            console.log("opopo", this.cards[i]);
+            this.mycaard = this.cards[i];
+          }
+        }
       });
     },
     auth() {
@@ -63,10 +64,19 @@ export default {
         // eslint-disable-next-line no-console
         console.log("hjkhbkjhjkhjkhk", res);
       });
-      this.$router.push("/").catch(err => {
-        // eslint-disable-next-line no-console
-        console.log(err);
-      });
+    },
+    signIn() {
+      // productId: localStorage.getItem("cartId");
+
+      this.$router.push("/login");
+      // userServices
+      //   .productCart(obj)
+      //   .then(res => {
+      //     console.log("prava", res);
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
     }
   }
 };

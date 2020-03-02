@@ -35,6 +35,7 @@
             <div class="cardContainer">
               {{card.description}}
             </div>
+           
             <div class="chipContainer">
               <div v-for="note in card.reminder">
                 <md-chip
@@ -62,6 +63,15 @@
               >
               </icons>
             </div>
+            <hr v-if="card.questionAndAnswerNotes.length>0">
+            <div class="questionLabel">
+            <div v-if="card.questionAndAnswerNotes.length>0">
+              Question Asked
+            </div>
+            <div v-for="question in card.questionAndAnswerNotes">
+              <div @click="questionAnd(card)" v-html="question.message">{{question.message}}</div>
+            </div>
+          </div>
           </md-card>
         </draggable>
      

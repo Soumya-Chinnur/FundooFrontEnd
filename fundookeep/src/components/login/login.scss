@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 30%;
   height: 100vh;
 }
 
@@ -66,23 +66,66 @@
   font-family: bold;
 }
 #header {
-  border-style: groove;
+  // border-style: groove;
   border-radius: 10px;
 }
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+}
+#card1 {
+  background-color: gray;
+  border: 1px solid black;
+  top: 30px;
+}
+#card1:hover {
+  background-color: #e6b800;
+}
+#card2 {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  border: 1px solid black;
+  height: 101%;
+}
+.class1 {
+  font-size: 17px;
+}
+.loginContainer {
+  display: flex;
+}
 
-@media (min-width: 290px) {
-  .centered-container {
-    width: 40%;
-    margin-left: 3%;
-  }
+// @media (min-width: 290px) {
+//   .centered-container {
+//     width: 40%;
+//     margin-left: 3%;
+//   }
+// }
+// @media (min-width: 340px) and (max-width: 900px) {
+//   .centered-container {
+//     width: 40%;
+//   }
+// }
+// @media (min-width: 890px) {
+//   .centered-container {
+//     width: 40%;
+//   }
+// }
+.container {
+  width: 40%;
+  display: flex;
+  align-items: center;
 }
-@media (min-width: 340px) and (max-width: 900px) {
-  .centered-container {
-    width: 40%;
-  }
+.servicecard {
+  height: 71%;
+  width: 85%;
+  background-color: #d0d1d1 !important;
 }
-@media (min-width: 890px) {
-  .centered-container {
-    width: 40%;
-  }
+.loginContainer {
+  display: flex;
+  justify-content: center;
+}
+.heading {
+  display: flex;
+  justify-content: center;
 }

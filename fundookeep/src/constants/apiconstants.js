@@ -20,5 +20,6 @@ export const apiConstant = {
  addCollaborator: "/notes/{id}/AddcollaboratorsNotes",
  profilePic: "/user/uploadProfileImage",
  qandaNotes: "/questionAndAnswerNotes/addQuestionAndAnswer",
- Ratings: "/questionAndAnswerNotes/rate/{parentId}"
+ Ratings: "/questionAndAnswerNotes/rate/{parentId}",
+ productCartId: "/productcarts/addToCart"
 };

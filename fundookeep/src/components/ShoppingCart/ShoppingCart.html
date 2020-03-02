@@ -1,0 +1,73 @@
+<section class="shopping-cart">
+  <div class="cardContainer">
+    <md-card>
+      <span class="md-title">fundoonotes</span>
+    </md-card>
+    <div class="progressBar">
+      <md-progress-bar
+        v-model.number="amount"
+        md-mode="determinate"
+        :md-value="amount"
+      >
+        <md-icon>thumb_up</md-icon>
+      </md-progress-bar>
+      <div class="progressBarDetails">
+        <div>sigin</div>
+        <div>review</div>
+        <div>complete</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="headerContainer">
+      <h3>Shopping Cart</h3>
+    </div>
+    <hr />
+    <div class="cartDetails">
+      <div class="cardContainer1">
+        <md-card class="card2Container">
+          <span class="md-title1"
+            >${{mycaard.price}} per month {{mycaard.name}}</span
+          >
+        </md-card>
+      </div>
+      <div class="informationDetails">
+        <div class="information1">
+          <span>advance Pack Details</span>
+          <ul>
+            <li>{{mycaard.description}}</li>
+          </ul>
+        </div>
+        <div class="information2">
+          <span>price</span>
+          <div>${{mycaard.price}}</div>
+        </div>
+        <div class="information3">
+          <span>validity</span>
+          <div>1month</div>
+        </div>
+
+        <div class="information1">
+          <md-card class="boxContainer">
+            <div>
+              <div class="boxDetails">
+                Subtotal(1 item) : ${{mycaard.price}}
+              </div>
+              <div>
+                <md-button class="button" @click="proceedCheckout"
+                  >Proceed to checkout</md-button
+                >
+              </div>
+            </div>
+          </md-card>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <div class="subtotalContainer">
+        Subtotal ( 1 item ): ${{mycaard.price}}
+      </div>
+    </div>
+  </div>
+</section>
