@@ -14,7 +14,7 @@ export default {
         email: "",
         password: ""
       },
-      mycaard:Object
+      mycaard: Object
     };
   },
   mounted() {
@@ -59,6 +59,6 @@ export default {
           // eslint-disable-next-line no-console
           console.log(err);
         });
-      }
+    }
   }
 };

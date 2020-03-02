@@ -49,7 +49,7 @@
   </div>
   <!---------------------------------------------------------------------------------------->
   <div class="container">
-    <md-card class="servicecard" >
+    <md-card class="servicecard">
       <div class="heading">
         <h2>Services</h2>
       </div>
@@ -60,10 +60,10 @@
           id="card1"
           v-for="card in cards"
         >
-        <div>
-          <div v-if="card.id==mycaard.id">SELECTED</div>
-          <div v-else="card.id=!mycaard.id">ADD TO CART</div>
-        </div>
+          <div>
+            <div v-if="card.id==mycaard.id">SELECTED</div>
+            <div v-else="card.id=!mycaard.id">ADD TO CART</div>
+          </div>
           <!-- <label class="class1">ADD TO CART</label> -->
           <md-card md-with-hover id="card2">
             <md-card-header>
