@@ -23,8 +23,8 @@ export default {
   created() {},
   methods: {
     openDialog(card) {
-      console.log(card,"hdfchgdehc");
-      
+      console.log(card, "hdfchgdehc");
+
       this.dialogdata = card;
       this.showDialog = true;
       var object = {
@@ -32,8 +32,7 @@ export default {
         description: card.description
       };
       this.card = object;
-      console.log(this.card,"jjjjjjjjjjjjjjj");
-      
+      console.log(this.card, "jjjjjjjjjjjjjjj");
     },
     serviceRegister() {
       userServices.userService().then(res => {
