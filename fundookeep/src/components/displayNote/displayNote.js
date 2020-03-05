@@ -34,7 +34,7 @@ export default {
   created() {
     normal.$on("searching", character => {
       this.character = character;
-      console.log("anushhhhhhhhhhhhhhhhhhhhhhhhhaaaa", character);
+      console.log("weweweewewewewwwwwwwww", character);
       console.log("nnnnnnnnnnnnnnnnnnnnnn", this.character);
     });
     console.log("dddddddddddddd");

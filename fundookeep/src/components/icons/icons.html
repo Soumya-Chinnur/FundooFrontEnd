@@ -44,7 +44,9 @@
               <datetime format="MM/DD/YYYY" width="300px" v-model="val"></datetime>
             </div>
           `</md-menu-content>
+          <!-- <div>{{mycaard.name}}</div> -->
         </md-menu>
+
         <div>
         <md-button class="md-icon-button"  @click="showDialog = true">
           <img src="../../assets/icons/collaborator.svg" alt="" srcset="" />
@@ -54,17 +56,18 @@
           <md-button class="md-icon-button" md-menu-trigger>
             <img src="../../assets/icons/color.svg" alt="" srcset="" />
           </md-button>
-
-          <md-menu-content>
-            <div class="displayColor" v-for="colors in colorArray">
-              <div v-for="color in colors">
-                <md-button
-                  class="md-fab md-mini"
-                  @click="colorDisplay(color.color,cardObj)"
-                  v-bind:style="{ 'background-color': color.color }"
-                >
-                </md-button>
-              </div>
+<md-menu-content>
+            <div>
+           <div class="displayColor" v-for="colors in colorArray">
+                  <div v-for="color in colors">
+                    <md-button :disabled="isdisable"
+                      class="md-fab md-mini"
+                      @click="colorDisplay(color.color,cardObj)"
+                      v-bind:style="{ 'background-color': color.color }"
+                    >
+                    </md-button>
+                  </div>
+                </div>
             </div>
           </md-menu-content>
         </md-menu>
@@ -73,7 +76,7 @@
           <img src="../../assets/icons/image.svg" alt="" srcset="" />
         </md-button>
 
-        <md-button
+        <md-button :disabled="isdisable"
           v-if="!route"
           class="md-icon-button"
           @click="archive(cardObj)"
@@ -90,7 +93,7 @@
         </md-button>
 
         <md-menu md-size="medium" md-align-trigger>
-          <md-button md-menu-trigger class="md-icon-button">
+          <md-button :disabled="isdisable" md-menu-trigger class="md-icon-button">
             <img src="../../assets/icons/menu.svg" alt="" srcset="" />
           </md-button>
           <md-menu-content>
@@ -116,7 +119,6 @@
                       <md-checkbox v-model="isCheckAll">{{label}}</md-checkbox>
                     </div>
                   </div>
-                  <!-- <div v-for="item in items" :key="item.id" >{{item.label}}</div> -->
                   <div @click="createLabel">create  {{userInput}}</div>
 
                 </md-menu-content>

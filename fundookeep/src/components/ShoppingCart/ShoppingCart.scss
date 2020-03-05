@@ -20,23 +20,24 @@
     font-size: 15px;
   }
   .card2Container {
-    width: 120px;
+    width: 88px;
     margin: 4px;
-    height: 40px;
+    height: 75px;
     display: flex;
     justify-content: center;
     border-radius: 7px;
-    margin-top: 2%;
+    // margin-top: 2%;
     background-color: #797777;
+    padding: 10px;
   }
   .cartDetails {
     display: flex;
     margin: 12px;
   }
   .informationDetails {
-    width: 55%;
+    // width: 55%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .boxContainer {
     width: 230px;
@@ -71,5 +72,27 @@
   .progressBar {
     width: 25%;
     margin: 4%;
+  }
+  .information {
+    margin: 1%;
+  }
+  .heading{
+    display: flex;
+    margin-left: 10%;
+    color: royalblue;
+  }
+  .heading1{
+    display: flex;
+    color: royalblue;
+  }
+  .inputContainer{
+    height:90px;
+    width:250px;
+  }
+  .cashDelivery{
+    display: flex;
+    justify-content: space-between;
+    width:73%;
+    margin:10px;
   }
 }

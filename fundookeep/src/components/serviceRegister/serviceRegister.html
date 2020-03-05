@@ -23,17 +23,19 @@
           >
             <label class="class1">ADD TO CART</label>
             <md-card md-with-hover id="card2">
-              <md-card-header>
-                <div class="md-title" @click="clickAtcard(card)">
-                  {{card.price}}
-                </div>
-                <a @click="openDialog(card)">{{card.name}}</a>
-                <div class="descriptionContainer">
-                  <li _ngcontent-c1="" class="features">
-                    {{card.description}}
-                  </li>
-                </div>
-              </md-card-header>
+              <div @click="openDialog(card)">
+                <md-card-header>
+                  <div class="md-title" @click="clickAtcard(card)">
+                    {{card.price}}
+                  </div>
+                  <a>{{card.name}}</a>
+                  <div class="descriptionContainer">
+                    <li _ngcontent-c1="" class="features">
+                      {{card.description}}
+                    </li>
+                  </div>
+                </md-card-header>
+              </div>
             </md-card>
           </md-card>
         </div>

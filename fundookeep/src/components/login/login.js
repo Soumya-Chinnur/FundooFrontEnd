@@ -21,18 +21,20 @@ export default {
     this.serviceRegister();
     // this.card.id = localStorage.getItem("card.id");
     this.card.id = localStorage.getItem("cartId");
+    console.log(this.card.id,"swswsws");
+    
   },
   methods: {
     serviceRegister() {
       userServices.userService().then(res => {
         console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
         this.cards = res.data.data.data;
-        console.log("jjjjjjjjj", this.cards);
+        // console.log("jjjjjjjjj", this.cards);
         for (let i = 0; i < this.cards.length; i++) {
           console.log(this.cards[i].id, this.card.id);
 
           if (this.card.id == this.cards[i].id) {
-            console.log("opopo", this.cards[i]);
+            // console.log("opopo", this.cards[i]);
             this.mycaard = this.cards[i];
           }
         }
@@ -53,7 +55,9 @@ export default {
           localStorage.setItem("firstName", res.data.firstName);
           localStorage.setItem("lastName", res.data.lastName);
           localStorage.setItem("userid", res.data.userId);
+          localStorage.setItem("token", res.data.id);
           this.$router.push("/dashboard");
+         
         })
         .catch(err => {
           // eslint-disable-next-line no-console

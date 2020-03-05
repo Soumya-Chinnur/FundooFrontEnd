@@ -3,8 +3,8 @@ import VueRouter from "vue-router";
 import labelService from "../../services/labelService";
 import userServices from "../../services/userServices";
 Vue.use(VueRouter);
-import { EventBus } from "../../main";
-import { normal } from "../../main";
+import { EventBus } from "../../eventBus";
+import { normal } from "../../eventBus";
 import noteService from "../../services/noteService";
 
 export default {

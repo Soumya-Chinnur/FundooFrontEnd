@@ -32,24 +32,28 @@
         </md-card>
       </div>
       <div class="informationDetails">
-        <div class="information1">
-          <span>advance Pack Details</span>
+        <div class="information">
+          <span class="heading">Advance Pack Details</span>
           <ul>
             <li>{{mycaard.description}}</li>
           </ul>
         </div>
-        <div class="information2">
-          <span>price</span>
+        <div v-if="flag==false">
+          <div class="heading1">${{mycaard.price}}</div>
+          <div>Per month</div>
+        </div>
+        <div class="information" v-if="flag==true">
+          <span class="heading1">Price</span>
           <div>${{mycaard.price}}</div>
         </div>
-        <div class="information3">
-          <span>validity</span>
+        <div class="information" v-if="flag==true">
+          <span class="heading1">Validity</span>
           <div>1month</div>
         </div>
 
-        <div class="information1">
+        <div v-if="order==true" class="information">
           <md-card class="boxContainer">
-            <div>
+            <div v-if="flag==true">
               <div class="boxDetails">
                 Subtotal(1 item) : ${{mycaard.price}}
               </div>
@@ -59,14 +63,35 @@
                 >
               </div>
             </div>
+
+            <div v-if="flag==false">
+              <div>
+                <md-button class="button" @click="placeOrder"
+                  >Place your Order</md-button
+                >
+              </div>
+              <div class="boxDetails">
+                Subtotal(1 item) : ${{mycaard.price}}
+              </div>
+            </div>
           </md-card>
         </div>
       </div>
     </div>
     <hr />
-    <div>
-      <div class="subtotalContainer">
+
+    <div v-if="flag==true">
+      <div class="subtotalContainer" @click="proceedCheckout">
         Subtotal ( 1 item ): ${{mycaard.price}}
+      </div>
+    </div>
+    <div v-if="order==true" class="cashDelivery">
+      <div v-if="flag==false">
+        <input class="inputContainer" />
+      </div>
+      <div v-if="flag==false">
+        <div>Payment Method</div>
+        <div class="heading1">Cash On Delivery</div>
       </div>
     </div>
   </div>

@@ -11,17 +11,25 @@ export default {
       },
       card: Object,
       mycaard: Object,
-      cardid: ""
+      cardid: "",
+      flag: true,
+      order: true
     };
   },
   computed: {},
   mounted() {
     this.serviceRegister();
     this.cardid = localStorage.getItem("cartId");
+    console.log(this.cardid, "hiuih");
   },
   methods: {
     proceedCheckout() {
       this.amount += 50;
+      this.flag = !this.flag;
+    },
+    placeOrder() {
+      this.amount += 100;
+      this.order = !this.order;
     },
     serviceRegister() {
       userServices.userService().then(res => {

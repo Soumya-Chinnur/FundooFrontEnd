@@ -18,7 +18,7 @@ export default {
   mounted() {
     //mounted() is called after DOM has been mounted so you can access the reactive component, templates, and DOM elements and manipulate them
     this.serviceRegister();
-    // this.clickAtcard();
+    this.clickAtcard();
   },
   created() {},
   methods: {

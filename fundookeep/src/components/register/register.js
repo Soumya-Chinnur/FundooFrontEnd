@@ -43,6 +43,7 @@ export default {
           if (this.card.id == this.cards[i].id) {
             console.log("opopo", this.cards[i]);
             this.mycaard = this.cards[i];
+            
           }
         }
       });
@@ -54,7 +55,7 @@ export default {
         lastName: this.register.lastName,
         email: this.register.email,
         password: this.register.password,
-        service: "advance"
+        service: this.mycaard.name
       };
       // eslint-disable-next-line no-console
       console.log("kjdkdldw", obj);

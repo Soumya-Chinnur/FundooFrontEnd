@@ -18,6 +18,19 @@ export default {
   },
   data() {
     return {
+      cards: {
+        type: Array
+      },
+      isdisable: false,
+      showSnackbar: false,
+      position: "center",
+      duration: 4000,
+      isInfinity: false,
+      mycaard: Object,
+      card: Object,
+      name: String,
+      advance: String,
+      basic: String,
       route: true,
       route1: true,
       route2: true,
@@ -38,9 +51,10 @@ export default {
       userInput1: "",
       label: "",
       message: [],
-      flag:true,
-      task:Object,
-     
+      flag: true,
+      task: Object,
+      // service: true,
+
       colorArray: [
         [
           { color: "#FFFFFF", name: "White" },
@@ -70,6 +84,13 @@ export default {
 
   computed: {},
   mounted() {
+    this.serviceRegister();
+    this.card.id = localStorage.getItem("cartId");
+    if (this.mycaard.name == "basic") {
+      console.log(this.mycaard.name, "sssssssssssssssssssssssssssss");
+      this.isdisable = true;
+    }
+    console.log(this.card.id, "pravallika");
     this.email = localStorage.getItem("email");
 
     labelService.getLabelList().then(res => {
@@ -99,6 +120,27 @@ export default {
     });
   },
   methods: {
+    serviceRegister() {
+      userServices.userService().then(res => {
+        console.log("serviceeeeeeeeeeeeeeeee", res.data.data.data);
+        this.cards = res.data.data.data;
+        console.log("Iconcards", this.cards);
+        for (let i = 0; i < this.cards.length; i++) {
+          console.log(this.cards[i].id, this.card.id);
+
+          if (this.card.id == this.cards[i].id) {
+            console.log("opopo", this.cards[i]);
+            this.mycaard = this.cards[i];
+            if (this.mycaard.name == "basic") {
+              console.log(this.mycaard.name, "sssssssssssssssssssssssssssss");
+              this.isdisable = true;
+            }
+          }
+        }
+        console.log(" this.isdisable : ",  this.isdisable);
+        
+      });
+    },
     filterBy,
     filterBylabel,
     addLabel() {
@@ -157,6 +199,7 @@ export default {
     },
 
     colorDisplay(color, card) {
+      // this.service = !this.service;
       if (card == undefined) {
         this.$emit("changeColor", color);
       } else {
@@ -165,6 +208,7 @@ export default {
       }
     },
     colorsEdit(color, card) {
+      // this.service = !this.service;
       var obj = {
         noteIdList: [card.id],
         color: color
@@ -243,9 +287,8 @@ export default {
       // EventBus.$emit('i-got-clicked', cardObj);
       // textService.sendMessage(JSON.stringify(cardObj));
       this.$router.push("/dashboard/questions/" + cardObj.id);
-      
     },
-    showQuestions(cardObj){
+    showQuestions(cardObj) {
       this.$router.push("/dashboard/questions/" + cardObj.id);
     },
     nextweek(card) {
