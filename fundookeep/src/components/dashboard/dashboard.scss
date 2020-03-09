@@ -252,3 +252,31 @@ input {
   display: flex;
   justify-content: center;
 }
+@media screen and (min-width:428px){
+  .search{
+    // display:none;
+    width:443px !important;
+  }
+}
+@media screen and (max-width:600px){
+  .search{
+    width:405px;
+  }
+  .searchIcon{
+    right:206px;
+  }
+  .pass1{
+    width:35%;
+  }
+}
+@media screen and (max-width:320px){
+  .mediaSearch{
+    width:125%;
+  }
+  .search{
+    display:none;
+  }
+  .mediaSearch{
+    width:226%;
+  }
+}

@@ -98,7 +98,7 @@ export default {
       console.log("wwwwwwwwwww", this.search);
       normal.$emit("searching", this.search);
     },
-    cartIcon(){
+    cartIcon() {
       // this.cart=false
       this.$router.push("/ShoppingCart");
     },

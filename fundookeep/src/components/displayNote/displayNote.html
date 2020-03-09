@@ -6,75 +6,69 @@
 <div v-bind:class="Liston==true ? 'listview':'gridview'">
   <div class="display-note">
     <div>
-      <draggable  class="flex" >
-          <md-card
-            v-for="card in filteredList"
-            class="card"
-            v-bind:style="{ 'background-color': card.color }"
-            :key="card.id"
-          >
-            <div class="titleAndPincontainer">
-              <div class="titleContainer" @click="openDialog(card)">
-                {{card.title}}
-              </div>
-              <div class="originalpin" v-if="pin== true">
-                <md-button class="md-icon-button" @click="filledpin">
-                  <img src="../../assets/icons/pin.svg" alt="" srcset="" />
-                </md-button>
-              </div>
-              <div v-if="pin== false" class="displaypin" @click="filledpin">
-                <md-button class="md-icon-button">
-                  <img
-                    src="../../assets/icons/filledpin.svg"
-                    alt=""
-                    srcset=""
-                  />
-                </md-button>
-              </div>
+      <draggable class="flex">
+        <md-card
+          v-for="card in filteredList"
+          class="card"
+          v-bind:style="{ 'background-color': card.color }"
+          :key="card.id"
+        >
+          <div class="titleAndPincontainer">
+            <div class="titleContainer" @click="openDialog(card)">
+              {{card.title}}
             </div>
-            <div class="cardContainer">
-              {{card.description}}
+            <div class="originalpin" v-if="pin== true">
+              <md-button class="md-icon-button" @click="filledpin">
+                <img src="../../assets/icons/pin.svg" alt="" srcset="" />
+              </md-button>
             </div>
-           
-            <div class="chipContainer">
-              <div v-for="note in card.reminder">
-                <md-chip
-                  v-if="card.reminder.length>0"
-                  @md-delete="deleteChip(card)"
-                  md-placeholder="Add genre..."
-                >
-                  {{note| moment("ddd,DD,HH,A") }}
-                </md-chip>
-              </div>
-              <!-- <div>
-            <md-chip md-placeholder="Add fruit..."></md-chip>
-          </div> -->
+            <div v-if="pin== false" class="displaypin" @click="filledpin">
+              <md-button class="md-icon-button">
+                <img src="../../assets/icons/filledpin.svg" alt="" srcset="" />
+              </md-button>
             </div>
-            <div>
-              <icons
-                @deleteCard="trash"
-                @archivedCard="archive"
-                @restorecard="restore"
-                @unarchivedCard="unarchive"
-                @deleteforvercard="deleteforever"
-                @updateNote="updateNote"
-                @reminderCard="deleteChip"
-                :cardObj="card"
+          </div>
+          <div class="cardContainer">
+            {{card.description}}
+          </div>
+
+          <div class="chipContainer">
+            <div v-for="note in card.reminder">
+              <md-chip
+                v-if="card.reminder.length>0"
+                @md-delete="deleteChip(card)"
+                md-placeholder="Add genre..."
               >
-              </icons>
+                {{note| moment("ddd,DD,HH,A") }}
+              </md-chip>
             </div>
-            <hr v-if="card.questionAndAnswerNotes.length>0">
-            <div class="questionLabel">
+          </div>
+          <div>
+            <icons
+              @deleteCard="trash"
+              @archivedCard="archive"
+              @restorecard="restore"
+              @unarchivedCard="unarchive"
+              @deleteforvercard="deleteforever"
+              @updateNote="updateNote"
+              @reminderCard="deleteChip"
+              :cardObj="card"
+            >
+            </icons>
+          </div>
+          <hr v-if="card.questionAndAnswerNotes.length>0" />
+          <div class="questionLabel">
             <div v-if="card.questionAndAnswerNotes.length>0">
               Question Asked
             </div>
             <div v-for="question in card.questionAndAnswerNotes">
-              <div @click="questionAnd(card)" v-html="question.message">{{question.message}}</div>
+              <div @click="questionAnd(card)" v-html="question.message">
+                {{question.message}}
+              </div>
             </div>
           </div>
-          </md-card>
-        </draggable>
-     
+        </md-card>
+      </draggable>
     </div>
 
     <div>

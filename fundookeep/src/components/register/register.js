@@ -21,7 +21,8 @@ export default {
       },
       price: "",
       flag: false,
-      mycaard: Object
+      mycaard: Object,
+      // color: true
     };
   },
   mounted() {
@@ -43,8 +44,8 @@ export default {
           if (this.card.id == this.cards[i].id) {
             console.log("opopo", this.cards[i]);
             this.mycaard = this.cards[i];
-            
           }
+         
         }
       });
     },

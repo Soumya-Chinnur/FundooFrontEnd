@@ -23,6 +23,10 @@ export default {
       },
       isdisable: false,
       showSnackbar: false,
+      showSnackbar1: false,
+      showSnackbar2: false,
+      showSnackbar3: false,
+      showSnackbar4: false,
       position: "center",
       duration: 4000,
       isInfinity: false,
@@ -131,10 +135,16 @@ export default {
           if (this.card.id == this.cards[i].id) {
             console.log("opopo", this.cards[i]);
             this.mycaard = this.cards[i];
+            
             if (this.mycaard.name == "basic") {
               console.log(this.mycaard.name, "sssssssssssssssssssssssssssss");
               this.isdisable = true;
+              this.showSnackbar= true;
             }
+            if(this.mycaard.name == "advance"){
+              this.showSnackbar= false;
+ 
+             }
           }
         }
         console.log(" this.isdisable : ",  this.isdisable);
@@ -309,6 +319,21 @@ export default {
       noteService.reminder(obj).then(res => {
         console.log("111111111111111111", res);
       });
-    }
+    },
+    snackBar(){
+    this.showSnackbar=true;
+    },
+    snackBar1(){
+      this.showSnackbar1=true;
+      },
+    snackBar2(){
+        this.showSnackbar2=true;
+        },
+    snackBar3(){
+          this.showSnackbar3=true;
+        },
+    snackBar4(){
+          this.showSnackbar4=true;
+        }
   }
 };

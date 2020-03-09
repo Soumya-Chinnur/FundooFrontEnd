@@ -60,10 +60,13 @@
               class="md-layout-item md-size-30 md-small-size-30"
               id="card1"
               v-for="card in cards"
+              this.color="true"
             >
               <div>
-                <div v-if="card.id==mycaard.id">SELECTED</div>
-                <div v-else="card.id=!mycaard.id">ADD TO CART</div>
+                <div v-if="card.id==mycaard.id" class="selected">SELECTED</div>
+                <div v-else="card.id=!mycaard.id" class="addCart">
+                  ADD TO CART
+                </div>
               </div>
               <md-card md-with-hover id="card2">
                 <md-card-header>
