@@ -53,7 +53,7 @@ export default {
             this.messages.push(res.data.data.data[index]);
           }
         }
-        console.log("asa",this.messages)
+        console.log("asa", this.messages);
       })
       .catch(err => {
         // eslint-disable-next-line no-console
