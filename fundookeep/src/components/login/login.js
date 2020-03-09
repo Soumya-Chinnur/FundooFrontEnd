@@ -21,8 +21,7 @@ export default {
     this.serviceRegister();
     // this.card.id = localStorage.getItem("card.id");
     this.card.id = localStorage.getItem("cartId");
-    console.log(this.card.id,"swswsws");
-    
+    console.log(this.card.id, "swswsws");
   },
   methods: {
     serviceRegister() {
@@ -57,7 +56,6 @@ export default {
           localStorage.setItem("userid", res.data.userId);
           localStorage.setItem("token", res.data.id);
           this.$router.push("/dashboard");
-         
         })
         .catch(err => {
           // eslint-disable-next-line no-console
