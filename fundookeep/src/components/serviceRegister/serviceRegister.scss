@@ -4,7 +4,6 @@
   }
   .md-title {
     margin-left: 7%;
-    // font-size: 25px;
   }
   .subtitleContainer {
     margin: 2%;
@@ -79,15 +78,16 @@
   justify-content: center;
 }
 
-@media only screen and (max-width:320px){
-.cardContainer{
-  width:100% !important
+@media only screen and (max-width: 320px) {
+  .cardContainer {
+    width: 100% !important;
+  }
+  #card2 {
+    position: relative;
+    top: 4px !important;
+    left: 16px !important;
+    border: 1px solid black;
+    height: 92% !important;
+    width: 114%;
+  }
 }
-#card2{
-  position: relative;
-  top: 4px !important;
-  left: 16px !important;
-  border: 1px solid black;
-  height: 92% !important;
-  width:114%;
-}}
